@@ -7,24 +7,24 @@ Vue.use(Router)
 import Layout from '@/layout'
 
 /**
- * Note: 路由配置项
+ * Note: 路由配置項
  *
- * hidden: true                     // 当设置 true 的时候该路由不会再侧边栏出现 如401，login等页面，或者如一些编辑页面/edit/1
- * alwaysShow: true                 // 当你一个路由下面的 children 声明的路由大于1个时，自动会变成嵌套的模式--如组件页面
- *                                  // 只有一个时，会将那个子路由当做根路由显示在侧边栏--如引导页面
- *                                  // 若你想不管路由下面的 children 声明的个数都显示你的根路由
- *                                  // 你可以设置 alwaysShow: true，这样它就会忽略之前定义的规则，一直显示根路由
- * redirect: noRedirect             // 当设置 noRedirect 的时候该路由在面包屑导航中不可被点击
- * name:'router-name'               // 设定路由的名字，一定要填写不然使用<keep-alive>时会出现各种问题
- * query: '{"id": 1, "name": "ry"}' // 访问路由的默认传递参数
- * roles: ['admin', 'common']       // 访问路由的角色权限
- * permissions: ['a:a:a', 'b:b:b']  // 访问路由的菜单权限
+ * hidden: true                     // 當設定 true 的時候該路由不會再側邊欄出現 如401，login等頁面，或者如一些編輯頁面/edit/1
+ * alwaysShow: true                 // 當你一個路由下面的 children 宣告的路由大於1個時，自動會變成巢狀的模式--如元件頁面
+ *                                  // 只有一個時，會將那個子路由當做根路由顯示在側邊欄--如引導頁面
+ *                                  // 若你想不管路由下面的 children 宣告的個數都顯示你的根路由
+ *                                  // 你可以設定 alwaysShow: true，這樣它就會忽略之前定義的規則，一直顯示根路由
+ * redirect: noRedirect             // 當設定 noRedirect 的時候該路由在麵包屑導航中不可被點選
+ * name:'router-name'               // 設定路由的名字，一定要填寫不然使用<keep-alive>時會出現各種問題
+ * query: '{"id": 1, "name": "ry"}' // 訪問路由的預設傳遞引數
+ * roles: ['admin', 'common']       // 訪問路由的角色許可權
+ * permissions: ['a:a:a', 'b:b:b']  // 訪問路由的選單許可權
  * meta : {
-    noCache: true                   // 如果设置为true，则不会被 <keep-alive> 缓存(默认 false)
-    title: 'title'                  // 设置该路由在侧边栏和面包屑中展示的名字
-    icon: 'svg-name'                // 设置该路由的图标，对应路径src/assets/icons/svg
-    breadcrumb: false               // 如果设置为false，则不会在breadcrumb面包屑中显示
-    activeMenu: '/system/user'      // 当路由设置了该属性，则会高亮相对应的侧边栏。
+    noCache: true                   // 如果設定為true，則不會被 <keep-alive> 快取(預設 false)
+    title: 'title'                  // 設定該路由在側邊欄和麵包屑中展示的名字
+    icon: 'svg-name'                // 設定該路由的圖示，對應路徑src/assets/icons/svg
+    breadcrumb: false               // 如果設定為false，則不會在breadcrumb麵包屑中顯示
+    activeMenu: '/system/user'      // 當路由設定了該屬性，則會高亮相對應的側邊欄。
   }
  */
 
@@ -70,7 +70,7 @@ export const constantRoutes = [
         path: 'index',
         component: () => import('@/views/index'),
         name: 'Index',
-        meta: { title: '首页', icon: 'dashboard', affix: true }
+        meta: { title: '首頁', icon: 'dashboard', affix: true }
       }
     ]
   },
@@ -84,13 +84,13 @@ export const constantRoutes = [
         path: 'profile',
         component: () => import('@/views/system/user/profile/index'),
         name: 'Profile',
-        meta: { title: '个人中心', icon: 'user' }
+        meta: { title: '個人中心', icon: 'user' }
       }
     ]
   }
 ]
 
-// 动态路由，基于用户权限动态去加载
+// 動態路由，基於使用者許可權動態去載入
 export const dynamicRoutes = [
   {
     path: '/system/user-auth',
@@ -116,7 +116,7 @@ export const dynamicRoutes = [
         path: 'user/:roleId(\\d+)',
         component: () => import('@/views/system/role/authUser'),
         name: 'AuthUser',
-        meta: { title: '分配用户', activeMenu: '/system/role' }
+        meta: { title: '分配使用者', activeMenu: '/system/role' }
       }
     ]
   },
@@ -130,7 +130,7 @@ export const dynamicRoutes = [
         path: 'index/:dictId(\\d+)',
         component: () => import('@/views/system/dict/data'),
         name: 'Data',
-        meta: { title: '字典数据', activeMenu: '/system/dict' }
+        meta: { title: '字典資料', activeMenu: '/system/dict' }
       }
     ]
   },
@@ -144,7 +144,7 @@ export const dynamicRoutes = [
         path: 'index/:jobId(\\d+)',
         component: () => import('@/views/monitor/job/log'),
         name: 'JobLog',
-        meta: { title: '调度日志', activeMenu: '/monitor/job' }
+        meta: { title: '排程日誌', activeMenu: '/monitor/job' }
       }
     ]
   },
@@ -164,7 +164,7 @@ export const dynamicRoutes = [
   }
 ]
 
-// 防止连续点击多次路由报错
+// 防止連續點選多次路由報錯
 let routerPush = Router.prototype.push
 let routerReplace = Router.prototype.replace
 // push

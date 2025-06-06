@@ -1,25 +1,25 @@
 <template>
   <el-card>
     <el-tabs v-model="activeName">
-      <el-tab-pane label="基本信息" name="basic">
+      <el-tab-pane label="基本資訊" name="basic">
         <basic-info-form ref="basicInfo" :info="info" />
       </el-tab-pane>
-      <el-tab-pane label="字段信息" name="columnInfo">
+      <el-tab-pane label="欄位資訊" name="columnInfo">
         <el-table ref="dragTable" :data="columns" row-key="columnId" :max-height="tableHeight">
-          <el-table-column label="序号" type="index" min-width="5%" class-name="allowDrag"/>
-          <el-table-column label="字段列名" prop="columnName" min-width="10%" :show-overflow-tooltip="true" class-name="allowDrag"/>
-          <el-table-column label="字段描述" min-width="10%">
+          <el-table-column label="序號" type="index" min-width="5%" class-name="allowDrag"/>
+          <el-table-column label="欄位列名" prop="columnName" min-width="10%" :show-overflow-tooltip="true" class-name="allowDrag"/>
+          <el-table-column label="欄位描述" min-width="10%">
             <template slot-scope="scope">
               <el-input v-model="scope.row.columnComment"></el-input>
             </template>
           </el-table-column>
           <el-table-column
-            label="物理类型"
+            label="物理型別"
             prop="columnType"
             min-width="10%"
             :show-overflow-tooltip="true"
           />
-          <el-table-column label="Java类型" min-width="11%">
+          <el-table-column label="Java型別" min-width="11%">
             <template slot-scope="scope">
               <el-select v-model="scope.row.javaType">
                 <el-option label="Long" value="Long" />
@@ -32,7 +32,7 @@
               </el-select>
             </template>
           </el-table-column>
-          <el-table-column label="java属性" min-width="10%">
+          <el-table-column label="java屬性" min-width="10%">
             <template slot-scope="scope">
               <el-input v-model="scope.row.javaField"></el-input>
             </template>
@@ -43,7 +43,7 @@
               <el-checkbox true-label="1" false-label="0" v-model="scope.row.isInsert"></el-checkbox>
             </template>
           </el-table-column>
-          <el-table-column label="编辑" min-width="5%">
+          <el-table-column label="編輯" min-width="5%">
             <template slot-scope="scope">
               <el-checkbox true-label="1" false-label="0" v-model="scope.row.isEdit"></el-checkbox>
             </template>
@@ -53,12 +53,12 @@
               <el-checkbox true-label="1" false-label="0" v-model="scope.row.isList"></el-checkbox>
             </template>
           </el-table-column>
-          <el-table-column label="查询" min-width="5%">
+          <el-table-column label="查詢" min-width="5%">
             <template slot-scope="scope">
               <el-checkbox true-label="1" false-label="0" v-model="scope.row.isQuery"></el-checkbox>
             </template>
           </el-table-column>
-          <el-table-column label="查询方式" min-width="10%">
+          <el-table-column label="查詢方式" min-width="10%">
             <template slot-scope="scope">
               <el-select v-model="scope.row.queryType">
                 <el-option label="=" value="EQ" />
@@ -77,24 +77,24 @@
               <el-checkbox true-label="1" false-label="0" v-model="scope.row.isRequired"></el-checkbox>
             </template>
           </el-table-column>
-          <el-table-column label="显示类型" min-width="12%">
+          <el-table-column label="顯示型別" min-width="12%">
             <template slot-scope="scope">
               <el-select v-model="scope.row.htmlType">
-                <el-option label="文本框" value="input" />
-                <el-option label="文本域" value="textarea" />
+                <el-option label="文字框" value="input" />
+                <el-option label="文字域" value="textarea" />
                 <el-option label="下拉框" value="select" />
-                <el-option label="单选框" value="radio" />
-                <el-option label="复选框" value="checkbox" />
-                <el-option label="日期控件" value="datetime" />
-                <el-option label="图片上传" value="imageUpload" />
-                <el-option label="文件上传" value="fileUpload" />
-                <el-option label="富文本控件" value="editor" />
+                <el-option label="單選框" value="radio" />
+                <el-option label="核取方塊" value="checkbox" />
+                <el-option label="日期控制元件" value="datetime" />
+                <el-option label="圖片上傳" value="imageUpload" />
+                <el-option label="檔案上傳" value="fileUpload" />
+                <el-option label="富文字控制元件" value="editor" />
               </el-select>
             </template>
           </el-table-column>
-          <el-table-column label="字典类型" min-width="12%">
+          <el-table-column label="字典型別" min-width="12%">
             <template slot-scope="scope">
-              <el-select v-model="scope.row.dictType" clearable filterable placeholder="请选择">
+              <el-select v-model="scope.row.dictType" clearable filterable placeholder="請選擇">
                 <el-option
                   v-for="dict in dictOptions"
                   :key="dict.dictType"
@@ -108,7 +108,7 @@
           </el-table-column>
         </el-table>
       </el-tab-pane>
-      <el-tab-pane label="生成信息" name="genInfo">
+      <el-tab-pane label="生成資訊" name="genInfo">
         <gen-info-form ref="genInfo" :info="info" :tables="tables" :menus="menus"/>
       </el-tab-pane>
     </el-tabs>
@@ -137,43 +137,43 @@ export default {
   },
   data() {
     return {
-      // 选中选项卡的 name
+      // 選中選項卡的 name
       activeName: "columnInfo",
       // 表格的高度
       tableHeight: document.documentElement.scrollHeight - 245 + "px",
-      // 表信息
+      // 表資訊
       tables: [],
-      // 表列信息
+      // 表列資訊
       columns: [],
-      // 字典信息
+      // 字典資訊
       dictOptions: [],
-      // 菜单信息
+      // 選單資訊
       menus: [],
-      // 表详细信息
+      // 表詳細資訊
       info: {}
     }
   },
   created() {
     const tableId = this.$route.params && this.$route.params.tableId
     if (tableId) {
-      // 获取表详细信息
+      // 獲取表詳細資訊
       getGenTable(tableId).then(res => {
         this.columns = res.data.rows
         this.info = res.data.info
         this.tables = res.data.tables
       })
-      /** 查询字典下拉列表 */
+      /** 查詢字典下拉選單 */
       getDictOptionselect().then(response => {
         this.dictOptions = response.data
       })
-      /** 查询菜单下拉列表 */
+      /** 查詢選單下拉選單 */
       getMenuTreeselect().then(response => {
         this.menus = this.handleTree(response.data, "menuId")
       })
     }
   },
   methods: {
-    /** 提交按钮 */
+    /** 提交按鈕 */
     submitForm() {
       const basicForm = this.$refs.basicInfo.$refs.basicInfoForm
       const genForm = this.$refs.genInfo.$refs.genInfoForm
@@ -195,7 +195,7 @@ export default {
             }
           })
         } else {
-          this.$modal.msgError("表单校验未通过，请重新检查提交内容")
+          this.$modal.msgError("表單校驗未透過，請重新檢查提交內容")
         }
       })
     },
@@ -206,7 +206,7 @@ export default {
         })
       })
     },
-    /** 关闭按钮 */
+    /** 關閉按鈕 */
     close() {
       const obj = { path: "/tool/gen", query: { t: Date.now(), pageNum: this.$route.query.pageNum } }
       this.$tab.closeOpenPage(obj)

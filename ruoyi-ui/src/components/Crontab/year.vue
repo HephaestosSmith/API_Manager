@@ -2,7 +2,7 @@
 	<el-form size="small">
 		<el-form-item>
 			<el-radio :label="1" v-model='radioValue'>
-				不填，允许的通配符[, - * /]
+				不填，允許的萬用字元[, - * /]
 			</el-radio>
 		</el-form-item>
 
@@ -14,7 +14,7 @@
 
 		<el-form-item>
 			<el-radio :label="3" v-model='radioValue'>
-				周期从
+				週期從
 				<el-input-number v-model='cycle01' :min='fullYear' :max="2098" /> -
 				<el-input-number v-model='cycle02' :min="cycle01 ? cycle01 + 1 : fullYear + 1" :max="2099" />
 			</el-radio>
@@ -22,9 +22,9 @@
 
 		<el-form-item>
 			<el-radio :label="4" v-model='radioValue'>
-				从
-				<el-input-number v-model='average01' :min='fullYear' :max="2098"/> 年开始，每
-				<el-input-number v-model='average02' :min="1" :max="2099 - average01 || fullYear" /> 年执行一次
+				從
+				<el-input-number v-model='average01' :min='fullYear' :max="2098"/> 年開始，每
+				<el-input-number v-model='average02' :min="1" :max="2099 - average01 || fullYear" /> 年執行一次
 			</el-radio>
 
 		</el-form-item>
@@ -32,7 +32,7 @@
 		<el-form-item>
 			<el-radio :label="5" v-model='radioValue'>
 				指定
-				<el-select clearable v-model="checkboxList" placeholder="可多选" multiple>
+				<el-select clearable v-model="checkboxList" placeholder="可多選" multiple>
 					<el-option v-for="item in 9" :key="item" :value="item - 1 + fullYear" :label="item -1 + fullYear" />
 				</el-select>
 			</el-radio>
@@ -57,7 +57,7 @@ export default {
 	name: 'crontab-year',
 	props: ['check', 'month', 'cron'],
 	methods: {
-		// 单选按钮值变化时
+		// 單選按鈕值變化時
 		radioChange() {
 			switch (this.radioValue) {
 				case 1:
@@ -77,19 +77,19 @@ export default {
 					break
 			}
 		},
-		// 周期两个值变化时
+		// 週期兩個值變化時
 		cycleChange() {
 			if (this.radioValue == '3') {
 				this.$emit('update', 'year', this.cycleTotal)
 			}
 		},
-		// 平均两个值变化时
+		// 平均兩個值變化時
 		averageChange() {
 			if (this.radioValue == '4') {
 				this.$emit('update', 'year', this.averageTotal)
 			}
 		},
-		// checkbox值变化时
+		// checkbox值變化時
 		checkboxChange() {
 			if (this.radioValue == '5') {
 				this.$emit('update', 'year', this.checkboxString)
@@ -103,26 +103,26 @@ export default {
 		'checkboxString': 'checkboxChange'
 	},
 	computed: {
-		// 计算两个周期值
+		// 計算兩個週期值
 		cycleTotal: function () {
 			const cycle01 = this.checkNum(this.cycle01, this.fullYear, 2098)
 			const cycle02 = this.checkNum(this.cycle02, cycle01 ? cycle01 + 1 : this.fullYear + 1, 2099)
 			return cycle01 + '-' + cycle02
 		},
-		// 计算平均用到的值
+		// 計算平均用到的值
 		averageTotal: function () {
 			const average01 = this.checkNum(this.average01, this.fullYear, 2098)
 			const average02 = this.checkNum(this.average02, 1, 2099 - average01 || this.fullYear)
 			return average01 + '/' + average02
 		},
-		// 计算勾选的checkbox值合集
+		// 計算勾選的checkbox值合集
 		checkboxString: function () {
 			let str = this.checkboxList.join()
 			return str
 		}
 	},
 	mounted: function () {
-		// 仅获取当前年份
+		// 僅獲取當前年份
 		this.fullYear = Number(new Date().getFullYear())
 		this.cycle01 = this.fullYear
 		this.average01 = this.fullYear

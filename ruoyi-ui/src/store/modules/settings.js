@@ -27,11 +27,11 @@ const mutations = {
 }
 
 const actions = {
-  // 修改布局设置
+  // 修改佈局設定
   changeSetting({ commit }, data) {
     commit('CHANGE_SETTING', data)
   },
-  // 设置网页标题
+  // 設定網頁標題
   setTitle({ commit }, title) {
     state.title = title
     useDynamicTitle()

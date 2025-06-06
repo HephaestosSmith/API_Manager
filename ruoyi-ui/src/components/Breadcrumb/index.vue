@@ -45,9 +45,9 @@ export default {
       } else {
         matched = router.matched.filter(item => item.meta && item.meta.title)
       }
-      // 判断是否为首页
+      // 判斷是否為首頁
       if (!this.isDashboard(matched[0])) {
-        matched = [{ path: "/index", meta: { title: "首页" } }].concat(matched)
+        matched = [{ path: "/index", meta: { title: "首頁" } }].concat(matched)
       }
       this.levelList = matched.filter(item => item.meta && item.meta.title && item.meta.breadcrumb !== false)
     },

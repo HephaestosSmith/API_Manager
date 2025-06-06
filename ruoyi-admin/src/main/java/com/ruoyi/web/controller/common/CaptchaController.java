@@ -21,7 +21,7 @@ import com.ruoyi.common.utils.uuid.IdUtils;
 import com.ruoyi.system.service.ISysConfigService;
 
 /**
- * 验证码操作处理
+ * 驗證碼操作處理
  * 
  * @author ruoyi
  */
@@ -40,7 +40,7 @@ public class CaptchaController
     @Autowired
     private ISysConfigService configService;
     /**
-     * 生成验证码
+     * 生成驗證碼
      */
     @GetMapping("/captchaImage")
     public AjaxResult getCode(HttpServletResponse response) throws IOException
@@ -53,14 +53,14 @@ public class CaptchaController
             return ajax;
         }
 
-        // 保存验证码信息
+        // 儲存驗證碼資訊
         String uuid = IdUtils.simpleUUID();
         String verifyKey = CacheConstants.CAPTCHA_CODE_KEY + uuid;
 
         String capStr = null, code = null;
         BufferedImage image = null;
 
-        // 生成验证码
+        // 生成驗證碼
         String captchaType = RuoYiConfig.getCaptchaType();
         if ("math".equals(captchaType))
         {
@@ -76,7 +76,7 @@ public class CaptchaController
         }
 
         redisCache.setCacheObject(verifyKey, code, Constants.CAPTCHA_EXPIRATION, TimeUnit.MINUTES);
-        // 转换流信息写出
+        // 轉換流資訊寫出
         FastByteArrayOutputStream os = new FastByteArrayOutputStream();
         try
         {

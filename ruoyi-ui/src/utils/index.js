@@ -1,7 +1,7 @@
 import { parseTime } from './ruoyi'
 
 /**
- * 表格时间格式化
+ * 表格時間格式化
  */
 export function formatDate(cellValue) {
   if (cellValue == null || cellValue == "") return ""
@@ -32,12 +32,12 @@ export function formatTime(time, option) {
   const diff = (now - d) / 1000
 
   if (diff < 30) {
-    return '刚刚'
+    return '剛剛'
   } else if (diff < 3600) {
     // less 1 hour
-    return Math.ceil(diff / 60) + '分钟前'
+    return Math.ceil(diff / 60) + '分鐘前'
   } else if (diff < 3600 * 24) {
-    return Math.ceil(diff / 3600) + '小时前'
+    return Math.ceil(diff / 3600) + '小時前'
   } else if (diff < 3600 * 24 * 2) {
     return '1天前'
   }
@@ -51,7 +51,7 @@ export function formatTime(time, option) {
       d.getDate() +
       '日' +
       d.getHours() +
-      '时' +
+      '時' +
       d.getMinutes() +
       '分'
     )
@@ -219,15 +219,15 @@ export function debounce(func, wait, immediate) {
   let timeout, args, context, timestamp, result
 
   const later = function() {
-    // 据上一次触发时间间隔
+    // 據上一次觸發時間間隔
     const last = +new Date() - timestamp
 
-    // 上次被包装函数被调用时间间隔 last 小于设定时间间隔 wait
+    // 上次被包裝函式被呼叫時間間隔 last 小於設定時間間隔 wait
     if (last < wait && last > 0) {
       timeout = setTimeout(later, wait - last)
     } else {
       timeout = null
-      // 如果设定为immediate===true，因为开始边界已经调用过了此处无需调用
+      // 如果設定為immediate===true，因為開始邊界已經呼叫過了此處無需呼叫
       if (!immediate) {
         result = func.apply(context, args)
         if (!timeout) context = args = null
@@ -239,7 +239,7 @@ export function debounce(func, wait, immediate) {
     context = this
     timestamp = +new Date()
     const callNow = immediate && !timeout
-    // 如果延时不存在，重新设定延时
+    // 如果延時不存在，重新設定延時
     if (!timeout) timeout = setTimeout(later, wait)
     if (callNow) {
       result = func.apply(context, args)
@@ -379,7 +379,7 @@ export function titleCase(str) {
   return str.replace(/( |^)[a-z]/g, L => L.toUpperCase())
 }
 
-// 下划转驼峰
+// 下劃轉駝峰
 export function camelCase(str) {
   return str.replace(/_[a-z]/g, str1 => str1.substr(-1).toUpperCase())
 }

@@ -26,7 +26,7 @@ import com.ruoyi.framework.web.service.TokenService;
 import com.ruoyi.system.service.ISysUserService;
 
 /**
- * 个人信息 业务处理
+ * 個人資訊 業務處理
  * 
  * @author ruoyi
  */
@@ -41,7 +41,7 @@ public class SysProfileController extends BaseController
     private TokenService tokenService;
 
     /**
-     * 个人信息
+     * 個人資訊
      */
     @GetMapping
     public AjaxResult profile()
@@ -55,9 +55,9 @@ public class SysProfileController extends BaseController
     }
 
     /**
-     * 修改用户
+     * 修改使用者
      */
-    @Log(title = "个人信息", businessType = BusinessType.UPDATE)
+    @Log(title = "個人資訊", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult updateProfile(@RequestBody SysUser user)
     {
@@ -69,25 +69,25 @@ public class SysProfileController extends BaseController
         currentUser.setSex(user.getSex());
         if (StringUtils.isNotEmpty(user.getPhonenumber()) && !userService.checkPhoneUnique(currentUser))
         {
-            return error("修改用户'" + loginUser.getUsername() + "'失败，手机号码已存在");
+            return error("修改使用者'" + loginUser.getUsername() + "'失敗，手機號碼已存在");
         }
         if (StringUtils.isNotEmpty(user.getEmail()) && !userService.checkEmailUnique(currentUser))
         {
-            return error("修改用户'" + loginUser.getUsername() + "'失败，邮箱账号已存在");
+            return error("修改使用者'" + loginUser.getUsername() + "'失敗，郵箱賬號已存在");
         }
         if (userService.updateUserProfile(currentUser) > 0)
         {
-            // 更新缓存用户信息
+            // 更新快取使用者資訊
             tokenService.setLoginUser(loginUser);
             return success();
         }
-        return error("修改个人信息异常，请联系管理员");
+        return error("修改個人資訊異常，請聯絡管理員");
     }
 
     /**
-     * 重置密码
+     * 重置密碼
      */
-    @Log(title = "个人信息", businessType = BusinessType.UPDATE)
+    @Log(title = "個人資訊", businessType = BusinessType.UPDATE)
     @PutMapping("/updatePwd")
     public AjaxResult updatePwd(@RequestBody Map<String, String> params)
     {
@@ -98,28 +98,28 @@ public class SysProfileController extends BaseController
         String password = loginUser.getPassword();
         if (!SecurityUtils.matchesPassword(oldPassword, password))
         {
-            return error("修改密码失败，旧密码错误");
+            return error("修改密碼失敗，舊密碼錯誤");
         }
         if (SecurityUtils.matchesPassword(newPassword, password))
         {
-            return error("新密码不能与旧密码相同");
+            return error("新密碼不能與舊密碼相同");
         }
         newPassword = SecurityUtils.encryptPassword(newPassword);
         if (userService.resetUserPwd(userName, newPassword) > 0)
         {
-            // 更新缓存用户密码&密码最后更新时间
+            // 更新快取使用者密碼&密碼最後更新時間
             loginUser.getUser().setPwdUpdateDate(DateUtils.getNowDate());
             loginUser.getUser().setPassword(newPassword);
             tokenService.setLoginUser(loginUser);
             return success();
         }
-        return error("修改密码异常，请联系管理员");
+        return error("修改密碼異常，請聯絡管理員");
     }
 
     /**
-     * 头像上传
+     * 頭像上傳
      */
-    @Log(title = "用户头像", businessType = BusinessType.UPDATE)
+    @Log(title = "使用者頭像", businessType = BusinessType.UPDATE)
     @PostMapping("/avatar")
     public AjaxResult avatar(@RequestParam("avatarfile") MultipartFile file) throws Exception
     {
@@ -131,12 +131,12 @@ public class SysProfileController extends BaseController
             {
                 AjaxResult ajax = AjaxResult.success();
                 ajax.put("imgUrl", avatar);
-                // 更新缓存用户头像
+                // 更新快取使用者頭像
                 loginUser.getUser().setAvatar(avatar);
                 tokenService.setLoginUser(loginUser);
                 return ajax;
             }
         }
-        return error("上传图片异常，请联系管理员");
+        return error("上傳圖片異常，請聯絡管理員");
     }
 }

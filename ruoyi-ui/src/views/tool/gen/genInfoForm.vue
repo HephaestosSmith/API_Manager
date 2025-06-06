@@ -5,15 +5,15 @@
         <el-form-item prop="tplCategory">
           <span slot="label">生成模板</span>
           <el-select v-model="info.tplCategory" @change="tplSelectChange">
-            <el-option label="单表（增删改查）" value="crud" />
-            <el-option label="树表（增删改查）" value="tree" />
-            <el-option label="主子表（增删改查）" value="sub" />
+            <el-option label="單表（增刪改查）" value="crud" />
+            <el-option label="樹表（增刪改查）" value="tree" />
+            <el-option label="主子表（增刪改查）" value="sub" />
           </el-select>
         </el-form-item>
       </el-col>
       <el-col :span="12">
         <el-form-item prop="tplWebType">
-          <span slot="label">前端类型</span>
+          <span slot="label">前端型別</span>
           <el-select v-model="info.tplWebType">
             <el-option label="Vue2 Element UI 模版" value="element-ui" />
             <el-option label="Vue3 Element Plus 模版" value="element-plus" />
@@ -23,8 +23,8 @@
       <el-col :span="12">
         <el-form-item prop="packageName">
           <span slot="label">
-            生成包路径
-            <el-tooltip content="生成在哪个java包下，例如 com.ruoyi.system" placement="top">
+            生成包路徑
+            <el-tooltip content="生成在哪個java包下，例如 com.ruoyi.system" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
@@ -35,8 +35,8 @@
       <el-col :span="12">
         <el-form-item prop="moduleName">
           <span slot="label">
-            生成模块名
-            <el-tooltip content="可理解为子系统名，例如 system" placement="top">
+            生成模組名
+            <el-tooltip content="可理解為子系統名，例如 system" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
@@ -47,8 +47,8 @@
       <el-col :span="12">
         <el-form-item prop="businessName">
           <span slot="label">
-            生成业务名
-            <el-tooltip content="可理解为功能英文名，例如 user" placement="top">
+            生成業務名
+            <el-tooltip content="可理解為功能英文名，例如 user" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
@@ -60,7 +60,7 @@
         <el-form-item prop="functionName">
           <span slot="label">
             生成功能名
-            <el-tooltip content="用作类描述，例如 用户" placement="top">
+            <el-tooltip content="用作類描述，例如 使用者" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
@@ -71,21 +71,21 @@
       <el-col :span="12">
         <el-form-item prop="genType">
           <span slot="label">
-            生成代码方式
-            <el-tooltip content="默认为zip压缩包下载，也可以自定义生成路径" placement="top">
+            生成程式碼方式
+            <el-tooltip content="預設為zip壓縮包下載，也可以自定義生成路徑" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
-          <el-radio v-model="info.genType" label="0">zip压缩包</el-radio>
-          <el-radio v-model="info.genType" label="1">自定义路径</el-radio>
+          <el-radio v-model="info.genType" label="0">zip壓縮包</el-radio>
+          <el-radio v-model="info.genType" label="1">自定義路徑</el-radio>
         </el-form-item>
       </el-col>
 
       <el-col :span="12">
         <el-form-item>
           <span slot="label">
-            上级菜单
-            <el-tooltip content="分配到指定菜单下，例如 系统管理" placement="top">
+            上級選單
+            <el-tooltip content="分配到指定選單下，例如 系統管理" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
@@ -95,7 +95,7 @@
             :options="menus"
             :normalizer="normalizer"
             :show-count="true"
-            placeholder="请选择系统菜单"
+            placeholder="請選擇系統選單"
           />
         </el-form-item>
       </el-col>
@@ -103,19 +103,19 @@
       <el-col :span="24" v-if="info.genType == '1'">
         <el-form-item prop="genPath">
           <span slot="label">
-            自定义路径
-            <el-tooltip content="填写磁盘绝对路径，若不填写，则生成到当前Web项目下" placement="top">
+            自定義路徑
+            <el-tooltip content="填寫磁碟絕對路徑，若不填寫，則生成到當前Web專案下" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
           <el-input v-model="info.genPath">
             <el-dropdown slot="append">
               <el-button type="primary">
-                最近路径快速选择
+                最近路徑快速選擇
                 <i class="el-icon-arrow-down el-icon--right"></i>
               </el-button>
               <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item @click.native="info.genPath = '/'">恢复默认的生成基础路径</el-dropdown-item>
+                <el-dropdown-item @click.native="info.genPath = '/'">恢復預設的生成基礎路徑</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </el-input>
@@ -124,16 +124,16 @@
     </el-row>
 
     <el-row v-show="info.tplCategory == 'tree'">
-      <h4 class="form-header">其他信息</h4>
+      <h4 class="form-header">其他資訊</h4>
       <el-col :span="12">
         <el-form-item>
           <span slot="label">
-            树编码字段
-            <el-tooltip content="树显示的编码字段名， 如：dept_id" placement="top">
+            樹編碼欄位
+            <el-tooltip content="樹顯示的編碼欄位名， 如：dept_id" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
-          <el-select v-model="info.treeCode" placeholder="请选择">
+          <el-select v-model="info.treeCode" placeholder="請選擇">
             <el-option
               v-for="(column, index) in info.columns"
               :key="index"
@@ -146,12 +146,12 @@
       <el-col :span="12">
         <el-form-item>
           <span slot="label">
-            树父编码字段
-            <el-tooltip content="树显示的父编码字段名， 如：parent_Id" placement="top">
+            樹父編碼欄位
+            <el-tooltip content="樹顯示的父編碼欄位名， 如：parent_Id" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
-          <el-select v-model="info.treeParentCode" placeholder="请选择">
+          <el-select v-model="info.treeParentCode" placeholder="請選擇">
             <el-option
               v-for="(column, index) in info.columns"
               :key="index"
@@ -164,12 +164,12 @@
       <el-col :span="12">
         <el-form-item>
           <span slot="label">
-            树名称字段
-            <el-tooltip content="树节点的显示名称字段名， 如：dept_name" placement="top">
+            樹名稱欄位
+            <el-tooltip content="樹節點的顯示名稱欄位名， 如：dept_name" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
-          <el-select v-model="info.treeName" placeholder="请选择">
+          <el-select v-model="info.treeName" placeholder="請選擇">
             <el-option
               v-for="(column, index) in info.columns"
               :key="index"
@@ -181,16 +181,16 @@
       </el-col>
     </el-row>
     <el-row v-show="info.tplCategory == 'sub'">
-      <h4 class="form-header">关联信息</h4>
+      <h4 class="form-header">關聯資訊</h4>
       <el-col :span="12">
         <el-form-item>
           <span slot="label">
-            关联子表的表名
-            <el-tooltip content="关联子表的表名， 如：sys_user" placement="top">
+            關聯子表的表名
+            <el-tooltip content="關聯子表的表名， 如：sys_user" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
-          <el-select v-model="info.subTableName" placeholder="请选择" @change="subSelectChange">
+          <el-select v-model="info.subTableName" placeholder="請選擇" @change="subSelectChange">
             <el-option
               v-for="(table, index) in tables"
               :key="index"
@@ -203,12 +203,12 @@
       <el-col :span="12">
         <el-form-item>
           <span slot="label">
-            子表关联的外键名
-            <el-tooltip content="子表关联的外键名， 如：user_id" placement="top">
+            子表關聯的外來鍵名
+            <el-tooltip content="子表關聯的外來鍵名， 如：user_id" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
-          <el-select v-model="info.subTableFkName" placeholder="请选择">
+          <el-select v-model="info.subTableFkName" placeholder="請選擇">
             <el-option
               v-for="(column, index) in subColumns"
               :key="index"
@@ -247,19 +247,19 @@ export default {
       subColumns: [],
       rules: {
         tplCategory: [
-          { required: true, message: "请选择生成模板", trigger: "blur" }
+          { required: true, message: "請選擇生成模板", trigger: "blur" }
         ],
         packageName: [
-          { required: true, message: "请输入生成包路径", trigger: "blur" }
+          { required: true, message: "請輸入生成包路徑", trigger: "blur" }
         ],
         moduleName: [
-          { required: true, message: "请输入生成模块名", trigger: "blur" }
+          { required: true, message: "請輸入生成模組名", trigger: "blur" }
         ],
         businessName: [
-          { required: true, message: "请输入生成业务名", trigger: "blur" }
+          { required: true, message: "請輸入生成業務名", trigger: "blur" }
         ],
         functionName: [
-          { required: true, message: "请输入生成功能名", trigger: "blur" }
+          { required: true, message: "請輸入生成功能名", trigger: "blur" }
         ]
       }
     }
@@ -275,7 +275,7 @@ export default {
     }
   },
   methods: {
-    /** 转换菜单数据结构 */
+    /** 轉換選單資料結構 */
     normalizer(node) {
       if (node.children && !node.children.length) {
         delete node.children
@@ -286,18 +286,18 @@ export default {
         children: node.children
       }
     },
-    /** 选择子表名触发 */
+    /** 選擇子表名觸發 */
     subSelectChange(value) {
       this.info.subTableFkName = ''
     },
-    /** 选择生成模板触发 */
+    /** 選擇生成模板觸發 */
     tplSelectChange(value) {
       if(value !== 'sub') {
         this.info.subTableName = ''
         this.info.subTableFkName = ''
       }
     },
-    /** 设置关联外键 */
+    /** 設定關聯外來鍵 */
     setSubTableColumns(value) {
       for (var item in this.tables) {
         const name = this.tables[item].tableName

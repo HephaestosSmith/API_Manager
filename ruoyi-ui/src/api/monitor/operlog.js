@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询操作日志列表
+// 查詢操作日誌列表
 export function list(query) {
   return request({
     url: '/monitor/operlog/list',
@@ -9,7 +9,7 @@ export function list(query) {
   })
 }
 
-// 删除操作日志
+// 刪除操作日誌
 export function delOperlog(operId) {
   return request({
     url: '/monitor/operlog/' + operId,
@@ -17,7 +17,7 @@ export function delOperlog(operId) {
   })
 }
 
-// 清空操作日志
+// 清空操作日誌
 export function cleanOperlog() {
   return request({
     url: '/monitor/operlog/clean',

@@ -9,7 +9,7 @@ import com.ruoyi.common.annotation.Excel.ColumnType;
 import com.ruoyi.common.core.domain.BaseEntity;
 
 /**
- * 参数配置表 sys_config
+ * 引數配置表 sys_config
  * 
  * @author ruoyi
  */
@@ -17,24 +17,24 @@ public class SysConfig extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /** 参数主键 */
-    @Excel(name = "参数主键", cellType = ColumnType.NUMERIC)
+    /** 引數主鍵 */
+    @Excel(name = "引數主鍵", cellType = ColumnType.NUMERIC)
     private Long configId;
 
-    /** 参数名称 */
-    @Excel(name = "参数名称")
+    /** 引數名稱 */
+    @Excel(name = "引數名稱")
     private String configName;
 
-    /** 参数键名 */
-    @Excel(name = "参数键名")
+    /** 引數鍵名 */
+    @Excel(name = "引數鍵名")
     private String configKey;
 
-    /** 参数键值 */
-    @Excel(name = "参数键值")
+    /** 引數鍵值 */
+    @Excel(name = "引數鍵值")
     private String configValue;
 
-    /** 系统内置（Y是 N否） */
-    @Excel(name = "系统内置", readConverterExp = "Y=是,N=否")
+    /** 系統內建（Y是 N否） */
+    @Excel(name = "系統內建", readConverterExp = "Y=是,N=否")
     private String configType;
 
     public Long getConfigId()
@@ -47,8 +47,8 @@ public class SysConfig extends BaseEntity
         this.configId = configId;
     }
 
-    @NotBlank(message = "参数名称不能为空")
-    @Size(min = 0, max = 100, message = "参数名称不能超过100个字符")
+    @NotBlank(message = "引數名稱不能為空")
+    @Size(min = 0, max = 100, message = "引數名稱不能超過100個字元")
     public String getConfigName()
     {
         return configName;
@@ -59,8 +59,8 @@ public class SysConfig extends BaseEntity
         this.configName = configName;
     }
 
-    @NotBlank(message = "参数键名长度不能为空")
-    @Size(min = 0, max = 100, message = "参数键名长度不能超过100个字符")
+    @NotBlank(message = "引數鍵名長度不能為空")
+    @Size(min = 0, max = 100, message = "引數鍵名長度不能超過100個字元")
     public String getConfigKey()
     {
         return configKey;
@@ -71,8 +71,8 @@ public class SysConfig extends BaseEntity
         this.configKey = configKey;
     }
 
-    @NotBlank(message = "参数键值不能为空")
-    @Size(min = 0, max = 500, message = "参数键值长度不能超过500个字符")
+    @NotBlank(message = "引數鍵值不能為空")
+    @Size(min = 0, max = 500, message = "引數鍵值長度不能超過500個字元")
     public String getConfigValue()
     {
         return configValue;

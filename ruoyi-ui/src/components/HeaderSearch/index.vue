@@ -14,7 +14,7 @@
         size="large"
         @input="querySearch"
         prefix-icon="el-icon-search"
-        placeholder="菜单搜索，支持标题、URL模糊查询"
+        placeholder="選單搜尋，支援標題、URL模糊查詢"
         clearable
         @keyup.enter.native="selectActiveResult"
         @keydown.up.native="navigateResult('up')"
@@ -98,7 +98,7 @@ export default {
       const path = val.path
       const query = val.query
       if(isHttp(val.path)) {
-        // http(s):// 路径新窗口打开
+        // http(s):// 路徑新視窗開啟
         const pindex = path.indexOf("http")
         window.open(path.substr(pindex, path.length), "_blank")
       } else {

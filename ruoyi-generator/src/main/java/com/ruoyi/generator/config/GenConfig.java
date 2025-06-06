@@ -6,7 +6,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 /**
- * 读取代码生成相关配置
+ * 讀取程式碼生成相關配置
  * 
  * @author ruoyi
  */
@@ -18,16 +18,16 @@ public class GenConfig
     /** 作者 */
     public static String author;
 
-    /** 生成包路径 */
+    /** 生成包路徑 */
     public static String packageName;
 
-    /** 自动去除表前缀 */
+    /** 自動去除表字首 */
     public static boolean autoRemovePre;
 
-    /** 表前缀 */
+    /** 表字首 */
     public static String tablePrefix;
 
-    /** 是否允许生成文件覆盖到本地（自定义路径） */
+    /** 是否允許生成檔案覆蓋到本地（自定義路徑） */
     public static boolean allowOverwrite;
 
     public static String getAuthor()

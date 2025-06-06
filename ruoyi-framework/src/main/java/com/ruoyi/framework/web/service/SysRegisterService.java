@@ -20,7 +20,7 @@ import com.ruoyi.system.service.ISysConfigService;
 import com.ruoyi.system.service.ISysUserService;
 
 /**
- * 注册校验方法
+ * 註冊校驗方法
  * 
  * @author ruoyi
  */
@@ -37,7 +37,7 @@ public class SysRegisterService
     private RedisCache redisCache;
 
     /**
-     * 注册
+     * 註冊
      */
     public String register(RegisterBody registerBody)
     {
@@ -45,7 +45,7 @@ public class SysRegisterService
         SysUser sysUser = new SysUser();
         sysUser.setUserName(username);
 
-        // 验证码开关
+        // 驗證碼開關
         boolean captchaEnabled = configService.selectCaptchaEnabled();
         if (captchaEnabled)
         {
@@ -54,25 +54,25 @@ public class SysRegisterService
 
         if (StringUtils.isEmpty(username))
         {
-            msg = "用户名不能为空";
+            msg = "使用者名稱不能為空";
         }
         else if (StringUtils.isEmpty(password))
         {
-            msg = "用户密码不能为空";
+            msg = "使用者密碼不能為空";
         }
         else if (username.length() < UserConstants.USERNAME_MIN_LENGTH
                 || username.length() > UserConstants.USERNAME_MAX_LENGTH)
         {
-            msg = "账户长度必须在2到20个字符之间";
+            msg = "賬戶長度必須在2到20個字元之間";
         }
         else if (password.length() < UserConstants.PASSWORD_MIN_LENGTH
                 || password.length() > UserConstants.PASSWORD_MAX_LENGTH)
         {
-            msg = "密码长度必须在5到20个字符之间";
+            msg = "密碼長度必須在5到20個字元之間";
         }
         else if (!userService.checkUserNameUnique(sysUser))
         {
-            msg = "保存用户'" + username + "'失败，注册账号已存在";
+            msg = "儲存使用者'" + username + "'失敗，註冊賬號已存在";
         }
         else
         {
@@ -82,7 +82,7 @@ public class SysRegisterService
             boolean regFlag = userService.registerUser(sysUser);
             if (!regFlag)
             {
-                msg = "注册失败,请联系系统管理人员";
+                msg = "註冊失敗,請聯絡系統管理人員";
             }
             else
             {
@@ -93,12 +93,12 @@ public class SysRegisterService
     }
 
     /**
-     * 校验验证码
+     * 校驗驗證碼
      * 
-     * @param username 用户名
-     * @param code 验证码
-     * @param uuid 唯一标识
-     * @return 结果
+     * @param username 使用者名稱
+     * @param code 驗證碼
+     * @param uuid 唯一標識
+     * @return 結果
      */
     public void validateCaptcha(String username, String code, String uuid)
     {

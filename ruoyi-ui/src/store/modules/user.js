@@ -41,7 +41,7 @@ const user = {
   },
 
   actions: {
-    // 登录
+    // 登入
     Login({ commit }, userInfo) {
       const username = userInfo.username.trim()
       const password = userInfo.password
@@ -58,7 +58,7 @@ const user = {
       })
     },
 
-    // 获取用户信息
+    // 獲取使用者資訊
     GetInfo({ commit, state }) {
       return new Promise((resolve, reject) => {
         getInfo().then(res => {
@@ -67,7 +67,7 @@ const user = {
           if (!isHttp(avatar)) {
             avatar = (isEmpty(avatar)) ? defAva : process.env.VUE_APP_BASE_API + avatar
           }
-          if (res.roles && res.roles.length > 0) { // 验证返回的roles是否是一个非空数组
+          if (res.roles && res.roles.length > 0) { // 驗證返回的roles是否是一個非空陣列
             commit('SET_ROLES', res.roles)
             commit('SET_PERMISSIONS', res.permissions)
           } else {
@@ -77,15 +77,15 @@ const user = {
           commit('SET_NAME', user.userName)
           commit('SET_NICK_NAME', user.nickName)
           commit('SET_AVATAR', avatar)
-          /* 初始密码提示 */
+          /* 初始密碼提示 */
           if(res.isDefaultModifyPwd) {
-            MessageBox.confirm('您的密码还是初始密码，请修改密码！',  '安全提示', {  confirmButtonText: '确定',  cancelButtonText: '取消',  type: 'warning' }).then(() => {
+            MessageBox.confirm('您的密碼還是初始密碼，請修改密碼！',  '安全提示', {  confirmButtonText: '確定',  cancelButtonText: '取消',  type: 'warning' }).then(() => {
               router.push({ name: 'Profile', params: { activeTab: 'resetPwd' } })
             }).catch(() => {})
           }
-          /* 过期密码提示 */
+          /* 過期密碼提示 */
           if(!res.isDefaultModifyPwd && res.isPasswordExpired) {
-            MessageBox.confirm('您的密码已过期，请尽快修改密码！',  '安全提示', {  confirmButtonText: '确定',  cancelButtonText: '取消',  type: 'warning' }).then(() => {
+            MessageBox.confirm('您的密碼已過期，請儘快修改密碼！',  '安全提示', {  confirmButtonText: '確定',  cancelButtonText: '取消',  type: 'warning' }).then(() => {
               router.push({ name: 'Profile', params: { activeTab: 'resetPwd' } })
             }).catch(() => {})
           }
@@ -96,7 +96,7 @@ const user = {
       })
     },
 
-    // 退出系统
+    // 退出系統
     LogOut({ commit, state }) {
       return new Promise((resolve, reject) => {
         logout(state.token).then(() => {

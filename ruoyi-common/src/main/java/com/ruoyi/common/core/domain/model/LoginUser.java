@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Set;
 
 /**
- * 登录用户身份权限
+ * 登入使用者身份許可權
  * 
  * @author ruoyi
  */
@@ -17,57 +17,57 @@ public class LoginUser implements UserDetails
     private static final long serialVersionUID = 1L;
 
     /**
-     * 用户ID
+     * 使用者ID
      */
     private Long userId;
 
     /**
-     * 部门ID
+     * 部門ID
      */
     private Long deptId;
 
     /**
-     * 用户唯一标识
+     * 使用者唯一標識
      */
     private String token;
 
     /**
-     * 登录时间
+     * 登入時間
      */
     private Long loginTime;
 
     /**
-     * 过期时间
+     * 過期時間
      */
     private Long expireTime;
 
     /**
-     * 登录IP地址
+     * 登入IP地址
      */
     private String ipaddr;
 
     /**
-     * 登录地点
+     * 登入地點
      */
     private String loginLocation;
 
     /**
-     * 浏览器类型
+     * 瀏覽器型別
      */
     private String browser;
 
     /**
-     * 操作系统
+     * 作業系統
      */
     private String os;
 
     /**
-     * 权限列表
+     * 許可權列表
      */
     private Set<String> permissions;
 
     /**
-     * 用户信息
+     * 使用者資訊
      */
     private SysUser user;
 
@@ -133,7 +133,7 @@ public class LoginUser implements UserDetails
     }
 
     /**
-     * 账户是否未过期,过期无法验证
+     * 賬戶是否未過期,過期無法驗證
      */
     @JSONField(serialize = false)
     @Override
@@ -143,7 +143,7 @@ public class LoginUser implements UserDetails
     }
 
     /**
-     * 指定用户是否解锁,锁定的用户无法进行身份验证
+     * 指定使用者是否解鎖,鎖定的使用者無法進行身份驗證
      * 
      * @return
      */
@@ -155,7 +155,7 @@ public class LoginUser implements UserDetails
     }
 
     /**
-     * 指示是否已过期的用户的凭据(密码),过期的凭据防止认证
+     * 指示是否已過期的使用者的憑據(密碼),過期的憑據防止認證
      * 
      * @return
      */
@@ -167,7 +167,7 @@ public class LoginUser implements UserDetails
     }
 
     /**
-     * 是否可用 ,禁用的用户不能身份验证
+     * 是否可用 ,禁用的使用者不能身份驗證
      * 
      * @return
      */

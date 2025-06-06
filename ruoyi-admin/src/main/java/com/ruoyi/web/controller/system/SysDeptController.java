@@ -23,7 +23,7 @@ import com.ruoyi.common.utils.StringUtils;
 import com.ruoyi.system.service.ISysDeptService;
 
 /**
- * 部门信息
+ * 部門資訊
  * 
  * @author ruoyi
  */
@@ -35,7 +35,7 @@ public class SysDeptController extends BaseController
     private ISysDeptService deptService;
 
     /**
-     * 获取部门列表
+     * 獲取部門列表
      */
     @PreAuthorize("@ss.hasPermi('system:dept:list')")
     @GetMapping("/list")
@@ -46,7 +46,7 @@ public class SysDeptController extends BaseController
     }
 
     /**
-     * 查询部门列表（排除节点）
+     * 查詢部門列表（排除節點）
      */
     @PreAuthorize("@ss.hasPermi('system:dept:list')")
     @GetMapping("/list/exclude/{deptId}")
@@ -58,7 +58,7 @@ public class SysDeptController extends BaseController
     }
 
     /**
-     * 根据部门编号获取详细信息
+     * 根據部門編號獲取詳細資訊
      */
     @PreAuthorize("@ss.hasPermi('system:dept:query')")
     @GetMapping(value = "/{deptId}")
@@ -69,26 +69,26 @@ public class SysDeptController extends BaseController
     }
 
     /**
-     * 新增部门
+     * 新增部門
      */
     @PreAuthorize("@ss.hasPermi('system:dept:add')")
-    @Log(title = "部门管理", businessType = BusinessType.INSERT)
+    @Log(title = "部門管理", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@Validated @RequestBody SysDept dept)
     {
         if (!deptService.checkDeptNameUnique(dept))
         {
-            return error("新增部门'" + dept.getDeptName() + "'失败，部门名称已存在");
+            return error("新增部門'" + dept.getDeptName() + "'失敗，部門名稱已存在");
         }
         dept.setCreateBy(getUsername());
         return toAjax(deptService.insertDept(dept));
     }
 
     /**
-     * 修改部门
+     * 修改部門
      */
     @PreAuthorize("@ss.hasPermi('system:dept:edit')")
-    @Log(title = "部门管理", businessType = BusinessType.UPDATE)
+    @Log(title = "部門管理", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@Validated @RequestBody SysDept dept)
     {
@@ -96,35 +96,35 @@ public class SysDeptController extends BaseController
         deptService.checkDeptDataScope(deptId);
         if (!deptService.checkDeptNameUnique(dept))
         {
-            return error("修改部门'" + dept.getDeptName() + "'失败，部门名称已存在");
+            return error("修改部門'" + dept.getDeptName() + "'失敗，部門名稱已存在");
         }
         else if (dept.getParentId().equals(deptId))
         {
-            return error("修改部门'" + dept.getDeptName() + "'失败，上级部门不能是自己");
+            return error("修改部門'" + dept.getDeptName() + "'失敗，上級部門不能是自己");
         }
         else if (StringUtils.equals(UserConstants.DEPT_DISABLE, dept.getStatus()) && deptService.selectNormalChildrenDeptById(deptId) > 0)
         {
-            return error("该部门包含未停用的子部门！");
+            return error("該部門包含未停用的子部門！");
         }
         dept.setUpdateBy(getUsername());
         return toAjax(deptService.updateDept(dept));
     }
 
     /**
-     * 删除部门
+     * 刪除部門
      */
     @PreAuthorize("@ss.hasPermi('system:dept:remove')")
-    @Log(title = "部门管理", businessType = BusinessType.DELETE)
+    @Log(title = "部門管理", businessType = BusinessType.DELETE)
     @DeleteMapping("/{deptId}")
     public AjaxResult remove(@PathVariable Long deptId)
     {
         if (deptService.hasChildByDeptId(deptId))
         {
-            return warn("存在下级部门,不允许删除");
+            return warn("存在下級部門,不允許刪除");
         }
         if (deptService.checkDeptExistUser(deptId))
         {
-            return warn("部门存在用户,不允许删除");
+            return warn("部門存在使用者,不允許刪除");
         }
         deptService.checkDeptDataScope(deptId);
         return toAjax(deptService.deleteDeptById(deptId));

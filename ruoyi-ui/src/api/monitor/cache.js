@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询缓存详细
+// 查詢快取詳細
 export function getCache() {
   return request({
     url: '/monitor/cache',
@@ -8,7 +8,7 @@ export function getCache() {
   })
 }
 
-// 查询缓存名称列表
+// 查詢快取名稱列表
 export function listCacheName() {
   return request({
     url: '/monitor/cache/getNames',
@@ -16,7 +16,7 @@ export function listCacheName() {
   })
 }
 
-// 查询缓存键名列表
+// 查詢快取鍵名列表
 export function listCacheKey(cacheName) {
   return request({
     url: '/monitor/cache/getKeys/' + cacheName,
@@ -24,7 +24,7 @@ export function listCacheKey(cacheName) {
   })
 }
 
-// 查询缓存内容
+// 查詢快取內容
 export function getCacheValue(cacheName, cacheKey) {
   return request({
     url: '/monitor/cache/getValue/' + cacheName + '/' + cacheKey,
@@ -32,7 +32,7 @@ export function getCacheValue(cacheName, cacheKey) {
   })
 }
 
-// 清理指定名称缓存
+// 清理指定名稱快取
 export function clearCacheName(cacheName) {
   return request({
     url: '/monitor/cache/clearCacheName/' + cacheName,
@@ -40,7 +40,7 @@ export function clearCacheName(cacheName) {
   })
 }
 
-// 清理指定键名缓存
+// 清理指定鍵名快取
 export function clearCacheKey(cacheKey) {
   return request({
     url: '/monitor/cache/clearCacheKey/' + cacheKey,
@@ -48,7 +48,7 @@ export function clearCacheKey(cacheKey) {
   })
 }
 
-// 清理全部缓存
+// 清理全部快取
 export function clearCacheAll() {
   return request({
     url: '/monitor/cache/clearCacheAll',

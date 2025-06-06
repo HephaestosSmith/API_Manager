@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询角色列表
+// 查詢角色列表
 export function listRole(query) {
   return request({
     url: '/system/role/list',
@@ -9,7 +9,7 @@ export function listRole(query) {
   })
 }
 
-// 查询角色详细
+// 查詢角色詳細
 export function getRole(roleId) {
   return request({
     url: '/system/role/' + roleId,
@@ -35,7 +35,7 @@ export function updateRole(data) {
   })
 }
 
-// 角色数据权限
+// 角色資料許可權
 export function dataScope(data) {
   return request({
     url: '/system/role/dataScope',
@@ -44,7 +44,7 @@ export function dataScope(data) {
   })
 }
 
-// 角色状态修改
+// 角色狀態修改
 export function changeRoleStatus(roleId, status) {
   const data = {
     roleId,
@@ -57,7 +57,7 @@ export function changeRoleStatus(roleId, status) {
   })
 }
 
-// 删除角色
+// 刪除角色
 export function delRole(roleId) {
   return request({
     url: '/system/role/' + roleId,
@@ -65,7 +65,7 @@ export function delRole(roleId) {
   })
 }
 
-// 查询角色已授权用户列表
+// 查詢角色已授權使用者列表
 export function allocatedUserList(query) {
   return request({
     url: '/system/role/authUser/allocatedList',
@@ -74,7 +74,7 @@ export function allocatedUserList(query) {
   })
 }
 
-// 查询角色未授权用户列表
+// 查詢角色未授權使用者列表
 export function unallocatedUserList(query) {
   return request({
     url: '/system/role/authUser/unallocatedList',
@@ -83,7 +83,7 @@ export function unallocatedUserList(query) {
   })
 }
 
-// 取消用户授权角色
+// 取消使用者授權角色
 export function authUserCancel(data) {
   return request({
     url: '/system/role/authUser/cancel',
@@ -92,7 +92,7 @@ export function authUserCancel(data) {
   })
 }
 
-// 批量取消用户授权角色
+// 批次取消使用者授權角色
 export function authUserCancelAll(data) {
   return request({
     url: '/system/role/authUser/cancelAll',
@@ -101,7 +101,7 @@ export function authUserCancelAll(data) {
   })
 }
 
-// 授权用户选择
+// 授權使用者選擇
 export function authUserSelectAll(data) {
   return request({
     url: '/system/role/authUser/selectAll',
@@ -110,7 +110,7 @@ export function authUserSelectAll(data) {
   })
 }
 
-// 根据角色ID查询部门树结构
+// 根據角色ID查詢部門樹結構
 export function deptTreeSelect(roleId) {
   return request({
     url: '/system/role/deptTree/' + roleId,

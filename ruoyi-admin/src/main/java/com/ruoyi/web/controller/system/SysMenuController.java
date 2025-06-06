@@ -22,7 +22,7 @@ import com.ruoyi.common.utils.StringUtils;
 import com.ruoyi.system.service.ISysMenuService;
 
 /**
- * 菜单信息
+ * 選單資訊
  * 
  * @author ruoyi
  */
@@ -34,7 +34,7 @@ public class SysMenuController extends BaseController
     private ISysMenuService menuService;
 
     /**
-     * 获取菜单列表
+     * 獲取選單列表
      */
     @PreAuthorize("@ss.hasPermi('system:menu:list')")
     @GetMapping("/list")
@@ -45,7 +45,7 @@ public class SysMenuController extends BaseController
     }
 
     /**
-     * 根据菜单编号获取详细信息
+     * 根據選單編號獲取詳細資訊
      */
     @PreAuthorize("@ss.hasPermi('system:menu:query')")
     @GetMapping(value = "/{menuId}")
@@ -55,7 +55,7 @@ public class SysMenuController extends BaseController
     }
 
     /**
-     * 获取菜单下拉树列表
+     * 獲取選單下拉樹列表
      */
     @GetMapping("/treeselect")
     public AjaxResult treeselect(SysMenu menu)
@@ -65,7 +65,7 @@ public class SysMenuController extends BaseController
     }
 
     /**
-     * 加载对应角色菜单列表树
+     * 載入對應角色選單列表樹
      */
     @GetMapping(value = "/roleMenuTreeselect/{roleId}")
     public AjaxResult roleMenuTreeselect(@PathVariable("roleId") Long roleId)
@@ -78,64 +78,64 @@ public class SysMenuController extends BaseController
     }
 
     /**
-     * 新增菜单
+     * 新增選單
      */
     @PreAuthorize("@ss.hasPermi('system:menu:add')")
-    @Log(title = "菜单管理", businessType = BusinessType.INSERT)
+    @Log(title = "選單管理", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@Validated @RequestBody SysMenu menu)
     {
         if (!menuService.checkMenuNameUnique(menu))
         {
-            return error("新增菜单'" + menu.getMenuName() + "'失败，菜单名称已存在");
+            return error("新增選單'" + menu.getMenuName() + "'失敗，選單名稱已存在");
         }
         else if (UserConstants.YES_FRAME.equals(menu.getIsFrame()) && !StringUtils.ishttp(menu.getPath()))
         {
-            return error("新增菜单'" + menu.getMenuName() + "'失败，地址必须以http(s)://开头");
+            return error("新增選單'" + menu.getMenuName() + "'失敗，地址必須以http(s)://開頭");
         }
         menu.setCreateBy(getUsername());
         return toAjax(menuService.insertMenu(menu));
     }
 
     /**
-     * 修改菜单
+     * 修改選單
      */
     @PreAuthorize("@ss.hasPermi('system:menu:edit')")
-    @Log(title = "菜单管理", businessType = BusinessType.UPDATE)
+    @Log(title = "選單管理", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@Validated @RequestBody SysMenu menu)
     {
         if (!menuService.checkMenuNameUnique(menu))
         {
-            return error("修改菜单'" + menu.getMenuName() + "'失败，菜单名称已存在");
+            return error("修改選單'" + menu.getMenuName() + "'失敗，選單名稱已存在");
         }
         else if (UserConstants.YES_FRAME.equals(menu.getIsFrame()) && !StringUtils.ishttp(menu.getPath()))
         {
-            return error("修改菜单'" + menu.getMenuName() + "'失败，地址必须以http(s)://开头");
+            return error("修改選單'" + menu.getMenuName() + "'失敗，地址必須以http(s)://開頭");
         }
         else if (menu.getMenuId().equals(menu.getParentId()))
         {
-            return error("修改菜单'" + menu.getMenuName() + "'失败，上级菜单不能选择自己");
+            return error("修改選單'" + menu.getMenuName() + "'失敗，上級選單不能選擇自己");
         }
         menu.setUpdateBy(getUsername());
         return toAjax(menuService.updateMenu(menu));
     }
 
     /**
-     * 删除菜单
+     * 刪除選單
      */
     @PreAuthorize("@ss.hasPermi('system:menu:remove')")
-    @Log(title = "菜单管理", businessType = BusinessType.DELETE)
+    @Log(title = "選單管理", businessType = BusinessType.DELETE)
     @DeleteMapping("/{menuId}")
     public AjaxResult remove(@PathVariable("menuId") Long menuId)
     {
         if (menuService.hasChildByMenuId(menuId))
         {
-            return warn("存在子菜单,不允许删除");
+            return warn("存在子選單,不允許刪除");
         }
         if (menuService.checkMenuExistRole(menuId))
         {
-            return warn("菜单已分配,不允许删除");
+            return warn("選單已分配,不允許刪除");
         }
         return toAjax(menuService.deleteMenuById(menuId));
     }

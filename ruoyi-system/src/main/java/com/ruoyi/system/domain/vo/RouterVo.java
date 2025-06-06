@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
 
 /**
- * 路由配置信息
+ * 路由配置資訊
  * 
  * @author ruoyi
  */
@@ -22,27 +22,27 @@ public class RouterVo
     private String path;
 
     /**
-     * 是否隐藏路由，当设置 true 的时候该路由不会再侧边栏出现
+     * 是否隱藏路由，當設定 true 的時候該路由不會再側邊欄出現
      */
     private boolean hidden;
 
     /**
-     * 重定向地址，当设置 noRedirect 的时候该路由在面包屑导航中不可被点击
+     * 重定向地址，當設定 noRedirect 的時候該路由在麵包屑導航中不可被點選
      */
     private String redirect;
 
     /**
-     * 组件地址
+     * 元件地址
      */
     private String component;
 
     /**
-     * 路由参数：如 {"id": 1, "name": "ry"}
+     * 路由引數：如 {"id": 1, "name": "ry"}
      */
     private String query;
 
     /**
-     * 当你一个路由下面的 children 声明的路由大于1个时，自动会变成嵌套的模式--如组件页面
+     * 當你一個路由下面的 children 宣告的路由大於1個時，自動會變成巢狀的模式--如元件頁面
      */
     private Boolean alwaysShow;
 

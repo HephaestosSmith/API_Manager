@@ -26,7 +26,7 @@ import com.ruoyi.system.service.ISysDictDataService;
 import com.ruoyi.system.service.ISysDictTypeService;
 
 /**
- * 数据字典信息
+ * 資料字典資訊
  * 
  * @author ruoyi
  */
@@ -49,18 +49,18 @@ public class SysDictDataController extends BaseController
         return getDataTable(list);
     }
 
-    @Log(title = "字典数据", businessType = BusinessType.EXPORT)
+    @Log(title = "字典資料", businessType = BusinessType.EXPORT)
     @PreAuthorize("@ss.hasPermi('system:dict:export')")
     @PostMapping("/export")
     public void export(HttpServletResponse response, SysDictData dictData)
     {
         List<SysDictData> list = dictDataService.selectDictDataList(dictData);
         ExcelUtil<SysDictData> util = new ExcelUtil<SysDictData>(SysDictData.class);
-        util.exportExcel(response, list, "字典数据");
+        util.exportExcel(response, list, "字典資料");
     }
 
     /**
-     * 查询字典数据详细
+     * 查詢字典資料詳細
      */
     @PreAuthorize("@ss.hasPermi('system:dict:query')")
     @GetMapping(value = "/{dictCode}")
@@ -70,7 +70,7 @@ public class SysDictDataController extends BaseController
     }
 
     /**
-     * 根据字典类型查询字典数据信息
+     * 根據字典型別查詢字典資料資訊
      */
     @GetMapping(value = "/type/{dictType}")
     public AjaxResult dictType(@PathVariable String dictType)
@@ -84,10 +84,10 @@ public class SysDictDataController extends BaseController
     }
 
     /**
-     * 新增字典类型
+     * 新增字典型別
      */
     @PreAuthorize("@ss.hasPermi('system:dict:add')")
-    @Log(title = "字典数据", businessType = BusinessType.INSERT)
+    @Log(title = "字典資料", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@Validated @RequestBody SysDictData dict)
     {
@@ -96,10 +96,10 @@ public class SysDictDataController extends BaseController
     }
 
     /**
-     * 修改保存字典类型
+     * 修改儲存字典型別
      */
     @PreAuthorize("@ss.hasPermi('system:dict:edit')")
-    @Log(title = "字典数据", businessType = BusinessType.UPDATE)
+    @Log(title = "字典資料", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@Validated @RequestBody SysDictData dict)
     {
@@ -108,10 +108,10 @@ public class SysDictDataController extends BaseController
     }
 
     /**
-     * 删除字典类型
+     * 刪除字典型別
      */
     @PreAuthorize("@ss.hasPermi('system:dict:remove')")
-    @Log(title = "字典类型", businessType = BusinessType.DELETE)
+    @Log(title = "字典型別", businessType = BusinessType.DELETE)
     @DeleteMapping("/{dictCodes}")
     public AjaxResult remove(@PathVariable Long[] dictCodes)
     {

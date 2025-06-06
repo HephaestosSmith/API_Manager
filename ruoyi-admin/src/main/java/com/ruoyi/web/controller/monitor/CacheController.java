@@ -23,7 +23,7 @@ import com.ruoyi.common.utils.StringUtils;
 import com.ruoyi.system.domain.SysCache;
 
 /**
- * 缓存监控
+ * 快取監控
  * 
  * @author ruoyi
  */
@@ -36,13 +36,13 @@ public class CacheController
 
     private final static List<SysCache> caches = new ArrayList<SysCache>();
     {
-        caches.add(new SysCache(CacheConstants.LOGIN_TOKEN_KEY, "用户信息"));
-        caches.add(new SysCache(CacheConstants.SYS_CONFIG_KEY, "配置信息"));
-        caches.add(new SysCache(CacheConstants.SYS_DICT_KEY, "数据字典"));
-        caches.add(new SysCache(CacheConstants.CAPTCHA_CODE_KEY, "验证码"));
+        caches.add(new SysCache(CacheConstants.LOGIN_TOKEN_KEY, "使用者資訊"));
+        caches.add(new SysCache(CacheConstants.SYS_CONFIG_KEY, "配置資訊"));
+        caches.add(new SysCache(CacheConstants.SYS_DICT_KEY, "資料字典"));
+        caches.add(new SysCache(CacheConstants.CAPTCHA_CODE_KEY, "驗證碼"));
         caches.add(new SysCache(CacheConstants.REPEAT_SUBMIT_KEY, "防重提交"));
-        caches.add(new SysCache(CacheConstants.RATE_LIMIT_KEY, "限流处理"));
-        caches.add(new SysCache(CacheConstants.PWD_ERR_CNT_KEY, "密码错误次数"));
+        caches.add(new SysCache(CacheConstants.RATE_LIMIT_KEY, "限流處理"));
+        caches.add(new SysCache(CacheConstants.PWD_ERR_CNT_KEY, "密碼錯誤次數"));
     }
 
     @PreAuthorize("@ss.hasPermi('monitor:cache:list')")

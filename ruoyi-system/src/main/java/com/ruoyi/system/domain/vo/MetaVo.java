@@ -3,29 +3,29 @@ package com.ruoyi.system.domain.vo;
 import com.ruoyi.common.utils.StringUtils;
 
 /**
- * 路由显示信息
+ * 路由顯示資訊
  * 
  * @author ruoyi
  */
 public class MetaVo
 {
     /**
-     * 设置该路由在侧边栏和面包屑中展示的名字
+     * 設定該路由在側邊欄和麵包屑中展示的名字
      */
     private String title;
 
     /**
-     * 设置该路由的图标，对应路径src/assets/icons/svg
+     * 設定該路由的圖示，對應路徑src/assets/icons/svg
      */
     private String icon;
 
     /**
-     * 设置为true，则不会被 <keep-alive>缓存
+     * 設定為true，則不會被 <keep-alive>快取
      */
     private boolean noCache;
 
     /**
-     * 内链地址（http(s)://开头）
+     * 內鏈地址（http(s)://開頭）
      */
     private String link;
 

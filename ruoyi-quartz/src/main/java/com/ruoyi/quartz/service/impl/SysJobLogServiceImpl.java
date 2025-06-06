@@ -8,7 +8,7 @@ import com.ruoyi.quartz.mapper.SysJobLogMapper;
 import com.ruoyi.quartz.service.ISysJobLogService;
 
 /**
- * 定时任务调度日志信息 服务层
+ * 定時任務排程日誌資訊 服務層
  * 
  * @author ruoyi
  */
@@ -19,10 +19,10 @@ public class SysJobLogServiceImpl implements ISysJobLogService
     private SysJobLogMapper jobLogMapper;
 
     /**
-     * 获取quartz调度器日志的计划任务
+     * 獲取quartz排程器日誌的計劃任務
      * 
-     * @param jobLog 调度日志信息
-     * @return 调度任务日志集合
+     * @param jobLog 排程日誌資訊
+     * @return 排程任務日誌集合
      */
     @Override
     public List<SysJobLog> selectJobLogList(SysJobLog jobLog)
@@ -31,10 +31,10 @@ public class SysJobLogServiceImpl implements ISysJobLogService
     }
 
     /**
-     * 通过调度任务日志ID查询调度信息
+     * 透過排程任務日誌ID查詢排程資訊
      * 
-     * @param jobLogId 调度任务日志ID
-     * @return 调度任务日志对象信息
+     * @param jobLogId 排程任務日誌ID
+     * @return 排程任務日誌物件資訊
      */
     @Override
     public SysJobLog selectJobLogById(Long jobLogId)
@@ -43,9 +43,9 @@ public class SysJobLogServiceImpl implements ISysJobLogService
     }
 
     /**
-     * 新增任务日志
+     * 新增任務日誌
      * 
-     * @param jobLog 调度日志信息
+     * @param jobLog 排程日誌資訊
      */
     @Override
     public void addJobLog(SysJobLog jobLog)
@@ -54,10 +54,10 @@ public class SysJobLogServiceImpl implements ISysJobLogService
     }
 
     /**
-     * 批量删除调度日志信息
+     * 批次刪除排程日誌資訊
      * 
-     * @param logIds 需要删除的数据ID
-     * @return 结果
+     * @param logIds 需要刪除的資料ID
+     * @return 結果
      */
     @Override
     public int deleteJobLogByIds(Long[] logIds)
@@ -66,9 +66,9 @@ public class SysJobLogServiceImpl implements ISysJobLogService
     }
 
     /**
-     * 删除任务日志
+     * 刪除任務日誌
      * 
-     * @param jobId 调度日志ID
+     * @param jobId 排程日誌ID
      */
     @Override
     public int deleteJobLogById(Long jobId)
@@ -77,7 +77,7 @@ public class SysJobLogServiceImpl implements ISysJobLogService
     }
 
     /**
-     * 清空任务日志
+     * 清空任務日誌
      */
     @Override
     public void cleanJobLog()

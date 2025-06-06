@@ -1,7 +1,7 @@
 package com.ruoyi.common.exception.user;
 
 /**
- * 验证码失效异常类
+ * 驗證碼失效異常類
  * 
  * @author ruoyi
  */

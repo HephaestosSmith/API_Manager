@@ -3,43 +3,43 @@ import { Message, MessageBox, Notification, Loading } from 'element-ui'
 let loadingInstance
 
 export default {
-  // 消息提示
+  // 訊息提示
   msg(content) {
     Message.info(content)
   },
-  // 错误消息
+  // 錯誤訊息
   msgError(content) {
     Message.error(content)
   },
-  // 成功消息
+  // 成功訊息
   msgSuccess(content) {
     Message.success(content)
   },
-  // 警告消息
+  // 警告訊息
   msgWarning(content) {
     Message.warning(content)
   },
-  // 弹出提示
+  // 彈出提示
   alert(content) {
-    MessageBox.alert(content, "系统提示")
+    MessageBox.alert(content, "系統提示")
   },
-  // 错误提示
+  // 錯誤提示
   alertError(content) {
-    MessageBox.alert(content, "系统提示", { type: 'error' })
+    MessageBox.alert(content, "系統提示", { type: 'error' })
   },
   // 成功提示
   alertSuccess(content) {
-    MessageBox.alert(content, "系统提示", { type: 'success' })
+    MessageBox.alert(content, "系統提示", { type: 'success' })
   },
   // 警告提示
   alertWarning(content) {
-    MessageBox.alert(content, "系统提示", { type: 'warning' })
+    MessageBox.alert(content, "系統提示", { type: 'warning' })
   },
   // 通知提示
   notify(content) {
     Notification.info(content)
   },
-  // 错误通知
+  // 錯誤通知
   notifyError(content) {
     Notification.error(content)
   },
@@ -51,23 +51,23 @@ export default {
   notifyWarning(content) {
     Notification.warning(content)
   },
-  // 确认窗体
+  // 確認窗體
   confirm(content) {
-    return MessageBox.confirm(content, "系统提示", {
-      confirmButtonText: '确定',
+    return MessageBox.confirm(content, "系統提示", {
+      confirmButtonText: '確定',
       cancelButtonText: '取消',
       type: "warning",
     })
   },
-  // 提交内容
+  // 提交內容
   prompt(content) {
-    return MessageBox.prompt(content, "系统提示", {
-      confirmButtonText: '确定',
+    return MessageBox.prompt(content, "系統提示", {
+      confirmButtonText: '確定',
       cancelButtonText: '取消',
       type: "warning",
     })
   },
-  // 打开遮罩层
+  // 開啟遮罩層
   loading(content) {
     loadingInstance = Loading.service({
       lock: true,
@@ -76,7 +76,7 @@ export default {
       background: "rgba(0, 0, 0, 0.7)",
     })
   },
-  // 关闭遮罩层
+  // 關閉遮罩層
   closeLoading() {
     loadingInstance.close()
   }

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PreDestroy;
 
 /**
- * 确保应用退出时能关闭后台线程
+ * 確保應用退出時能關閉後臺執行緒
  *
  * @author ruoyi
  */
@@ -22,13 +22,13 @@ public class ShutdownManager
     }
 
     /**
-     * 停止异步执行任务
+     * 停止非同步執行任務
      */
     private void shutdownAsyncManager()
     {
         try
         {
-            logger.info("====关闭后台任务任务线程池====");
+            logger.info("====關閉後臺任務任務執行緒池====");
             AsyncManager.me().shutdown();
         }
         catch (Exception e)

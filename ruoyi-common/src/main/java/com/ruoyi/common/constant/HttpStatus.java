@@ -1,7 +1,7 @@
 package com.ruoyi.common.constant;
 
 /**
- * 返回状态码
+ * 返回狀態碼
  * 
  * @author ruoyi
  */
@@ -13,22 +13,22 @@ public class HttpStatus
     public static final int SUCCESS = 200;
 
     /**
-     * 对象创建成功
+     * 物件建立成功
      */
     public static final int CREATED = 201;
 
     /**
-     * 请求已经被接受
+     * 請求已經被接受
      */
     public static final int ACCEPTED = 202;
 
     /**
-     * 操作已经执行成功，但是没有返回数据
+     * 操作已經執行成功，但是沒有返回資料
      */
     public static final int NO_CONTENT = 204;
 
     /**
-     * 资源已被移除
+     * 資源已被移除
      */
     public static final int MOVED_PERM = 301;
 
@@ -38,57 +38,57 @@ public class HttpStatus
     public static final int SEE_OTHER = 303;
 
     /**
-     * 资源没有被修改
+     * 資源沒有被修改
      */
     public static final int NOT_MODIFIED = 304;
 
     /**
-     * 参数列表错误（缺少，格式不匹配）
+     * 引數列表錯誤（缺少，格式不匹配）
      */
     public static final int BAD_REQUEST = 400;
 
     /**
-     * 未授权
+     * 未授權
      */
     public static final int UNAUTHORIZED = 401;
 
     /**
-     * 访问受限，授权过期
+     * 訪問受限，授權過期
      */
     public static final int FORBIDDEN = 403;
 
     /**
-     * 资源，服务未找到
+     * 資源，服務未找到
      */
     public static final int NOT_FOUND = 404;
 
     /**
-     * 不允许的http方法
+     * 不允許的http方法
      */
     public static final int BAD_METHOD = 405;
 
     /**
-     * 资源冲突，或者资源被锁
+     * 資源衝突，或者資源被鎖
      */
     public static final int CONFLICT = 409;
 
     /**
-     * 不支持的数据，媒体类型
+     * 不支援的資料，媒體型別
      */
     public static final int UNSUPPORTED_TYPE = 415;
 
     /**
-     * 系统内部错误
+     * 系統內部錯誤
      */
     public static final int ERROR = 500;
 
     /**
-     * 接口未实现
+     * 介面未實現
      */
     public static final int NOT_IMPLEMENTED = 501;
 
     /**
-     * 系统警告消息
+     * 系統警告訊息
      */
     public static final int WARN = 601;
 }

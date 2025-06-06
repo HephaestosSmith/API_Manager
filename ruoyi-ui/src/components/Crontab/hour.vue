@@ -2,30 +2,30 @@
 	<el-form size="small">
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="1">
-				小时，允许的通配符[, - * /]
+				小時，允許的萬用字元[, - * /]
 			</el-radio>
 		</el-form-item>
 
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="2">
-				周期从
+				週期從
 				<el-input-number v-model='cycle01' :min="0" :max="22" /> -
-				<el-input-number v-model='cycle02' :min="cycle01 ? cycle01 + 1 : 1" :max="23" /> 小时
+				<el-input-number v-model='cycle02' :min="cycle01 ? cycle01 + 1 : 1" :max="23" /> 小時
 			</el-radio>
 		</el-form-item>
 
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="3">
-				从
-				<el-input-number v-model='average01' :min="0" :max="22" /> 小时开始，每
-				<el-input-number v-model='average02' :min="1" :max="23 - average01 || 0" /> 小时执行一次
+				從
+				<el-input-number v-model='average01' :min="0" :max="22" /> 小時開始，每
+				<el-input-number v-model='average02' :min="1" :max="23 - average01 || 0" /> 小時執行一次
 			</el-radio>
 		</el-form-item>
 
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="4">
 				指定
-				<el-select clearable v-model="checkboxList" placeholder="可多选" multiple style="width:100%">
+				<el-select clearable v-model="checkboxList" placeholder="可多選" multiple style="width:100%">
 					<el-option v-for="item in 24" :key="item" :value="item-1">{{item-1}}</el-option>
 				</el-select>
 			</el-radio>
@@ -49,7 +49,7 @@ export default {
 	name: 'crontab-hour',
 	props: ['check', 'cron'],
 	methods: {
-		// 单选按钮值变化时
+		// 單選按鈕值變化時
 		radioChange() {
 			if (this.cron.min === '*') {
 			    this.$emit('update', 'min', '0', 'hour')
@@ -72,19 +72,19 @@ export default {
 					break
 			}
 		},
-		// 周期两个值变化时
+		// 週期兩個值變化時
 		cycleChange() {
 			if (this.radioValue == '2') {
 				this.$emit('update', 'hour', this.cycleTotal)
 			}
 		},
-		// 平均两个值变化时
+		// 平均兩個值變化時
 		averageChange() {
 			if (this.radioValue == '3') {
 				this.$emit('update', 'hour', this.averageTotal)
 			}
 		},
-		// checkbox值变化时
+		// checkbox值變化時
 		checkboxChange() {
 			if (this.radioValue == '4') {
 				this.$emit('update', 'hour', this.checkboxString)
@@ -98,19 +98,19 @@ export default {
 		'checkboxString': 'checkboxChange'
 	},
 	computed: {
-		// 计算两个周期值
+		// 計算兩個週期值
 		cycleTotal: function () {
 			const cycle01 = this.checkNum(this.cycle01, 0, 22)
 			const cycle02 = this.checkNum(this.cycle02, cycle01 ? cycle01 + 1 : 1, 23)
 			return cycle01 + '-' + cycle02
 		},
-		// 计算平均用到的值
+		// 計算平均用到的值
 		averageTotal: function () {
 			const average01 = this.checkNum(this.average01, 0, 22)
 			const average02 = this.checkNum(this.average02, 1, 23 - average01 || 0)
 			return average01 + '/' + average02
 		},
-		// 计算勾选的checkbox值合集
+		// 計算勾選的checkbox值合集
 		checkboxString: function () {
 			let str = this.checkboxList.join()
 			return str == '' ? '*' : str

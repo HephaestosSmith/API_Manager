@@ -13,9 +13,9 @@
       </el-menu-item>
     </template>
 
-    <!-- 顶部菜单超出数量折叠 -->
+    <!-- 頂部選單超出數量摺疊 -->
     <el-submenu :style="{'--theme': theme}" index="more" :key="visibleNumber" v-if="topMenus.length > visibleNumber">
-      <template slot="title">更多菜单</template>
+      <template slot="title">更多選單</template>
       <template v-for="(item, index) in topMenus">
         <el-menu-item
           :index="item.path"
@@ -35,15 +35,15 @@
 import { constantRoutes } from "@/router"
 import { isHttp } from "@/utils/validate"
 
-// 隐藏侧边栏路由
+// 隱藏側邊欄路由
 const hideList = ['/index', '/user/profile']
 
 export default {
   data() {
     return {
-      // 顶部栏初始数
+      // 頂部欄初始數
       visibleNumber: 5,
-      // 当前激活菜单的 index
+      // 當前啟用選單的 index
       currentIndex: undefined
     }
   },
@@ -51,12 +51,12 @@ export default {
     theme() {
       return this.$store.state.settings.theme
     },
-    // 顶部显示菜单
+    // 頂部顯示選單
     topMenus() {
       let topMenus = []
       this.routers.map((menu) => {
         if (menu.hidden !== true) {
-          // 兼容顶部栏一级菜单内部跳转
+          // 相容頂部欄一級選單內部跳轉
           if (menu.path === '/' && menu.children) {
             topMenus.push(menu.children[0])
           } else {
@@ -66,11 +66,11 @@ export default {
       })
       return topMenus
     },
-    // 所有的路由信息
+    // 所有的路由資訊
     routers() {
       return this.$store.state.permission.topbarRouters
     },
-    // 设置子路由
+    // 設定子路由
     childrenMenus() {
       var childrenMenus = []
       this.routers.map((router) => {
@@ -90,7 +90,7 @@ export default {
       })
       return constantRoutes.concat(childrenMenus)
     },
-    // 默认激活的菜单
+    // 預設啟用的選單
     activeMenu() {
       const path = this.$route.path
       let activePath = path
@@ -118,20 +118,20 @@ export default {
     this.setVisibleNumber()
   },
   methods: {
-    // 根据宽度计算设置显示栏数
+    // 根據寬度計算設定顯示欄數
     setVisibleNumber() {
       const width = document.body.getBoundingClientRect().width / 3
       this.visibleNumber = parseInt(width / 85)
     },
-    // 菜单选择事件
+    // 選單選擇事件
     handleSelect(key, keyPath) {
       this.currentIndex = key
       const route = this.routers.find(item => item.path === key)
       if (isHttp(key)) {
-        // http(s):// 路径新窗口打开
+        // http(s):// 路徑新視窗開啟
         window.open(key, "_blank")
       } else if (!route || !route.children) {
-        // 没有子路由路径内部打开
+        // 沒有子路由路徑內部開啟
         const routeMenu = this.childrenMenus.find(item => item.path === key)
         if (routeMenu && routeMenu.query) {
           let query = JSON.parse(routeMenu.query)
@@ -141,12 +141,12 @@ export default {
         }
         this.$store.dispatch('app/toggleSideBarHide', true)
       } else {
-        // 显示左侧联动菜单
+        // 顯示左側聯動選單
         this.activeRoutes(key)
         this.$store.dispatch('app/toggleSideBarHide', false)
       }
     },
-    // 当前激活的路由
+    // 當前啟用的路由
     activeRoutes(key) {
       var routes = []
       if (this.childrenMenus && this.childrenMenus.length > 0) {

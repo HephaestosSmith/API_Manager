@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="user-info-head" @click="editCropper()"><img v-bind:src="options.img" title="点击上传头像" class="img-circle img-lg" /></div>
+    <div class="user-info-head" @click="editCropper()"><img v-bind:src="options.img" title="點選上傳頭像" class="img-circle img-lg" /></div>
     <el-dialog :title="title" :visible.sync="open" width="800px" append-to-body @opened="modalOpened"  @close="closeDialog">
       <el-row>
         <el-col :xs="24" :md="12" :style="{height: '350px'}">
@@ -28,7 +28,7 @@
         <el-col :lg="2" :sm="3" :xs="3">
           <el-upload action="#" :http-request="requestUpload" :show-file-list="false" :before-upload="beforeUpload">
             <el-button size="small">
-              选择
+              選擇
               <i class="el-icon-upload el-icon--right"></i>
             </el-button>
           </el-upload>
@@ -63,31 +63,31 @@ export default {
   components: { VueCropper },
   data() {
     return {
-      // 是否显示弹出层
+      // 是否顯示彈出層
       open: false,
-      // 是否显示cropper
+      // 是否顯示cropper
       visible: false,
-      // 弹出层标题
-      title: "修改头像",
+      // 彈出層標題
+      title: "修改頭像",
       options: {
-        img: store.getters.avatar,  //裁剪图片的地址
-        autoCrop: true,             // 是否默认生成截图框
-        autoCropWidth: 200,         // 默认生成截图框宽度
-        autoCropHeight: 200,        // 默认生成截图框高度
-        fixedBox: true,             // 固定截图框大小 不允许改变
-        outputType:"png",           // 默认生成截图为PNG格式
-        filename: 'avatar'          // 文件名称
+        img: store.getters.avatar,  //裁剪圖片的地址
+        autoCrop: true,             // 是否預設生成截圖框
+        autoCropWidth: 200,         // 預設生成截圖框寬度
+        autoCropHeight: 200,        // 預設生成截圖框高度
+        fixedBox: true,             // 固定截圖框大小 不允許改變
+        outputType:"png",           // 預設生成截圖為PNG格式
+        filename: 'avatar'          // 檔名稱
       },
       previews: {},
       resizeHandler: null
     }
   },
   methods: {
-    // 编辑头像
+    // 編輯頭像
     editCropper() {
       this.open = true
     },
-    // 打开弹出层结束时的回调
+    // 開啟彈出層結束時的回撥
     modalOpened() {
       this.visible = true
       if (!this.resizeHandler) {
@@ -97,30 +97,30 @@ export default {
       }
       window.addEventListener("resize", this.resizeHandler)
     },
-    // 刷新组件
+    // 重新整理元件
     refresh() {
       this.$refs.cropper.refresh()
     },
-    // 覆盖默认的上传行为
+    // 覆蓋預設的上傳行為
     requestUpload() {
     },
-    // 向左旋转
+    // 向左旋轉
     rotateLeft() {
       this.$refs.cropper.rotateLeft()
     },
-    // 向右旋转
+    // 向右旋轉
     rotateRight() {
       this.$refs.cropper.rotateRight()
     },
-    // 图片缩放
+    // 圖片縮放
     changeScale(num) {
       num = num || 1
       this.$refs.cropper.changeScale(num)
     },
-    // 上传预处理
+    // 上傳預處理
     beforeUpload(file) {
       if (file.type.indexOf("image/") == -1) {
-        this.$modal.msgError("文件格式错误，请上传图片类型,如：JPG，PNG后缀的文件。")
+        this.$modal.msgError("檔案格式錯誤，請上傳圖片型別,如：JPG，PNG字尾的檔案。")
       } else {
         const reader = new FileReader()
         reader.readAsDataURL(file)
@@ -130,7 +130,7 @@ export default {
         }
       }
     },
-    // 上传图片
+    // 上傳圖片
     uploadImg() {
       this.$refs.cropper.getCropBlob(data => {
         let formData = new FormData()
@@ -144,11 +144,11 @@ export default {
         })
       })
     },
-    // 实时预览
+    // 實時預覽
     realTime(data) {
       this.previews = data
     },
-    // 关闭窗口
+    // 關閉視窗
     closeDialog() {
       this.options.img = store.getters.avatar
       this.visible = false

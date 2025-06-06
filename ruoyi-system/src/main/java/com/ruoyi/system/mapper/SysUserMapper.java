@@ -5,123 +5,123 @@ import org.apache.ibatis.annotations.Param;
 import com.ruoyi.common.core.domain.entity.SysUser;
 
 /**
- * 用户表 数据层
+ * 使用者表 資料層
  * 
  * @author ruoyi
  */
 public interface SysUserMapper
 {
     /**
-     * 根据条件分页查询用户列表
+     * 根據條件分頁查詢使用者列表
      * 
-     * @param sysUser 用户信息
-     * @return 用户信息集合信息
+     * @param sysUser 使用者資訊
+     * @return 使用者資訊集合資訊
      */
     public List<SysUser> selectUserList(SysUser sysUser);
 
     /**
-     * 根据条件分页查询已配用户角色列表
+     * 根據條件分頁查詢已配使用者角色列表
      * 
-     * @param user 用户信息
-     * @return 用户信息集合信息
+     * @param user 使用者資訊
+     * @return 使用者資訊集合資訊
      */
     public List<SysUser> selectAllocatedList(SysUser user);
 
     /**
-     * 根据条件分页查询未分配用户角色列表
+     * 根據條件分頁查詢未分配使用者角色列表
      * 
-     * @param user 用户信息
-     * @return 用户信息集合信息
+     * @param user 使用者資訊
+     * @return 使用者資訊集合資訊
      */
     public List<SysUser> selectUnallocatedList(SysUser user);
 
     /**
-     * 通过用户名查询用户
+     * 透過使用者名稱查詢使用者
      * 
-     * @param userName 用户名
-     * @return 用户对象信息
+     * @param userName 使用者名稱
+     * @return 使用者物件資訊
      */
     public SysUser selectUserByUserName(String userName);
 
     /**
-     * 通过用户ID查询用户
+     * 透過使用者ID查詢使用者
      * 
-     * @param userId 用户ID
-     * @return 用户对象信息
+     * @param userId 使用者ID
+     * @return 使用者物件資訊
      */
     public SysUser selectUserById(Long userId);
 
     /**
-     * 新增用户信息
+     * 新增使用者資訊
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user 使用者資訊
+     * @return 結果
      */
     public int insertUser(SysUser user);
 
     /**
-     * 修改用户信息
+     * 修改使用者資訊
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user 使用者資訊
+     * @return 結果
      */
     public int updateUser(SysUser user);
 
     /**
-     * 修改用户头像
+     * 修改使用者頭像
      * 
-     * @param userName 用户名
-     * @param avatar 头像地址
-     * @return 结果
+     * @param userName 使用者名稱
+     * @param avatar 頭像地址
+     * @return 結果
      */
     public int updateUserAvatar(@Param("userName") String userName, @Param("avatar") String avatar);
 
     /**
-     * 重置用户密码
+     * 重置使用者密碼
      * 
-     * @param userName 用户名
-     * @param password 密码
-     * @return 结果
+     * @param userName 使用者名稱
+     * @param password 密碼
+     * @return 結果
      */
     public int resetUserPwd(@Param("userName") String userName, @Param("password") String password);
 
     /**
-     * 通过用户ID删除用户
+     * 透過使用者ID刪除使用者
      * 
-     * @param userId 用户ID
-     * @return 结果
+     * @param userId 使用者ID
+     * @return 結果
      */
     public int deleteUserById(Long userId);
 
     /**
-     * 批量删除用户信息
+     * 批次刪除使用者資訊
      * 
-     * @param userIds 需要删除的用户ID
-     * @return 结果
+     * @param userIds 需要刪除的使用者ID
+     * @return 結果
      */
     public int deleteUserByIds(Long[] userIds);
 
     /**
-     * 校验用户名称是否唯一
+     * 校驗使用者名稱稱是否唯一
      * 
-     * @param userName 用户名称
-     * @return 结果
+     * @param userName 使用者名稱稱
+     * @return 結果
      */
     public SysUser checkUserNameUnique(String userName);
 
     /**
-     * 校验手机号码是否唯一
+     * 校驗手機號碼是否唯一
      *
-     * @param phonenumber 手机号码
-     * @return 结果
+     * @param phonenumber 手機號碼
+     * @return 結果
      */
     public SysUser checkPhoneUnique(String phonenumber);
 
     /**
-     * 校验email是否唯一
+     * 校驗email是否唯一
      *
-     * @param email 用户邮箱
-     * @return 结果
+     * @param email 使用者郵箱
+     * @return 結果
      */
     public SysUser checkEmailUnique(String email);
 }

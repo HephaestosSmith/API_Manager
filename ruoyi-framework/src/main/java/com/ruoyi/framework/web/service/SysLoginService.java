@@ -30,7 +30,7 @@ import com.ruoyi.system.service.ISysConfigService;
 import com.ruoyi.system.service.ISysUserService;
 
 /**
- * 登录校验方法
+ * 登入校驗方法
  * 
  * @author ruoyi
  */
@@ -53,27 +53,27 @@ public class SysLoginService
     private ISysConfigService configService;
 
     /**
-     * 登录验证
+     * 登入驗證
      * 
-     * @param username 用户名
-     * @param password 密码
-     * @param code 验证码
-     * @param uuid 唯一标识
-     * @return 结果
+     * @param username 使用者名稱
+     * @param password 密碼
+     * @param code 驗證碼
+     * @param uuid 唯一標識
+     * @return 結果
      */
     public String login(String username, String password, String code, String uuid)
     {
-        // 验证码校验
+        // 驗證碼校驗
         validateCaptcha(username, code, uuid);
-        // 登录前置校验
+        // 登入前置校驗
         loginPreCheck(username, password);
-        // 用户验证
+        // 使用者驗證
         Authentication authentication = null;
         try
         {
             UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
             AuthenticationContextHolder.setContext(authenticationToken);
-            // 该方法会去调用UserDetailsServiceImpl.loadUserByUsername
+            // 該方法會去呼叫UserDetailsServiceImpl.loadUserByUsername
             authentication = authenticationManager.authenticate(authenticationToken);
         }
         catch (Exception e)
@@ -101,12 +101,12 @@ public class SysLoginService
     }
 
     /**
-     * 校验验证码
+     * 校驗驗證碼
      * 
-     * @param username 用户名
-     * @param code 验证码
-     * @param uuid 唯一标识
-     * @return 结果
+     * @param username 使用者名稱
+     * @param code 驗證碼
+     * @param uuid 唯一標識
+     * @return 結果
      */
     public void validateCaptcha(String username, String code, String uuid)
     {
@@ -130,33 +130,33 @@ public class SysLoginService
     }
 
     /**
-     * 登录前置校验
-     * @param username 用户名
-     * @param password 用户密码
+     * 登入前置校驗
+     * @param username 使用者名稱
+     * @param password 使用者密碼
      */
     public void loginPreCheck(String username, String password)
     {
-        // 用户名或密码为空 错误
+        // 使用者名稱或密碼為空 錯誤
         if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password))
         {
             AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL, MessageUtils.message("not.null")));
             throw new UserNotExistsException();
         }
-        // 密码如果不在指定范围内 错误
+        // 密碼如果不在指定範圍內 錯誤
         if (password.length() < UserConstants.PASSWORD_MIN_LENGTH
                 || password.length() > UserConstants.PASSWORD_MAX_LENGTH)
         {
             AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL, MessageUtils.message("user.password.not.match")));
             throw new UserPasswordNotMatchException();
         }
-        // 用户名不在指定范围内 错误
+        // 使用者名稱不在指定範圍內 錯誤
         if (username.length() < UserConstants.USERNAME_MIN_LENGTH
                 || username.length() > UserConstants.USERNAME_MAX_LENGTH)
         {
             AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL, MessageUtils.message("user.password.not.match")));
             throw new UserPasswordNotMatchException();
         }
-        // IP黑名单校验
+        // IP黑名單校驗
         String blackStr = configService.selectConfigByKey("sys.login.blackIPList");
         if (IpUtils.isMatchedIp(blackStr, IpUtils.getIpAddr()))
         {
@@ -166,9 +166,9 @@ public class SysLoginService
     }
 
     /**
-     * 记录登录信息
+     * 記錄登入資訊
      *
-     * @param userId 用户ID
+     * @param userId 使用者ID
      */
     public void recordLoginInfo(Long userId)
     {

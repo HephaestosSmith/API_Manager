@@ -8,7 +8,7 @@ export default function(dict, dictMeta) {
 }
 
 /**
- * 确定字典字段
+ * 確定字典欄位
  * @param {DictData} dict
  * @param  {...String} fields
  */

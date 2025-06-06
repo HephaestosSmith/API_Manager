@@ -22,17 +22,17 @@
       <i class="el-icon-plus"></i>
     </el-upload>
 
-    <!-- 上传提示 -->
+    <!-- 上傳提示 -->
     <div class="el-upload__tip" slot="tip" v-if="showTip && !disabled">
-      请上传
-      <template v-if="fileSize"> 大小不超过 <b style="color: #f56c6c">{{ fileSize }}MB</b> </template>
-      <template v-if="fileType"> 格式为 <b style="color: #f56c6c">{{ fileType.join("/") }}</b> </template>
-      的文件
+      請上傳
+      <template v-if="fileSize"> 大小不超過 <b style="color: #f56c6c">{{ fileSize }}MB</b> </template>
+      <template v-if="fileType"> 格式為 <b style="color: #f56c6c">{{ fileType.join("/") }}</b> </template>
+      的檔案
     </div>
 
     <el-dialog
       :visible.sync="dialogVisible"
-      title="预览"
+      title="預覽"
       width="800"
       append-to-body
     >
@@ -52,16 +52,16 @@ import Sortable from 'sortablejs'
 export default {
   props: {
     value: [String, Object, Array],
-    // 上传接口地址
+    // 上傳介面地址
     action: {
       type: String,
       default: "/common/upload"
     },
-    // 上传携带的参数
+    // 上傳攜帶的引數
     data: {
       type: Object
     },
-    // 图片数量限制
+    // 圖片數量限制
     limit: {
       type: Number,
       default: 5
@@ -71,22 +71,22 @@ export default {
        type: Number,
       default: 5
     },
-    // 文件类型, 例如['png', 'jpg', 'jpeg']
+    // 檔案型別, 例如['png', 'jpg', 'jpeg']
     fileType: {
       type: Array,
       default: () => ["png", "jpg", "jpeg"]
     },
-    // 是否显示提示
+    // 是否顯示提示
     isShowTip: {
       type: Boolean,
       default: true
     },
-    // 禁用组件（仅查看图片）
+    // 禁用元件（僅檢檢視片）
     disabled: {
       type: Boolean,
       default: false
     },
-    // 拖动排序
+    // 拖動排序
     drag: {
       type: Boolean,
       default: true
@@ -100,7 +100,7 @@ export default {
       dialogVisible: false,
       hideUpload: false,
       baseUrl: process.env.VUE_APP_BASE_API,
-      uploadImgUrl: process.env.VUE_APP_BASE_API + this.action, // 上传的图片服务器地址
+      uploadImgUrl: process.env.VUE_APP_BASE_API + this.action, // 上傳的圖片伺服器地址
       headers: {
         Authorization: "Bearer " + getToken(),
       },
@@ -125,9 +125,9 @@ export default {
     value: {
       handler(val) {
         if (val) {
-          // 首先将值转为数组
+          // 首先將值轉為陣列
           const list = Array.isArray(val) ? val : this.value.split(',')
-          // 然后将数组转为对象数组
+          // 然後將陣列轉為物件陣列
           this.fileList = list.map(item => {
             if (typeof item === "string") {
               if (item.indexOf(this.baseUrl) === -1 && !isExternal(item)) {
@@ -148,13 +148,13 @@ export default {
     }
   },
   computed: {
-    // 是否显示提示
+    // 是否顯示提示
     showTip() {
       return this.isShowTip && (this.fileType || this.fileSize)
     },
   },
   methods: {
-    // 上传前loading加载
+    // 上傳前loading載入
     handleBeforeUpload(file) {
       let isImg = false
       if (this.fileType.length) {
@@ -172,28 +172,28 @@ export default {
       }
 
       if (!isImg) {
-        this.$modal.msgError(`文件格式不正确，请上传${this.fileType.join("/")}图片格式文件!`)
+        this.$modal.msgError(`檔案格式不正確，請上傳${this.fileType.join("/")}圖片格式檔案!`)
         return false
       }
       if (file.name.includes(',')) {
-        this.$modal.msgError('文件名不正确，不能包含英文逗号!')
+        this.$modal.msgError('檔名不正確，不能包含英文逗號!')
         return false
       }
       if (this.fileSize) {
         const isLt = file.size / 1024 / 1024 < this.fileSize
         if (!isLt) {
-          this.$modal.msgError(`上传头像图片大小不能超过 ${this.fileSize} MB!`)
+          this.$modal.msgError(`上傳頭像圖片大小不能超過 ${this.fileSize} MB!`)
           return false
         }
       }
-      this.$modal.loading("正在上传图片，请稍候...")
+      this.$modal.loading("正在上傳圖片，請稍候...")
       this.number++
     },
-    // 文件个数超出
+    // 檔案個數超出
     handleExceed() {
-      this.$modal.msgError(`上传文件数量不能超过 ${this.limit} 个!`)
+      this.$modal.msgError(`上傳檔案數量不能超過 ${this.limit} 個!`)
     },
-    // 上传成功回调
+    // 上傳成功回撥
     handleUploadSuccess(res, file) {
       if (res.code === 200) {
         this.uploadList.push({ name: res.fileName, url: res.fileName })
@@ -206,7 +206,7 @@ export default {
         this.uploadedSuccessfully()
       }
     },
-    // 删除图片
+    // 刪除圖片
     handleDelete(file) {
       const findex = this.fileList.map(f => f.name).indexOf(file.name)
       if (findex > -1) {
@@ -214,12 +214,12 @@ export default {
         this.$emit("input", this.listToString(this.fileList))
       }
     },
-    // 上传失败
+    // 上傳失敗
     handleUploadError() {
-      this.$modal.msgError("上传图片失败，请重试")
+      this.$modal.msgError("上傳圖片失敗，請重試")
       this.$modal.closeLoading()
     },
-    // 上传结束处理
+    // 上傳結束處理
     uploadedSuccessfully() {
       if (this.number > 0 && this.uploadList.length === this.number) {
         this.fileList = this.fileList.concat(this.uploadList)
@@ -229,12 +229,12 @@ export default {
         this.$modal.closeLoading()
       }
     },
-    // 预览
+    // 預覽
     handlePictureCardPreview(file) {
       this.dialogImageUrl = file.url
       this.dialogVisible = true
     },
-    // 对象转成指定字符串分隔
+    // 物件轉成指定字串分隔
     listToString(list, separator) {
       let strs = ""
       separator = separator || ","
@@ -249,7 +249,7 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-// .el-upload--picture-card 控制加号部分
+// .el-upload--picture-card 控制加號部分
 ::v-deep.hide .el-upload--picture-card {
   display: none;
 }
@@ -258,7 +258,7 @@ export default {
   display: none !important;
 } 
 
-// 去掉动画效果
+// 去掉動畫效果
 ::v-deep .el-list-enter-active,
 ::v-deep .el-list-leave-active {
   transition: all 0s;

@@ -4,53 +4,53 @@ import java.util.List;
 import com.ruoyi.quartz.domain.SysJobLog;
 
 /**
- * 定时任务调度日志信息信息 服务层
+ * 定時任務排程日誌資訊資訊 服務層
  * 
  * @author ruoyi
  */
 public interface ISysJobLogService
 {
     /**
-     * 获取quartz调度器日志的计划任务
+     * 獲取quartz排程器日誌的計劃任務
      * 
-     * @param jobLog 调度日志信息
-     * @return 调度任务日志集合
+     * @param jobLog 排程日誌資訊
+     * @return 排程任務日誌集合
      */
     public List<SysJobLog> selectJobLogList(SysJobLog jobLog);
 
     /**
-     * 通过调度任务日志ID查询调度信息
+     * 透過排程任務日誌ID查詢排程資訊
      * 
-     * @param jobLogId 调度任务日志ID
-     * @return 调度任务日志对象信息
+     * @param jobLogId 排程任務日誌ID
+     * @return 排程任務日誌物件資訊
      */
     public SysJobLog selectJobLogById(Long jobLogId);
 
     /**
-     * 新增任务日志
+     * 新增任務日誌
      * 
-     * @param jobLog 调度日志信息
+     * @param jobLog 排程日誌資訊
      */
     public void addJobLog(SysJobLog jobLog);
 
     /**
-     * 批量删除调度日志信息
+     * 批次刪除排程日誌資訊
      * 
-     * @param logIds 需要删除的日志ID
-     * @return 结果
+     * @param logIds 需要刪除的日誌ID
+     * @return 結果
      */
     public int deleteJobLogByIds(Long[] logIds);
 
     /**
-     * 删除任务日志
+     * 刪除任務日誌
      * 
-     * @param jobId 调度日志ID
-     * @return 结果
+     * @param jobId 排程日誌ID
+     * @return 結果
      */
     public int deleteJobLogById(Long jobId);
 
     /**
-     * 清空任务日志
+     * 清空任務日誌
      */
     public void cleanJobLog();
 }

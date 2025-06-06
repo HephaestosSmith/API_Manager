@@ -20,7 +20,7 @@ import com.ruoyi.quartz.domain.SysJobLog;
 import com.ruoyi.quartz.service.ISysJobLogService;
 
 /**
- * 调度日志操作处理
+ * 排程日誌操作處理
  * 
  * @author ruoyi
  */
@@ -32,7 +32,7 @@ public class SysJobLogController extends BaseController
     private ISysJobLogService jobLogService;
 
     /**
-     * 查询定时任务调度日志列表
+     * 查詢定時任務排程日誌列表
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:list')")
     @GetMapping("/list")
@@ -44,20 +44,20 @@ public class SysJobLogController extends BaseController
     }
 
     /**
-     * 导出定时任务调度日志列表
+     * 匯出定時任務排程日誌列表
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:export')")
-    @Log(title = "任务调度日志", businessType = BusinessType.EXPORT)
+    @Log(title = "任務排程日誌", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
     public void export(HttpServletResponse response, SysJobLog sysJobLog)
     {
         List<SysJobLog> list = jobLogService.selectJobLogList(sysJobLog);
         ExcelUtil<SysJobLog> util = new ExcelUtil<SysJobLog>(SysJobLog.class);
-        util.exportExcel(response, list, "调度日志");
+        util.exportExcel(response, list, "排程日誌");
     }
     
     /**
-     * 根据调度编号获取详细信息
+     * 根據排程編號獲取詳細資訊
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:query')")
     @GetMapping(value = "/{jobLogId}")
@@ -68,10 +68,10 @@ public class SysJobLogController extends BaseController
 
 
     /**
-     * 删除定时任务调度日志
+     * 刪除定時任務排程日誌
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:remove')")
-    @Log(title = "定时任务调度日志", businessType = BusinessType.DELETE)
+    @Log(title = "定時任務排程日誌", businessType = BusinessType.DELETE)
     @DeleteMapping("/{jobLogIds}")
     public AjaxResult remove(@PathVariable Long[] jobLogIds)
     {
@@ -79,10 +79,10 @@ public class SysJobLogController extends BaseController
     }
 
     /**
-     * 清空定时任务调度日志
+     * 清空定時任務排程日誌
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:remove')")
-    @Log(title = "调度日志", businessType = BusinessType.CLEAN)
+    @Log(title = "排程日誌", businessType = BusinessType.CLEAN)
     @DeleteMapping("/clean")
     public AjaxResult clean()
     {

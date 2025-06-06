@@ -13,7 +13,7 @@ import com.ruoyi.common.utils.http.HttpHelper;
 import com.ruoyi.common.constant.Constants;
 
 /**
- * 构建可重复读取inputStream的request
+ * 構建可重複讀取inputStream的request
  * 
  * @author ruoyi
  */

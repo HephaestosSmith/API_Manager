@@ -3,22 +3,22 @@ package com.ruoyi.system.domain;
 import com.ruoyi.common.utils.StringUtils;
 
 /**
- * 缓存信息
+ * 快取資訊
  * 
  * @author ruoyi
  */
 public class SysCache
 {
-    /** 缓存名称 */
+    /** 快取名稱 */
     private String cacheName = "";
 
-    /** 缓存键名 */
+    /** 快取鍵名 */
     private String cacheKey = "";
 
-    /** 缓存内容 */
+    /** 快取內容 */
     private String cacheValue = "";
 
-    /** 备注 */
+    /** 備註 */
     private String remark = "";
 
     public SysCache()

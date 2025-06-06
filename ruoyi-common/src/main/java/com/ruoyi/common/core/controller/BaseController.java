@@ -22,7 +22,7 @@ import com.ruoyi.common.utils.StringUtils;
 import com.ruoyi.common.utils.sql.SqlUtil;
 
 /**
- * web层通用数据处理
+ * web層通用資料處理
  * 
  * @author ruoyi
  */
@@ -31,12 +31,12 @@ public class BaseController
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
-     * 将前台传递过来的日期格式的字符串，自动转化为Date类型
+     * 將前臺傳遞過來的日期格式的字串，自動轉化為Date型別
      */
     @InitBinder
     public void initBinder(WebDataBinder binder)
     {
-        // Date 类型转换
+        // Date 型別轉換
         binder.registerCustomEditor(Date.class, new PropertyEditorSupport()
         {
             @Override
@@ -48,7 +48,7 @@ public class BaseController
     }
 
     /**
-     * 设置请求分页数据
+     * 設定請求分頁資料
      */
     protected void startPage()
     {
@@ -56,7 +56,7 @@ public class BaseController
     }
 
     /**
-     * 设置请求排序数据
+     * 設定請求排序資料
      */
     protected void startOrderBy()
     {
@@ -69,7 +69,7 @@ public class BaseController
     }
 
     /**
-     * 清理分页的线程变量
+     * 清理分頁的執行緒變數
      */
     protected void clearPage()
     {
@@ -77,14 +77,14 @@ public class BaseController
     }
 
     /**
-     * 响应请求分页数据
+     * 響應請求分頁資料
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
     protected TableDataInfo getDataTable(List<?> list)
     {
         TableDataInfo rspData = new TableDataInfo();
         rspData.setCode(HttpStatus.SUCCESS);
-        rspData.setMsg("查询成功");
+        rspData.setMsg("查詢成功");
         rspData.setRows(list);
         rspData.setTotal(new PageInfo(list).getTotal());
         return rspData;
@@ -99,7 +99,7 @@ public class BaseController
     }
 
     /**
-     * 返回失败消息
+     * 返回失敗訊息
      */
     public AjaxResult error()
     {
@@ -107,7 +107,7 @@ public class BaseController
     }
 
     /**
-     * 返回成功消息
+     * 返回成功訊息
      */
     public AjaxResult success(String message)
     {
@@ -115,7 +115,7 @@ public class BaseController
     }
     
     /**
-     * 返回成功消息
+     * 返回成功訊息
      */
     public AjaxResult success(Object data)
     {
@@ -123,7 +123,7 @@ public class BaseController
     }
 
     /**
-     * 返回失败消息
+     * 返回失敗訊息
      */
     public AjaxResult error(String message)
     {
@@ -131,7 +131,7 @@ public class BaseController
     }
 
     /**
-     * 返回警告消息
+     * 返回警告訊息
      */
     public AjaxResult warn(String message)
     {
@@ -139,10 +139,10 @@ public class BaseController
     }
 
     /**
-     * 响应返回结果
+     * 響應返回結果
      * 
-     * @param rows 影响行数
-     * @return 操作结果
+     * @param rows 影響行數
+     * @return 操作結果
      */
     protected AjaxResult toAjax(int rows)
     {
@@ -150,10 +150,10 @@ public class BaseController
     }
 
     /**
-     * 响应返回结果
+     * 響應返回結果
      * 
-     * @param result 结果
-     * @return 操作结果
+     * @param result 結果
+     * @return 操作結果
      */
     protected AjaxResult toAjax(boolean result)
     {
@@ -161,7 +161,7 @@ public class BaseController
     }
 
     /**
-     * 页面跳转
+     * 頁面跳轉
      */
     public String redirect(String url)
     {
@@ -169,7 +169,7 @@ public class BaseController
     }
 
     /**
-     * 获取用户缓存信息
+     * 獲取使用者快取資訊
      */
     public LoginUser getLoginUser()
     {
@@ -177,7 +177,7 @@ public class BaseController
     }
 
     /**
-     * 获取登录用户id
+     * 獲取登入使用者id
      */
     public Long getUserId()
     {
@@ -185,7 +185,7 @@ public class BaseController
     }
 
     /**
-     * 获取登录部门id
+     * 獲取登入部門id
      */
     public Long getDeptId()
     {
@@ -193,7 +193,7 @@ public class BaseController
     }
 
     /**
-     * 获取登录用户名
+     * 獲取登入使用者名稱
      */
     public String getUsername()
     {

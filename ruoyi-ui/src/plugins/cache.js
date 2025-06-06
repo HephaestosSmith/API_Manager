@@ -69,11 +69,11 @@ const localCache = {
 
 export default {
   /**
-   * 会话级缓存
+   * 會話級快取
    */
   session: sessionCache,
   /**
-   * 本地缓存
+   * 本地快取
    */
   local: localCache
 }

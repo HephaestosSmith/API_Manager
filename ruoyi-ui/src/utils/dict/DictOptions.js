@@ -5,14 +5,14 @@ export const options = {
   metas: {
     '*': {
       /**
-       * 字典请求，方法签名为function(dictMeta: DictMeta): Promise
+       * 字典請求，方法簽名為function(dictMeta: DictMeta): Promise
        */
       request: (dictMeta) => {
         console.log(`load dict ${dictMeta.type}`)
         return Promise.resolve([])
       },
       /**
-       * 字典响应数据转换器，方法签名为function(response: Object, dictMeta: DictMeta): DictData
+       * 字典響應資料轉換器，方法簽名為function(response: Object, dictMeta: DictMeta): DictData
        */
       responseConverter,
       labelField: 'label',
@@ -20,19 +20,19 @@ export const options = {
     },
   },
   /**
-   * 默认标签字段
+   * 預設標籤欄位
    */
   DEFAULT_LABEL_FIELDS: ['label', 'name', 'title'],
   /**
-   * 默认值字段
+   * 預設值欄位
    */
   DEFAULT_VALUE_FIELDS: ['value', 'id', 'uid', 'key'],
 }
 
 /**
- * 映射字典
- * @param {Object} response 字典数据
- * @param {DictMeta} dictMeta 字典元数据
+ * 對映字典
+ * @param {Object} response 字典資料
+ * @param {DictMeta} dictMeta 字典後設資料
  * @returns {DictData}
  */
 function responseConverter(response, dictMeta) {

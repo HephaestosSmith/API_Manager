@@ -3,16 +3,16 @@ package com.ruoyi.common.core.page;
 import com.ruoyi.common.utils.StringUtils;
 
 /**
- * 分页数据
+ * 分頁資料
  * 
  * @author ruoyi
  */
 public class PageDomain
 {
-    /** 当前记录起始索引 */
+    /** 當前記錄起始索引 */
     private Integer pageNum;
 
-    /** 每页显示记录数 */
+    /** 每頁顯示記錄數 */
     private Integer pageSize;
 
     /** 排序列 */
@@ -21,7 +21,7 @@ public class PageDomain
     /** 排序的方向desc或者asc */
     private String isAsc = "asc";
 
-    /** 分页参数合理化 */
+    /** 分頁引數合理化 */
     private Boolean reasonable = true;
 
     public String getOrderBy()
@@ -72,7 +72,7 @@ public class PageDomain
     {
         if (StringUtils.isNotEmpty(isAsc))
         {
-            // 兼容前端排序类型
+            // 相容前端排序型別
             if ("ascending".equals(isAsc))
             {
                 isAsc = "asc";

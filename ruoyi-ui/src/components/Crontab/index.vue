@@ -10,7 +10,7 @@
         />
       </el-tab-pane>
 
-      <el-tab-pane label="分钟" v-if="shouldHide('min')">
+      <el-tab-pane label="分鐘" v-if="shouldHide('min')">
         <CrontabMin
           @update="updateCrontabValue"
           :check="checkNumber"
@@ -19,7 +19,7 @@
         />
       </el-tab-pane>
 
-      <el-tab-pane label="小时" v-if="shouldHide('hour')">
+      <el-tab-pane label="小時" v-if="shouldHide('hour')">
         <CrontabHour
           @update="updateCrontabValue"
           :check="checkNumber"
@@ -67,11 +67,11 @@
 
     <div class="popup-main">
       <div class="popup-result">
-        <p class="title">时间表达式</p>
+        <p class="title">時間表示式</p>
         <table>
           <thead>
             <th v-for="item of tabTitles" width="40" :key="item">{{item}}</th>
-            <th>Cron 表达式</th>
+            <th>Cron 表示式</th>
           </thead>
           <tbody>
             <td>
@@ -104,7 +104,7 @@
       <CrontabResult :ex="crontabValueString"></CrontabResult>
 
       <div class="pop_btn">
-        <el-button size="small" type="primary" @click="submitFill">确定</el-button>
+        <el-button size="small" type="primary" @click="submitFill">確定</el-button>
         <el-button size="small" type="warning" @click="clearCron">重置</el-button>
         <el-button size="small" @click="hidePopup">取消</el-button>
       </div>
@@ -125,7 +125,7 @@ import CrontabResult from "./result.vue"
 export default {
   data() {
     return {
-      tabTitles: ["秒", "分钟", "小时", "日", "月", "周", "年"],
+      tabTitles: ["秒", "分鐘", "小時", "日", "月", "周", "年"],
       tabActive: 0,
       myindex: 0,
       crontabValueObj: {
@@ -147,11 +147,11 @@ export default {
       return true
     },
     resolveExp() {
-      // 反解析 表达式
+      // 反解析 表示式
       if (this.expression) {
         let arr = this.expression.split(" ")
         if (arr.length >= 6) {
-          //6 位以上是合法表达式
+          //6 位以上是合法表示式
           let obj = {
             second: arr[0],
             min: arr[1],
@@ -169,24 +169,24 @@ export default {
           }
         }
       } else {
-        // 没有传入的表达式 则还原
+        // 沒有傳入的表示式 則還原
         this.clearCron()
       }
     },
-    // tab切换值
+    // tab切換值
     tabCheck(index) {
       this.tabActive = index
     },
-    // 由子组件触发，更改表达式组成的字段值
+    // 由子元件觸發，更改表示式組成的欄位值
     updateCrontabValue(name, value, from) {
       "updateCrontabValue", name, value, from
       this.crontabValueObj[name] = value
       if (from && from !== name) {
-        console.log(`来自组件 ${from} 改变了 ${name} ${value}`)
+        console.log(`來自元件 ${from} 改變了 ${name} ${value}`)
         this.changeRadio(name, value)
       }
     },
-    // 赋值到组件
+    // 賦值到元件
     changeRadio(name, value) {
       let arr = ["second", "min", "hour", "month"],
         refName = "cron" + name,
@@ -291,9 +291,9 @@ export default {
       }
       this.$refs[refName].radioValue = insValue
     },
-    // 表单选项的子组件校验数字格式（通过-props传递）
+    // 表單選項的子元件校驗數字格式（透過-props傳遞）
     checkNumber(value, minLimit, maxLimit) {
-      // 检查必须为整数
+      // 檢查必須為整數
       value = Math.floor(value)
       if (value < minLimit) {
         value = minLimit
@@ -302,18 +302,18 @@ export default {
       }
       return value
     },
-    // 隐藏弹窗
+    // 隱藏彈窗
     hidePopup() {
       this.$emit("hide")
     },
-    // 填充表达式
+    // 填充表示式
     submitFill() {
       this.$emit("fill", this.crontabValueString)
       this.hidePopup()
     },
     clearCron() {
-      // 还原选择项
-      ("准备还原")
+      // 還原選擇項
+      ("準備還原")
       this.crontabValueObj = {
         second: "*",
         min: "*",
@@ -360,7 +360,7 @@ export default {
   watch: {
     expression: "resolveExp",
     hideComponent(value) {
-      // 隐藏部分组件
+      // 隱藏部分元件
     },
   },
   mounted: function() {

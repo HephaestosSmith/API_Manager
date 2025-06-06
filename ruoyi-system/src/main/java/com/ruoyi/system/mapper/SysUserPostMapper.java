@@ -4,41 +4,41 @@ import java.util.List;
 import com.ruoyi.system.domain.SysUserPost;
 
 /**
- * 用户与岗位关联表 数据层
+ * 使用者與崗位關聯表 資料層
  * 
  * @author ruoyi
  */
 public interface SysUserPostMapper
 {
     /**
-     * 通过用户ID删除用户和岗位关联
+     * 透過使用者ID刪除使用者和崗位關聯
      * 
-     * @param userId 用户ID
-     * @return 结果
+     * @param userId 使用者ID
+     * @return 結果
      */
     public int deleteUserPostByUserId(Long userId);
 
     /**
-     * 通过岗位ID查询岗位使用数量
+     * 透過崗位ID查詢崗位使用數量
      * 
-     * @param postId 岗位ID
-     * @return 结果
+     * @param postId 崗位ID
+     * @return 結果
      */
     public int countUserPostById(Long postId);
 
     /**
-     * 批量删除用户和岗位关联
+     * 批次刪除使用者和崗位關聯
      * 
-     * @param ids 需要删除的数据ID
-     * @return 结果
+     * @param ids 需要刪除的資料ID
+     * @return 結果
      */
     public int deleteUserPost(Long[] ids);
 
     /**
-     * 批量新增用户岗位信息
+     * 批次新增使用者崗位資訊
      * 
-     * @param userPostList 用户岗位列表
-     * @return 结果
+     * @param userPostList 使用者崗位列表
+     * @return 結果
      */
     public int batchUserPost(List<SysUserPost> userPostList);
 }

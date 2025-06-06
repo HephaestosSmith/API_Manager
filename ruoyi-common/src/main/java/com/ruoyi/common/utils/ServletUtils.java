@@ -18,14 +18,14 @@ import com.ruoyi.common.constant.Constants;
 import com.ruoyi.common.core.text.Convert;
 
 /**
- * 客户端工具类
+ * 客戶端工具類
  * 
  * @author ruoyi
  */
 public class ServletUtils
 {
     /**
-     * 获取String参数
+     * 獲取String引數
      */
     public static String getParameter(String name)
     {
@@ -33,7 +33,7 @@ public class ServletUtils
     }
 
     /**
-     * 获取String参数
+     * 獲取String引數
      */
     public static String getParameter(String name, String defaultValue)
     {
@@ -41,7 +41,7 @@ public class ServletUtils
     }
 
     /**
-     * 获取Integer参数
+     * 獲取Integer引數
      */
     public static Integer getParameterToInt(String name)
     {
@@ -49,7 +49,7 @@ public class ServletUtils
     }
 
     /**
-     * 获取Integer参数
+     * 獲取Integer引數
      */
     public static Integer getParameterToInt(String name, Integer defaultValue)
     {
@@ -57,7 +57,7 @@ public class ServletUtils
     }
 
     /**
-     * 获取Boolean参数
+     * 獲取Boolean引數
      */
     public static Boolean getParameterToBool(String name)
     {
@@ -65,7 +65,7 @@ public class ServletUtils
     }
 
     /**
-     * 获取Boolean参数
+     * 獲取Boolean引數
      */
     public static Boolean getParameterToBool(String name, Boolean defaultValue)
     {
@@ -73,9 +73,9 @@ public class ServletUtils
     }
 
     /**
-     * 获得所有请求参数
+     * 獲得所有請求引數
      *
-     * @param request 请求对象{@link ServletRequest}
+     * @param request 請求物件{@link ServletRequest}
      * @return Map
      */
     public static Map<String, String[]> getParams(ServletRequest request)
@@ -85,9 +85,9 @@ public class ServletUtils
     }
 
     /**
-     * 获得所有请求参数
+     * 獲得所有請求引數
      *
-     * @param request 请求对象{@link ServletRequest}
+     * @param request 請求物件{@link ServletRequest}
      * @return Map
      */
     public static Map<String, String> getParamMap(ServletRequest request)
@@ -101,7 +101,7 @@ public class ServletUtils
     }
 
     /**
-     * 获取request
+     * 獲取request
      */
     public static HttpServletRequest getRequest()
     {
@@ -109,7 +109,7 @@ public class ServletUtils
     }
 
     /**
-     * 获取response
+     * 獲取response
      */
     public static HttpServletResponse getResponse()
     {
@@ -117,7 +117,7 @@ public class ServletUtils
     }
 
     /**
-     * 获取session
+     * 獲取session
      */
     public static HttpSession getSession()
     {
@@ -131,10 +131,10 @@ public class ServletUtils
     }
 
     /**
-     * 将字符串渲染到客户端
+     * 將字串渲染到客戶端
      * 
-     * @param response 渲染对象
-     * @param string 待渲染的字符串
+     * @param response 渲染物件
+     * @param string 待渲染的字串
      */
     public static void renderString(HttpServletResponse response, String string)
     {
@@ -152,7 +152,7 @@ public class ServletUtils
     }
 
     /**
-     * 是否是Ajax异步请求
+     * 是否是Ajax非同步請求
      * 
      * @param request
      */
@@ -181,10 +181,10 @@ public class ServletUtils
     }
 
     /**
-     * 内容编码
+     * 內容編碼
      * 
-     * @param str 内容
-     * @return 编码后的内容
+     * @param str 內容
+     * @return 編碼後的內容
      */
     public static String urlEncode(String str)
     {
@@ -199,10 +199,10 @@ public class ServletUtils
     }
 
     /**
-     * 内容解码
+     * 內容解碼
      * 
-     * @param str 内容
-     * @return 解码后的内容
+     * @param str 內容
+     * @return 解碼後的內容
      */
     public static String urlDecode(String str)
     {

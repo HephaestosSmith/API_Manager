@@ -1,11 +1,11 @@
 <template>
 	<div class="popup-result">
-		<p class="title">最近5次运行时间</p>
+		<p class="title">最近5次執行時間</p>
 		<ul class="popup-result-scroll">
 			<template v-if='isShow'>
 				<li v-for='item in resultList' :key="item">{{item}}</li>
 			</template>
-			<li v-else>计算结果中...</li>
+			<li v-else>計算結果中...</li>
 		</ul>
 	</div>
 </template>
@@ -23,18 +23,18 @@ export default {
 	},
 	name: 'crontab-result',
 	methods: {
-		// 表达式值变化时，开始去计算结果
+		// 表示式值變化時，開始去計算結果
 		expressionChange() {
 
-			// 计算开始-隐藏结果
+			// 計算開始-隱藏結果
 			this.isShow = false
-			// 获取规则数组[0秒、1分、2时、3日、4月、5星期、6年]
+			// 獲取規則陣列[0秒、1分、2時、3日、4月、5星期、6年]
 			let ruleArr = this.$options.propsData.ex.split(' ')
-			// 用于记录进入循环的次数
+			// 用於記錄進入迴圈的次數
 			let nums = 0
-			// 用于暂时存符号时间规则结果的数组
+			// 用於暫時存符號時間規則結果的陣列
 			let resultArr = []
-			// 获取当前时间精确至[年、月、日、时、分、秒]
+			// 獲取當前時間精確至[年、月、日、時、分、秒]
 			let nTime = new Date()
 			let nYear = nTime.getFullYear()
 			let nMonth = nTime.getMonth() + 1
@@ -42,7 +42,7 @@ export default {
 			let nHour = nTime.getHours()
 			let nMin = nTime.getMinutes()
 			let nSecond = nTime.getSeconds()
-			// 根据规则获取到近100年可能年数组、月数组等等
+			// 根據規則獲取到近100年可能年陣列、月陣列等等
 			this.getSecondArr(ruleArr[0])
 			this.getMinArr(ruleArr[1])
 			this.getHourArr(ruleArr[2])
@@ -50,21 +50,21 @@ export default {
 			this.getMonthArr(ruleArr[4])
 			this.getWeekArr(ruleArr[5])
 			this.getYearArr(ruleArr[6], nYear)
-			// 将获取到的数组赋值-方便使用
+			// 將獲取到的陣列賦值-方便使用
 			let sDate = this.dateArr[0]
 			let mDate = this.dateArr[1]
 			let hDate = this.dateArr[2]
 			let DDate = this.dateArr[3]
 			let MDate = this.dateArr[4]
 			let YDate = this.dateArr[5]
-			// 获取当前时间在数组中的索引
+			// 獲取當前時間在陣列中的索引
 			let sIdx = this.getIndex(sDate, nSecond)
 			let mIdx = this.getIndex(mDate, nMin)
 			let hIdx = this.getIndex(hDate, nHour)
 			let DIdx = this.getIndex(DDate, nDay)
 			let MIdx = this.getIndex(MDate, nMonth)
 			let YIdx = this.getIndex(YDate, nYear)
-			// 重置月日时分秒的函数(后面用的比较多)
+			// 重置月日時分秒的函式(後面用的比較多)
 			const resetSecond = function () {
 				sIdx = 0
 				nSecond = sDate[sIdx]
@@ -89,41 +89,41 @@ export default {
 				nMonth = MDate[MIdx]
 				resetDay()
 			}
-			// 如果当前年份不为数组中当前值
+			// 如果當前年份不為陣列中當前值
 			if (nYear !== YDate[YIdx]) {
 				resetMonth()
 			}
-			// 如果当前月份不为数组中当前值
+			// 如果當前月份不為陣列中當前值
 			if (nMonth !== MDate[MIdx]) {
 				resetDay()
 			}
-			// 如果当前“日”不为数组中当前值
+			// 如果當前“日”不為陣列中當前值
 			if (nDay !== DDate[DIdx]) {
 				resetHour()
 			}
-			// 如果当前“时”不为数组中当前值
+			// 如果當前“時”不為陣列中當前值
 			if (nHour !== hDate[hIdx]) {
 				resetMin()
 			}
-			// 如果当前“分”不为数组中当前值
+			// 如果當前“分”不為陣列中當前值
 			if (nMin !== mDate[mIdx]) {
 				resetSecond()
 			}
 
-			// 循环年份数组
+			// 迴圈年份陣列
 			goYear: for (let Yi = YIdx; Yi < YDate.length; Yi++) {
 				let YY = YDate[Yi]
-				// 如果到达最大值时
+				// 如果到達最大值時
 				if (nMonth > MDate[MDate.length - 1]) {
 					resetMonth()
 					continue
 				}
-				// 循环月份数组
+				// 迴圈月份陣列
 				goMonth: for (let Mi = MIdx; Mi < MDate.length; Mi++) {
-					// 赋值、方便后面运算
+					// 賦值、方便後面運算
 					let MM = MDate[Mi];
 					MM = MM < 10 ? '0' + MM : MM
-					// 如果到达最大值时
+					// 如果到達最大值時
 					if (nDay > DDate[DDate.length - 1]) {
 						resetDay()
 						if (Mi == MDate.length - 1) {
@@ -132,13 +132,13 @@ export default {
 						}
 						continue
 					}
-					// 循环日期数组
+					// 迴圈日期陣列
 					goDay: for (let Di = DIdx; Di < DDate.length; Di++) {
-						// 赋值、方便后面运算
+						// 賦值、方便後面運算
 						let DD = DDate[Di]
 						let thisDD = DD < 10 ? '0' + DD : DD
 
-						// 如果到达最大值时
+						// 如果到達最大值時
 						if (nHour > hDate[hDate.length - 1]) {
 							resetHour()
 							if (Di == DDate.length - 1) {
@@ -152,14 +152,14 @@ export default {
 							continue
 						}
 
-						// 判断日期的合法性，不合法的话也是跳出当前循环
+						// 判斷日期的合法性，不合法的話也是跳出當前迴圈
 						if (this.checkDate(YY + '-' + MM + '-' + thisDD + ' 00:00:00') !== true && this.dayRule !== 'workDay' && this.dayRule !== 'lastWeek' && this.dayRule !== 'lastDay') {
 							resetDay()
 							continue goMonth
 						}
-						// 如果日期规则中有值时
+						// 如果日期規則中有值時
 						if (this.dayRule == 'lastDay') {
-							// 如果不是合法日期则需要将前将日期调到合法日期即月末最后一天
+							// 如果不是合法日期則需要將前將日期調到合法日期即月末最後一天
 
 							if (this.checkDate(YY + '-' + MM + '-' + thisDD + ' 00:00:00') !== true) {
 								while (DD > 0 && this.checkDate(YY + '-' + MM + '-' + thisDD + ' 00:00:00') !== true) {
@@ -168,26 +168,26 @@ export default {
 								}
 							}
 						} else if (this.dayRule == 'workDay') {
-							// 校验并调整如果是2月30号这种日期传进来时需调整至正常月底
+							// 校驗並調整如果是2月30號這種日期傳進來時需調整至正常月底
 							if (this.checkDate(YY + '-' + MM + '-' + thisDD + ' 00:00:00') !== true) {
 								while (DD > 0 && this.checkDate(YY + '-' + MM + '-' + thisDD + ' 00:00:00') !== true) {
 									DD--
 									thisDD = DD < 10 ? '0' + DD : DD
 								}
 							}
-							// 获取达到条件的日期是星期X
+							// 獲取達到條件的日期是星期X
 							let thisWeek = this.formatDate(new Date(YY + '-' + MM + '-' + thisDD + ' 00:00:00'), 'week')
-							// 当星期日时
+							// 當星期日時
 							if (thisWeek == 1) {
-								// 先找下一个日，并判断是否为月底
+								// 先找下一個日，並判斷是否為月底
 								DD++
 								thisDD = DD < 10 ? '0' + DD : DD
-								// 判断下一日已经不是合法日期
+								// 判斷下一日已經不是合法日期
 								if (this.checkDate(YY + '-' + MM + '-' + thisDD + ' 00:00:00') !== true) {
 									DD -= 3
 								}
 							} else if (thisWeek == 7) {
-								// 当星期6时只需判断不是1号就可进行操作
+								// 當星期6時只需判斷不是1號就可進行操作
 								if (this.dayRuleSup !== 1) {
 									DD--
 								} else {
@@ -195,12 +195,12 @@ export default {
 								}
 							}
 						} else if (this.dayRule == 'weekDay') {
-							// 如果指定了是星期几
-							// 获取当前日期是属于星期几
+							// 如果指定了是星期幾
+							// 獲取當前日期是屬於星期幾
 							let thisWeek = this.formatDate(new Date(YY + '-' + MM + '-' + DD + ' 00:00:00'), 'week')
-							// 校验当前星期是否在星期池（dayRuleSup）中
+							// 校驗當前星期是否在星期池（dayRuleSup）中
 							if (this.dayRuleSup.indexOf(thisWeek) < 0) {
-								// 如果到达最大值时
+								// 如果到達最大值時
 								if (Di == DDate.length - 1) {
 									resetDay()
 									if (Mi == MDate.length - 1) {
@@ -212,8 +212,8 @@ export default {
 								continue
 							}
 						} else if (this.dayRule == 'assWeek') {
-							// 如果指定了是第几周的星期几
-							// 获取每月1号是属于星期几
+							// 如果指定了是第幾周的星期幾
+							// 獲取每月1號是屬於星期幾
 							let thisWeek = this.formatDate(new Date(YY + '-' + MM + '-' + DD + ' 00:00:00'), 'week')
 							if (this.dayRuleSup[1] >= thisWeek) {
 								DD = (this.dayRuleSup[0] - 1) * 7 + this.dayRuleSup[1] - thisWeek + 1
@@ -221,31 +221,31 @@ export default {
 								DD = this.dayRuleSup[0] * 7 + this.dayRuleSup[1] - thisWeek + 1
 							}
 						} else if (this.dayRule == 'lastWeek') {
-							// 如果指定了每月最后一个星期几
-							// 校验并调整如果是2月30号这种日期传进来时需调整至正常月底
+							// 如果指定了每月最後一個星期幾
+							// 校驗並調整如果是2月30號這種日期傳進來時需調整至正常月底
 							if (this.checkDate(YY + '-' + MM + '-' + thisDD + ' 00:00:00') !== true) {
 								while (DD > 0 && this.checkDate(YY + '-' + MM + '-' + thisDD + ' 00:00:00') !== true) {
 									DD--
 									thisDD = DD < 10 ? '0' + DD : DD
 								}
 							}
-							// 获取月末最后一天是星期几
+							// 獲取月末最後一天是星期幾
 							let thisWeek = this.formatDate(new Date(YY + '-' + MM + '-' + thisDD + ' 00:00:00'), 'week')
-							// 找到要求中最近的那个星期几
+							// 找到要求中最近的那個星期幾
 							if (this.dayRuleSup < thisWeek) {
 								DD -= thisWeek - this.dayRuleSup
 							} else if (this.dayRuleSup > thisWeek) {
 								DD -= 7 - (this.dayRuleSup - thisWeek)
 							}
 						}
-						// 判断时间值是否小于10置换成“05”这种格式
+						// 判斷時間值是否小於10置換成“05”這種格式
 						DD = DD < 10 ? '0' + DD : DD
 
-						// 循环“时”数组
+						// 迴圈“時”陣列
 						goHour: for (let hi = hIdx; hi < hDate.length; hi++) {
 							let hh = hDate[hi] < 10 ? '0' + hDate[hi] : hDate[hi]
 
-							// 如果到达最大值时
+							// 如果到達最大值時
 							if (nMin > mDate[mDate.length - 1]) {
 								resetMin()
 								if (hi == hDate.length - 1) {
@@ -262,11 +262,11 @@ export default {
 								}
 								continue
 							}
-							// 循环"分"数组
+							// 迴圈"分"陣列
 							goMin: for (let mi = mIdx; mi < mDate.length; mi++) {
 								let mm = mDate[mi] < 10 ? '0' + mDate[mi] : mDate[mi]
 
-								// 如果到达最大值时
+								// 如果到達最大值時
 								if (nSecond > sDate[sDate.length - 1]) {
 									resetSecond()
 									if (mi == mDate.length - 1) {
@@ -287,17 +287,17 @@ export default {
 									}
 									continue
 								}
-								// 循环"秒"数组
+								// 迴圈"秒"陣列
 								goSecond: for (let si = sIdx; si <= sDate.length - 1; si++) {
 									let ss = sDate[si] < 10 ? '0' + sDate[si] : sDate[si]
-									// 添加当前时间（时间合法性在日期循环时已经判断）
+									// 新增當前時間（時間合法性在日期迴圈時已經判斷）
 									if (MM !== '00' && DD !== '00') {
 										resultArr.push(YY + '-' + MM + '-' + DD + ' ' + hh + ':' + mm + ':' + ss)
 										nums++
 									}
-									// 如果条数满了就退出循环
+									// 如果條數滿了就退出迴圈
 									if (nums == 5) break goYear
-									// 如果到达最大值时
+									// 如果到達最大值時
 									if (si == sDate.length - 1) {
 										resetSecond()
 										if (mi == mDate.length - 1) {
@@ -324,21 +324,21 @@ export default {
 					}//goDay
 				}//goMonth
 			}
-			// 判断100年内的结果条数
+			// 判斷100年內的結果條數
 			if (resultArr.length == 0) {
-				this.resultList = ['没有达到条件的结果！']
+				this.resultList = ['沒有達到條件的結果！']
 			} else {
 				this.resultList = resultArr
 				if (resultArr.length !== 5) {
-					this.resultList.push('最近100年内只有上面' + resultArr.length + '条结果！')
+					this.resultList.push('最近100年內只有上面' + resultArr.length + '條結果！')
 				}
 			}
-			// 计算完成-显示结果
+			// 計算完成-顯示結果
 			this.isShow = true
 
 
 		},
-		// 用于计算某位数字在数组中的索引
+		// 用於計算某位數字在陣列中的索引
 		getIndex(arr, value) {
 			if (value <= arr[0] || value > arr[arr.length - 1]) {
 				return 0
@@ -350,7 +350,7 @@ export default {
 				}
 			}
 		},
-		// 获取"年"数组
+		// 獲取"年"陣列
 		getYearArr(rule, year) {
 			this.dateArr[5] = this.getOrderArr(year, year + 100)
 			if (rule !== undefined) {
@@ -363,7 +363,7 @@ export default {
 				}
 			}
 		},
-		// 获取"月"数组
+		// 獲取"月"陣列
 		getMonthArr(rule) {
 			this.dateArr[4] = this.getOrderArr(1, 12)
 			if (rule.indexOf('-') >= 0) {
@@ -374,9 +374,9 @@ export default {
 				this.dateArr[4] = this.getAssignArr(rule)
 			}
 		},
-		// 获取"日"数组-主要为日期规则
+		// 獲取"日"陣列-主要為日期規則
 		getWeekArr(rule) {
-			// 只有当日期规则的两个值均为“”时则表达日期是有选项的
+			// 只有當日期規則的兩個值均為“”時則表達日期是有選項的
 			if (this.dayRule == '' && this.dayRuleSup == '') {
 				if (rule.indexOf('-') >= 0) {
 					this.dayRule = 'weekDay'
@@ -402,7 +402,7 @@ export default {
 				}
 			}
 		},
-		// 获取"日"数组-少量为日期规则
+		// 獲取"日"陣列-少量為日期規則
 		getDayArr(rule) {
 			this.dateArr[3] = this.getOrderArr(1, 31)
 			this.dayRule = ''
@@ -428,7 +428,7 @@ export default {
 				this.dayRuleSup = 'null'
 			}
 		},
-		// 获取"时"数组
+		// 獲取"時"陣列
 		getHourArr(rule) {
 			this.dateArr[2] = this.getOrderArr(0, 23)
 			if (rule.indexOf('-') >= 0) {
@@ -439,7 +439,7 @@ export default {
 				this.dateArr[2] = this.getAssignArr(rule)
 			}
 		},
-		// 获取"分"数组
+		// 獲取"分"陣列
 		getMinArr(rule) {
 			this.dateArr[1] = this.getOrderArr(0, 59)
 			if (rule.indexOf('-') >= 0) {
@@ -450,7 +450,7 @@ export default {
 				this.dateArr[1] = this.getAssignArr(rule)
 			}
 		},
-		// 获取"秒"数组
+		// 獲取"秒"陣列
 		getSecondArr(rule) {
 			this.dateArr[0] = this.getOrderArr(0, 59)
 			if (rule.indexOf('-') >= 0) {
@@ -461,7 +461,7 @@ export default {
 				this.dateArr[0] = this.getAssignArr(rule)
 			}
 		},
-		// 根据传进来的min-max返回一个顺序的数组
+		// 根據傳進來的min-max返回一個順序的陣列
 		getOrderArr(min, max) {
 			let arr = []
 			for (let i = min; i <= max; i++) {
@@ -469,7 +469,7 @@ export default {
 			}
 			return arr
 		},
-		// 根据规则中指定的零散值返回一个数组
+		// 根據規則中指定的零散值返回一個陣列
 		getAssignArr(rule) {
 			let arr = []
 			let assiginArr = rule.split(',')
@@ -479,7 +479,7 @@ export default {
 			arr.sort(this.compare)
 			return arr
 		},
-		// 根据一定算术规则计算返回一个数组
+		// 根據一定算術規則計算返回一個陣列
 		getAverageArr(rule, limit) {
 			let arr = []
 			let agArr = rule.split('/')
@@ -491,9 +491,9 @@ export default {
 			}
 			return arr
 		},
-		// 根据规则返回一个具有周期性的数组
+		// 根據規則返回一個具有週期性的陣列
 		getCycleArr(rule, limit, status) {
-			// status--表示是否从0开始（则从1开始）
+			// status--表示是否從0開始（則從1開始）
 			let arr = []
 			let cycleArr = rule.split('-')
 			let min = Number(cycleArr[0])
@@ -511,7 +511,7 @@ export default {
 			arr.sort(this.compare)
 			return arr
 		},
-		// 比较数字大小（用于Array.sort）
+		// 比較數字大小（用於Array.sort）
 		compare(value1, value2) {
 			if (value2 - value1 > 0) {
 				return -1
@@ -521,7 +521,7 @@ export default {
 		},
 		// 格式化日期格式如：2017-9-19 18:04:33
 		formatDate(value, type) {
-			// 计算日期相关值
+			// 計算日期相關值
 			let time = typeof value == 'number' ? new Date(value) : value
 			let Y = time.getFullYear()
 			let M = time.getMonth() + 1
@@ -530,15 +530,15 @@ export default {
 			let m = time.getMinutes()
 			let s = time.getSeconds()
 			let week = time.getDay()
-			// 如果传递了type的话
+			// 如果傳遞了type的話
 			if (type == undefined) {
 				return Y + '-' + (M < 10 ? '0' + M : M) + '-' + (D < 10 ? '0' + D : D) + ' ' + (h < 10 ? '0' + h : h) + ':' + (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s)
 			} else if (type == 'week') {
-				// 在quartz中 1为星期日
+				// 在quartz中 1為星期日
 				return week + 1
 			}
 		},
-		// 检查日期是否存在
+		// 檢查日期是否存在
 		checkDate(value) {
 			let time = new Date(value)
 			let format = this.formatDate(time)
@@ -550,7 +550,7 @@ export default {
 	},
 	props: ['ex'],
 	mounted: function () {
-		// 初始化 获取一次结果
+		// 初始化 獲取一次結果
 		this.expressionChange()
 	}
 }

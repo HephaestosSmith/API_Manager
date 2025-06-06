@@ -1,5 +1,5 @@
 /**
- * 路径匹配器
+ * 路徑匹配器
  * @param {string} pattern
  * @param {string} path
  * @returns {Boolean}
@@ -11,7 +11,7 @@ export function isPathMatch(pattern, path) {
 }
 
 /**
- * 判断value字符串是否为空 
+ * 判斷value字串是否為空 
  * @param {string} value
  * @returns {Boolean}
  */
@@ -23,7 +23,7 @@ export function isEmpty(value) {
 }
 
 /**
- * 判断url是否是http或https 
+ * 判斷url是否是http或https 
  * @param {string} url
  * @returns {Boolean}
  */
@@ -32,7 +32,7 @@ export function isHttp(url) {
 }
 
 /**
- * 判断path是否为外链
+ * 判斷path是否為外鏈
  * @param {string} path
  * @returns {Boolean}
  */

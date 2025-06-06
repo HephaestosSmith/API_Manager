@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询参数列表
+// 查詢引數列表
 export function listConfig(query) {
   return request({
     url: '/system/config/list',
@@ -9,7 +9,7 @@ export function listConfig(query) {
   })
 }
 
-// 查询参数详细
+// 查詢引數詳細
 export function getConfig(configId) {
   return request({
     url: '/system/config/' + configId,
@@ -17,7 +17,7 @@ export function getConfig(configId) {
   })
 }
 
-// 根据参数键名查询参数值
+// 根據引數鍵名查詢引數值
 export function getConfigKey(configKey) {
   return request({
     url: '/system/config/configKey/' + configKey,
@@ -25,7 +25,7 @@ export function getConfigKey(configKey) {
   })
 }
 
-// 新增参数配置
+// 新增引數配置
 export function addConfig(data) {
   return request({
     url: '/system/config',
@@ -34,7 +34,7 @@ export function addConfig(data) {
   })
 }
 
-// 修改参数配置
+// 修改引數配置
 export function updateConfig(data) {
   return request({
     url: '/system/config',
@@ -43,7 +43,7 @@ export function updateConfig(data) {
   })
 }
 
-// 删除参数配置
+// 刪除引數配置
 export function delConfig(configId) {
   return request({
     url: '/system/config/' + configId,
@@ -51,7 +51,7 @@ export function delConfig(configId) {
   })
 }
 
-// 刷新参数缓存
+// 重新整理引數快取
 export function refreshCache() {
   return request({
     url: '/system/config/refreshCache',

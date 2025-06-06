@@ -14,7 +14,7 @@ import com.ruoyi.system.service.ISysMenuService;
 import com.ruoyi.system.service.ISysRoleService;
 
 /**
- * 用户权限处理
+ * 使用者許可權處理
  * 
  * @author ruoyi
  */
@@ -28,15 +28,15 @@ public class SysPermissionService
     private ISysMenuService menuService;
 
     /**
-     * 获取角色数据权限
+     * 獲取角色資料許可權
      * 
-     * @param user 用户信息
-     * @return 角色权限信息
+     * @param user 使用者資訊
+     * @return 角色許可權資訊
      */
     public Set<String> getRolePermission(SysUser user)
     {
         Set<String> roles = new HashSet<String>();
-        // 管理员拥有所有权限
+        // 管理員擁有所有許可權
         if (user.isAdmin())
         {
             roles.add("admin");
@@ -49,15 +49,15 @@ public class SysPermissionService
     }
 
     /**
-     * 获取菜单数据权限
+     * 獲取選單資料許可權
      * 
-     * @param user 用户信息
-     * @return 菜单权限信息
+     * @param user 使用者資訊
+     * @return 選單許可權資訊
      */
     public Set<String> getMenuPermission(SysUser user)
     {
         Set<String> perms = new HashSet<String>();
-        // 管理员拥有所有权限
+        // 管理員擁有所有許可權
         if (user.isAdmin())
         {
             perms.add("*:*:*");
@@ -67,7 +67,7 @@ public class SysPermissionService
             List<SysRole> roles = user.getRoles();
             if (!CollectionUtils.isEmpty(roles))
             {
-                // 多角色设置permissions属性，以便数据权限匹配权限
+                // 多角色設定permissions屬性，以便資料許可權匹配許可權
                 for (SysRole role : roles)
                 {
                     if (StringUtils.equals(role.getStatus(), UserConstants.ROLE_NORMAL) && !role.isAdmin())

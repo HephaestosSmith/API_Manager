@@ -25,7 +25,7 @@ import com.ruoyi.system.service.ISysConfigService;
 import com.ruoyi.system.service.ISysMenuService;
 
 /**
- * 登录验证
+ * 登入驗證
  * 
  * @author ruoyi
  */
@@ -48,10 +48,10 @@ public class SysLoginController
     private ISysConfigService configService;
 
     /**
-     * 登录方法
+     * 登入方法
      * 
-     * @param loginBody 登录信息
-     * @return 结果
+     * @param loginBody 登入資訊
+     * @return 結果
      */
     @PostMapping("/login")
     public AjaxResult login(@RequestBody LoginBody loginBody)
@@ -65,9 +65,9 @@ public class SysLoginController
     }
 
     /**
-     * 获取用户信息
+     * 獲取使用者資訊
      * 
-     * @return 用户信息
+     * @return 使用者資訊
      */
     @GetMapping("getInfo")
     public AjaxResult getInfo()
@@ -76,7 +76,7 @@ public class SysLoginController
         SysUser user = loginUser.getUser();
         // 角色集合
         Set<String> roles = permissionService.getRolePermission(user);
-        // 权限集合
+        // 許可權集合
         Set<String> permissions = permissionService.getMenuPermission(user);
         if (!loginUser.getPermissions().equals(permissions))
         {
@@ -93,9 +93,9 @@ public class SysLoginController
     }
 
     /**
-     * 获取路由信息
+     * 獲取路由資訊
      * 
-     * @return 路由信息
+     * @return 路由資訊
      */
     @GetMapping("getRouters")
     public AjaxResult getRouters()
@@ -105,14 +105,14 @@ public class SysLoginController
         return AjaxResult.success(menuService.buildMenus(menus));
     }
     
-    // 检查初始密码是否提醒修改
+    // 檢查初始密碼是否提醒修改
     public boolean initPasswordIsModify(Date pwdUpdateDate)
     {
         Integer initPasswordModify = Convert.toInt(configService.selectConfigByKey("sys.account.initPasswordModify"));
         return initPasswordModify != null && initPasswordModify == 1 && pwdUpdateDate == null;
     }
 
-    // 检查密码是否过期
+    // 檢查密碼是否過期
     public boolean passwordIsExpiration(Date pwdUpdateDate)
     {
         Integer passwordValidateDays = Convert.toInt(configService.selectConfigByKey("sys.account.passwordValidateDays"));
@@ -120,7 +120,7 @@ public class SysLoginController
         {
             if (StringUtils.isNull(pwdUpdateDate))
             {
-                // 如果从未修改过初始密码，直接提醒过期
+                // 如果從未修改過初始密碼，直接提醒過期
                 return true;
             }
             Date nowDate = DateUtils.getNowDate();

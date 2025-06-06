@@ -4,7 +4,7 @@ import java.io.Serializable;
 import com.ruoyi.common.constant.HttpStatus;
 
 /**
- * 响应信息主体
+ * 響應資訊主體
  *
  * @author ruoyi
  */
@@ -15,7 +15,7 @@ public class R<T> implements Serializable
     /** 成功 */
     public static final int SUCCESS = HttpStatus.SUCCESS;
 
-    /** 失败 */
+    /** 失敗 */
     public static final int FAIL = HttpStatus.ERROR;
 
     private int code;
@@ -41,7 +41,7 @@ public class R<T> implements Serializable
 
     public static <T> R<T> fail()
     {
-        return restResult(null, FAIL, "操作失败");
+        return restResult(null, FAIL, "操作失敗");
     }
 
     public static <T> R<T> fail(String msg)
@@ -51,7 +51,7 @@ public class R<T> implements Serializable
 
     public static <T> R<T> fail(T data)
     {
-        return restResult(data, FAIL, "操作失败");
+        return restResult(data, FAIL, "操作失敗");
     }
 
     public static <T> R<T> fail(T data, String msg)

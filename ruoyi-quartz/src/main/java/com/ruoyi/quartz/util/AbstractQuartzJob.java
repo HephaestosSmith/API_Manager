@@ -16,7 +16,7 @@ import com.ruoyi.quartz.domain.SysJobLog;
 import com.ruoyi.quartz.service.ISysJobLogService;
 
 /**
- * 抽象quartz调用
+ * 抽象quartz呼叫
  *
  * @author ruoyi
  */
@@ -25,7 +25,7 @@ public abstract class AbstractQuartzJob implements Job
     private static final Logger log = LoggerFactory.getLogger(AbstractQuartzJob.class);
 
     /**
-     * 线程本地变量
+     * 執行緒本地變數
      */
     private static ThreadLocal<Date> threadLocal = new ThreadLocal<>();
 
@@ -45,16 +45,16 @@ public abstract class AbstractQuartzJob implements Job
         }
         catch (Exception e)
         {
-            log.error("任务执行异常  - ：", e);
+            log.error("任務執行異常  - ：", e);
             after(context, sysJob, e);
         }
     }
 
     /**
-     * 执行前
+     * 執行前
      *
-     * @param context 工作执行上下文对象
-     * @param sysJob 系统计划任务
+     * @param context 工作執行上下文物件
+     * @param sysJob 系統計劃任務
      */
     protected void before(JobExecutionContext context, SysJob sysJob)
     {
@@ -62,10 +62,10 @@ public abstract class AbstractQuartzJob implements Job
     }
 
     /**
-     * 执行后
+     * 執行後
      *
-     * @param context 工作执行上下文对象
-     * @param sysJob 系统计划任务
+     * @param context 工作執行上下文物件
+     * @param sysJob 系統計劃任務
      */
     protected void after(JobExecutionContext context, SysJob sysJob, Exception e)
     {
@@ -79,7 +79,7 @@ public abstract class AbstractQuartzJob implements Job
         sysJobLog.setStartTime(startTime);
         sysJobLog.setStopTime(new Date());
         long runMs = sysJobLog.getStopTime().getTime() - sysJobLog.getStartTime().getTime();
-        sysJobLog.setJobMessage(sysJobLog.getJobName() + " 总共耗时：" + runMs + "毫秒");
+        sysJobLog.setJobMessage(sysJobLog.getJobName() + " 總共耗時：" + runMs + "毫秒");
         if (e != null)
         {
             sysJobLog.setStatus(Constants.FAIL);
@@ -91,16 +91,16 @@ public abstract class AbstractQuartzJob implements Job
             sysJobLog.setStatus(Constants.SUCCESS);
         }
 
-        // 写入数据库当中
+        // 寫入資料庫當中
         SpringUtils.getBean(ISysJobLogService.class).addJobLog(sysJobLog);
     }
 
     /**
-     * 执行方法，由子类重载
+     * 執行方法，由子類過載
      *
-     * @param context 工作执行上下文对象
-     * @param sysJob 系统计划任务
-     * @throws Exception 执行过程中的异常
+     * @param context 工作執行上下文物件
+     * @param sysJob 系統計劃任務
+     * @throws Exception 執行過程中的異常
      */
     protected abstract void doExecute(JobExecutionContext context, SysJob sysJob) throws Exception;
 }

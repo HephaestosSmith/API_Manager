@@ -1,18 +1,18 @@
 <template>
   <div class="top-right-btn" :style="style">
     <el-row>
-      <el-tooltip class="item" effect="dark" :content="showSearch ? '隐藏搜索' : '显示搜索'" placement="top" v-if="search">
+      <el-tooltip class="item" effect="dark" :content="showSearch ? '隱藏搜尋' : '顯示搜尋'" placement="top" v-if="search">
         <el-button size="mini" circle icon="el-icon-search" @click="toggleSearch()" />
       </el-tooltip>
-      <el-tooltip class="item" effect="dark" content="刷新" placement="top">
+      <el-tooltip class="item" effect="dark" content="重新整理" placement="top">
         <el-button size="mini" circle icon="el-icon-refresh" @click="refresh()" />
       </el-tooltip>
-      <el-tooltip class="item" effect="dark" content="显隐列" placement="top" v-if="columns">
+      <el-tooltip class="item" effect="dark" content="顯隱列" placement="top" v-if="columns">
         <el-button size="mini" circle icon="el-icon-menu" @click="showColumn()" v-if="showColumnsType == 'transfer'"/>
         <el-dropdown trigger="click" :hide-on-click="false" style="padding-left: 12px" v-if="showColumnsType == 'checkbox'">
           <el-button size="mini" circle icon="el-icon-menu" />
           <el-dropdown-menu slot="dropdown">
-            <!-- 全选/反选 按钮 -->
+            <!-- 全選/反選 按鈕 -->
             <el-dropdown-item>
               <el-checkbox :indeterminate="isIndeterminate" v-model="isChecked" @change="toggleCheckAll"> 列展示 </el-checkbox>
             </el-dropdown-item>
@@ -28,7 +28,7 @@
     </el-row>
     <el-dialog :title="title" :visible.sync="open" append-to-body>
       <el-transfer
-        :titles="['显示', '隐藏']"
+        :titles="['顯示', '隱藏']"
         v-model="value"
         :data="columns"
         @change="dataChange"
@@ -41,35 +41,35 @@ export default {
   name: "RightToolbar",
   data() {
     return {
-      // 显隐数据
+      // 顯隱資料
       value: [],
-      // 弹出层标题
-      title: "显示/隐藏",
-      // 是否显示弹出层
+      // 彈出層標題
+      title: "顯示/隱藏",
+      // 是否顯示彈出層
       open: false
     }
   },
   props: {
-    /* 是否显示检索条件 */
+    /* 是否顯示檢索條件 */
     showSearch: {
       type: Boolean,
       default: true
     },
-    /* 显隐列信息 */
+    /* 顯隱列資訊 */
     columns: {
       type: Array
     },
-    /* 是否显示检索图标 */
+    /* 是否顯示檢索圖示 */
     search: {
       type: Boolean,
       default: true
     },
-    /* 显隐列类型（transfer穿梭框、checkbox复选框） */
+    /* 顯隱列型別（transfer穿梭框、checkbox核取方塊） */
     showColumnsType: {
       type: String,
       default: "checkbox"
     },
-    /* 右外边距 */
+    /* 右外邊距 */
     gutter: {
       type: Number,
       default: 10
@@ -95,7 +95,7 @@ export default {
   },
   created() {
     if (this.showColumnsType == 'transfer') {
-      // 显隐列初始默认隐藏列
+      // 顯隱列初始預設隱藏列
       for (let item in this.columns) {
         if (this.columns[item].visible === false) {
           this.value.push(parseInt(item))
@@ -104,30 +104,30 @@ export default {
     }
   },
   methods: {
-    // 搜索
+    // 搜尋
     toggleSearch() {
       this.$emit("update:showSearch", !this.showSearch)
     },
-    // 刷新
+    // 重新整理
     refresh() {
       this.$emit("queryTable")
     },
-    // 右侧列表元素变化
+    // 右側列表元素變化
     dataChange(data) {
       for (let item in this.columns) {
         const key = this.columns[item].key
         this.columns[item].visible = !data.includes(key)
       }
     },
-    // 打开显隐列dialog
+    // 開啟顯隱列dialog
     showColumn() {
       this.open = true
     },
-    // 单勾选
+    // 單勾選
     checkboxChange(event, label) {
       this.columns.filter(item => item.label == label)[0].visible = event
     },
-    // 切换全选/反选
+    // 切換全選/反選
     toggleCheckAll() {
       const newValue = !this.isChecked
       this.columns.forEach((col) => (col.visible = newValue))

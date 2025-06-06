@@ -1,7 +1,7 @@
 package com.ruoyi.common.utils;
 
 /**
- * 处理并记录日志文件
+ * 處理並記錄日誌檔案
  * 
  * @author ruoyi
  */

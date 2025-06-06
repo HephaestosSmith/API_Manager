@@ -2,15 +2,15 @@
   <div class="app-container home">
     <el-row :gutter="20">
       <el-col :sm="24" :lg="12" style="padding-left: 20px">
-        <h2>若依后台管理框架</h2>
+        <h2>若依後臺管理框架</h2>
         <p>
-          一直想做一款后台管理系统，看了很多优秀的开源项目但是发现没有合适自己的。于是利用空闲休息时间开始自己写一套后台系统。如此有了若依管理系统，她可以用于所有的Web应用程序，如网站管理后台，网站会员中心，CMS，CRM，OA等等，当然，您也可以对她进行深度定制，以做出更强系统。所有前端后台代码封装过后十分精简易上手，出错概率低。同时支持移动客户端访问。系统会陆续更新一些实用功能。
+          一直想做一款後臺管理系統，看了很多優秀的開源專案但是發現沒有合適自己的。於是利用空閒休息時間開始自己寫一套後臺系統。如此有了若依管理系統，她可以用於所有的Web應用程式，如網站管理後臺，網站會員中心，CMS，CRM，OA等等，當然，您也可以對她進行深度定製，以做出更強系統。所有前端後臺程式碼封裝過後十分精簡易上手，出錯機率低。同時支援移動客戶端訪問。系統會陸續更新一些實用功能。
         </p>
         <p>
-          <b>当前版本:</b> <span>v{{ version }}</span>
+          <b>當前版本:</b> <span>v{{ version }}</span>
         </p>
         <p>
-          <el-tag type="danger">&yen;免费开源</el-tag>
+          <el-tag type="danger">&yen;免費開源</el-tag>
         </p>
         <p>
           <el-button
@@ -19,14 +19,14 @@
             icon="el-icon-cloudy"
             plain
             @click="goTarget('https://gitee.com/y_project/RuoYi-Vue')"
-            >访问码云</el-button
+            >訪問碼雲</el-button
           >
           <el-button
             size="mini"
             icon="el-icon-s-home"
             plain
             @click="goTarget('http://ruoyi.vip')"
-            >访问主页</el-button
+            >訪問主頁</el-button
           >
         </p>
       </el-col>
@@ -34,12 +34,12 @@
       <el-col :sm="24" :lg="12" style="padding-left: 50px">
         <el-row>
           <el-col :span="12">
-            <h2>技术选型</h2>
+            <h2>技術選型</h2>
           </el-col>
         </el-row>
         <el-row>
           <el-col :span="6">
-            <h4>后端技术</h4>
+            <h4>後端技術</h4>
             <ul>
               <li>SpringBoot</li>
               <li>Spring Security</li>
@@ -51,7 +51,7 @@
             </ul>
           </el-col>
           <el-col :span="6">
-            <h4>前端技术</h4>
+            <h4>前端技術</h4>
             <ul>
               <li>Vue</li>
               <li>Vuex</li>
@@ -70,24 +70,24 @@
       <el-col :xs="24" :sm="24" :md="12" :lg="8">
         <el-card class="update-log">
           <div slot="header" class="clearfix">
-            <span>联系信息</span>
+            <span>聯絡資訊</span>
           </div>
           <div class="body">
             <p>
-              <i class="el-icon-s-promotion"></i> 官网：<el-link
+              <i class="el-icon-s-promotion"></i> 官網：<el-link
                 href="http://www.ruoyi.vip"
                 target="_blank"
                 >http://www.ruoyi.vip</el-link
               >
             </p>
             <p>
-              <i class="el-icon-user-solid"></i> QQ群：<s> 满937441 </s> <s> 满887144332 </s>
-              <s> 满180251782 </s> <s> 满104180207 </s> <s> 满186866453 </s> <s> 满201396349 </s>
-              <s> 满101456076 </s> <s> 满101539465 </s> <s> 满264312783 </s> <s> 满167385320 </s> 
-              <s> 满104748341 </s> <s> 满160110482 </s> <s> 满170801498 </s> <s> 满108482800 </s> 
-              <s> 满101046199 </s> <s> 满136919097 </s> <s> 满143961921 </s> <s> 满174951577 </s> 
-              <s> 满161281055 </s> <s> 满138988063 </s> <s> 满151450850 </s> <s> 满224622315 </s>
-              <s> 满287842588 </s> <s> 满187944233 </s> <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=G6r5KGCaa3pqdbUSXNIgYloyb8e0_L0D&authKey=4w8tF1eGW7%2FedWn%2FHAypQksdrML%2BDHolQSx7094Agm7Luakj9EbfPnSTxSi2T1LQ&noverify=0&group_code=228578329" target="_blank">228578329</a>
+              <i class="el-icon-user-solid"></i> QQ群：<s> 滿937441 </s> <s> 滿887144332 </s>
+              <s> 滿180251782 </s> <s> 滿104180207 </s> <s> 滿186866453 </s> <s> 滿201396349 </s>
+              <s> 滿101456076 </s> <s> 滿101539465 </s> <s> 滿264312783 </s> <s> 滿167385320 </s> 
+              <s> 滿104748341 </s> <s> 滿160110482 </s> <s> 滿170801498 </s> <s> 滿108482800 </s> 
+              <s> 滿101046199 </s> <s> 滿136919097 </s> <s> 滿143961921 </s> <s> 滿174951577 </s> 
+              <s> 滿161281055 </s> <s> 滿138988063 </s> <s> 滿151450850 </s> <s> 滿224622315 </s>
+              <s> 滿287842588 </s> <s> 滿187944233 </s> <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=G6r5KGCaa3pqdbUSXNIgYloyb8e0_L0D&authKey=4w8tF1eGW7%2FedWn%2FHAypQksdrML%2BDHolQSx7094Agm7Luakj9EbfPnSTxSi2T1LQ&noverify=0&group_code=228578329" target="_blank">228578329</a>
             </p>
             <p>
               <i class="el-icon-chat-dot-round"></i> 微信：<a
@@ -96,9 +96,9 @@
               >
             </p>
             <p>
-              <i class="el-icon-money"></i> 支付宝：<a
+              <i class="el-icon-money"></i> 支付寶：<a
                 href="javascript:;"
-                class="支付宝信息"
+                class="支付寶資訊"
                 >/ *若依</a
               >
             </p>
@@ -108,925 +108,925 @@
       <el-col :xs="24" :sm="24" :md="12" :lg="8">
         <el-card class="update-log">
           <div slot="header" class="clearfix">
-            <span>更新日志</span>
+            <span>更新日誌</span>
           </div>
           <el-collapse accordion>
             <el-collapse-item title="v3.9.0 - 2025-05-28">
               <ol>
-                <li>优化菜单搜索查询页</li>
-                <li>导航栏显示昵称&设置</li>
-                <li>菜单管理新增路由名称</li>
-                <li>添加底部版权信息&开关</li>
-                <li>分配角色禁用不允许勾选</li>
-                <li>Excel导入导出支持多图片</li>
-                <li>添加页签图标显示开关功能</li>
-                <li>上传组件新增拖动排序属性</li>
-                <li>显隐列组件支持全选/全不选</li>
-                <li>初始密码支持自定义修改策略</li>
-                <li>账号密码支持自定义更新周期</li>
-                <li>代码生成列表支持按时间排序</li>
-                <li>支持富文本复制粘贴图片上传至url</li>
-                <li>支持文件&图片组件自定义地址&参数</li>
-                <li>升级tomcat到最新版本9.0.105</li>
-                <li>升级oshi到最新版本6.8.1</li>
-                <li>升级fastjson到最新版2.0.57</li>
-                <li>升级commons.io到最新版本2.19.0</li>
-                <li>package.json移除runjs依赖</li>
-                <li>package.json移除eslint依赖</li>
-                <li>package.json移除vue-meta依赖</li>
-                <li>修复代码生成主子表校验必填失效问题</li>
-                <li>优化前端树结构性能问题</li>
-                <li>优化前端处理路由函数代码</li>
-                <li>优化文件上传组件新增类型</li>
-                <li>优化顶部菜单搜索栏为多层级显示</li>
-                <li>优化文件&图片上传组件新增disabled属性</li>
-                <li>优化空指针异常时无法获取错误信息问题</li>
-                <li>优化定时任务字符包含多个括号导致数据错误</li>
-                <li>优化登录&注册页表头使用VUE_APP_TITLE配置值</li>
-                <li>优化导出Excel日期格式双击离开后与设定的格式不一致问题</li>
-                <li>其他细节优化</li>
+                <li>最佳化選單搜尋查詢頁</li>
+                <li>導航欄顯示暱稱&設定</li>
+                <li>選單管理新增路由名稱</li>
+                <li>新增底部版權資訊&開關</li>
+                <li>分配角色禁用不允許勾選</li>
+                <li>Excel匯入匯出支援多圖片</li>
+                <li>新增頁籤圖示顯示開關功能</li>
+                <li>上傳元件新增拖動排序屬性</li>
+                <li>顯隱列元件支援全選/全不選</li>
+                <li>初始密碼支援自定義修改策略</li>
+                <li>賬號密碼支援自定義更新週期</li>
+                <li>程式碼生成列表支援按時間排序</li>
+                <li>支援富文字複製貼上圖片上傳至url</li>
+                <li>支援檔案&圖片元件自定義地址&引數</li>
+                <li>升級tomcat到最新版本9.0.105</li>
+                <li>升級oshi到最新版本6.8.1</li>
+                <li>升級fastjson到最新版2.0.57</li>
+                <li>升級commons.io到最新版本2.19.0</li>
+                <li>package.json移除runjs依賴</li>
+                <li>package.json移除eslint依賴</li>
+                <li>package.json移除vue-meta依賴</li>
+                <li>修復程式碼生成主子表校驗必填失效問題</li>
+                <li>最佳化前端樹結構效能問題</li>
+                <li>最佳化前端處理路由函式程式碼</li>
+                <li>最佳化檔案上傳元件新增型別</li>
+                <li>最佳化頂部選單搜尋欄為多層級顯示</li>
+                <li>最佳化檔案&圖片上傳元件新增disabled屬性</li>
+                <li>最佳化空指標異常時無法獲取錯誤資訊問題</li>
+                <li>最佳化定時任務字元包含多個括號導致資料錯誤</li>
+                <li>最佳化登入&註冊頁表頭使用VUE_APP_TITLE配置值</li>
+                <li>最佳化匯出Excel日期格式雙擊離開後與設定的格式不一致問題</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.9 - 2024-12-30">
               <ol>
-                <li>用户管理支持分栏拖动</li>
-                <li>修改主题样式本地读取</li>
-                <li>用户头像http(s)链接支持</li>
-                <li>用户管理过滤掉已禁用部门</li>
-                <li>支持自定义显示Excel属性列</li>
-                <li>操作日志记录DELETE请求参数</li>
-                <li>白名单支持对通配符路径匹配</li>
-                <li>校检文件名是否包含特殊字符</li>
-                <li>代码生成创建表屏蔽违规的字符</li>
-                <li>菜单面包屑导航支持多层级显示</li>
-                <li>Excel注解支持wrapText是否允许内容换行</li>
-                <li>代码生成新增配置是否允许文件覆盖到本地</li>
-                <li>修复角色禁用权限不失效问题</li>
-                <li>修复代码生成上级菜单显示问题</li>
-                <li>修复导出子列表对象只能在最后的问题</li>
-                <li>修复TopNav无法正确获取active的问题</li>
-                <li>修复默认关闭Tags-Views内链页面打不开</li>
-                <li>升级oshi到最新版本6.6.5</li>
-                <li>升级tomcat到最新版本9.0.96</li>
-                <li>升级fastjson到最新版2.0.53</li>
-                <li>升级logback到最新版本1.2.13</li>
-                <li>升级spring-framework到最新版本5.3.39</li>
-                <li>升级quill到最新版本2.0.2</li>
-                <li>升级axios到最新版本0.28.1</li>
-                <li>优化身份证脱敏正则</li>
-                <li>优化权限更新后同步缓存</li>
-                <li>优化查询时间范围日期格式</li>
-                <li>优化参数键值更换为多行文本</li>
-                <li>优化导入带标题文件关闭清理</li>
-                <li>优化上传图片带域名不增加前缀</li>
-                <li>优化特殊字符密码修改失败问题</li>
-                <li>优化无用户编号不校验数据权限</li>
-                <li>优化TopNav内链菜单点击没有高亮</li>
-                <li>优化菜单管理切换Mini布局错乱问题</li>
-                <li>其他细节优化</li>
+                <li>使用者管理支援分欄拖動</li>
+                <li>修改主題樣式本地讀取</li>
+                <li>使用者頭像http(s)連結支援</li>
+                <li>使用者管理過濾掉已禁用部門</li>
+                <li>支援自定義顯示Excel屬性列</li>
+                <li>操作日誌記錄DELETE請求引數</li>
+                <li>白名單支援對萬用字元路徑匹配</li>
+                <li>校檢檔名是否包含特殊字元</li>
+                <li>程式碼生成建立表遮蔽違規的字元</li>
+                <li>選單麵包屑導航支援多層級顯示</li>
+                <li>Excel註解支援wrapText是否允許內容換行</li>
+                <li>程式碼生成新增配置是否允許檔案覆蓋到本地</li>
+                <li>修復角色禁用許可權不失效問題</li>
+                <li>修復程式碼生成上級選單顯示問題</li>
+                <li>修復匯出子列表物件只能在最後的問題</li>
+                <li>修復TopNav無法正確獲取active的問題</li>
+                <li>修復預設關閉Tags-Views內鏈頁面打不開</li>
+                <li>升級oshi到最新版本6.6.5</li>
+                <li>升級tomcat到最新版本9.0.96</li>
+                <li>升級fastjson到最新版2.0.53</li>
+                <li>升級logback到最新版本1.2.13</li>
+                <li>升級spring-framework到最新版本5.3.39</li>
+                <li>升級quill到最新版本2.0.2</li>
+                <li>升級axios到最新版本0.28.1</li>
+                <li>最佳化身份證脫敏正則</li>
+                <li>最佳化許可權更新後同步快取</li>
+                <li>最佳化查詢時間範圍日期格式</li>
+                <li>最佳化引數鍵值更換為多行文字</li>
+                <li>最佳化匯入帶標題檔案關閉清理</li>
+                <li>最佳化上傳圖片帶域名不增加字首</li>
+                <li>最佳化特殊字元密碼修改失敗問題</li>
+                <li>最佳化無使用者編號不校驗資料許可權</li>
+                <li>最佳化TopNav內鏈選單點選沒有高亮</li>
+                <li>最佳化選單管理切換Mini佈局錯亂問題</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.8 - 2024-06-30">
               <ol>
-                <li>菜单管理新增路由名称</li>
-                <li>新增数据脱敏过滤注解</li>
-                <li>用户密码新增非法字符验证</li>
-                <li>限制用户操作数据权限范围</li>
-                <li>代码生成新增创建表结构功能</li>
-                <li>定时任务白名单配置范围缩小</li>
-                <li>优化代码生成主子表关联查询方式</li>
-                <li>Excel注解新增属性comboReadDict</li>
-                <li>Excel注解ColumnType类型新增文本</li>
-                <li>新增国际化资源文件配置</li>
-                <li>升级oshi到最新版本6.6.1</li>
-                <li>升级druid到最新版本1.2.23</li>
-                <li>升级core-js到最新版本3.37.1</li>
+                <li>選單管理新增路由名稱</li>
+                <li>新增資料脫敏過濾註解</li>
+                <li>使用者密碼新增非法字元驗證</li>
+                <li>限制使用者運算元據許可權範圍</li>
+                <li>程式碼生成新增建立表結構功能</li>
+                <li>定時任務白名單配置範圍縮小</li>
+                <li>最佳化程式碼生成主子表關聯查詢方式</li>
+                <li>Excel註解新增屬性comboReadDict</li>
+                <li>Excel註解ColumnType型別新增文字</li>
+                <li>新增國際化資原始檔配置</li>
+                <li>升級oshi到最新版本6.6.1</li>
+                <li>升級druid到最新版本1.2.23</li>
+                <li>升級core-js到最新版本3.37.1</li>
                 <li>更新HttpUtils中的User-Agent</li>
-                <li>更新compressionPlugin到6.1.2以兼容node18+</li>
-                <li>升级spring-security到安全版本，防止漏洞风险</li>
-                <li>升级spring-framework到安全版本，防止漏洞风险</li>
-                <li>优化自定义XSS注解匹配方式</li>
-                <li>优化缓存监控键名列表排序显示</li>
-                <li>优化定时任务日志默认按时间排序</li>
-                <li>优化默认文件大小超过2G无效的问题</li>
-                <li>优化查表特殊字符使用反斜杠进行转义</li>
-                <li>优化定时任务cron表达式小时配置显示错误问题</li>
-                <li>优化多个自定数据权限使用in查询,避免多次拼接</li>
-                <li>优化导入Excel时设置dictType属性重复查缓存问题</li>
-                <li>其他细节优化</li>
+                <li>更新compressionPlugin到6.1.2以相容node18+</li>
+                <li>升級spring-security到安全版本，防止漏洞風險</li>
+                <li>升級spring-framework到安全版本，防止漏洞風險</li>
+                <li>最佳化自定義XSS註解匹配方式</li>
+                <li>最佳化快取監控鍵名列表排序顯示</li>
+                <li>最佳化定時任務日誌預設按時間排序</li>
+                <li>最佳化預設檔案大小超過2G無效的問題</li>
+                <li>最佳化查表特殊字元使用反斜槓進行轉義</li>
+                <li>最佳化定時任務cron表示式小時配置顯示錯誤問題</li>
+                <li>最佳化多個自定資料許可權使用in查詢,避免多次拼接</li>
+                <li>最佳化匯入Excel時設定dictType屬性重複查快取問題</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.7 - 2023-12-08">
               <ol>
-                <li>操作日志记录部门名称</li>
-                <li>全局数据存储用户编号</li>
-                <li>新增编程式判断资源访问权限</li>
-                <li>操作日志列表新增IP地址查询</li>
-                <li>定时任务新增页去除状态选项</li>
-                <li>代码生成支持选择前端模板类型</li>
-                <li>显隐列组件支持复选框弹出类型</li>
-                <li>通用排序属性orderBy参数限制长度</li>
-                <li>Excel自定义数据处理器增加单元格/工作簿对象</li>
-                <li>升级oshi到最新版本6.4.8</li>
-                <li>升级druid到最新版本1.2.20</li>
-                <li>升级fastjson到最新版2.0.43</li>
-                <li>升级pagehelper到最新版1.4.7</li>
-                <li>升级commons.io到最新版本2.13.0</li>
-                <li>升级element-ui到最新版本2.15.14</li>
-                <li>修复五级路由缓存无效问题</li>
-                <li>修复外链带端口出现的异常</li>
-                <li>修复树模板父级编码变量错误</li>
-                <li>修复字典表详情页面搜索问题</li>
-                <li>修复内链iframe没有传递参数问题</li>
-                <li>修复自定义字典样式不生效的问题</li>
-                <li>修复字典缓存删除方法参数错误问题</li>
-                <li>修复Excel导入数据临时文件无法删除问题</li>
-                <li>修复未登录带参数访问成功后参数丢失问题</li>
-                <li>修复HeaderSearch组件跳转query参数丢失问题</li>
-                <li>修复代码生成导入后必填项与数据库不匹配问题</li>
-                <li>修复Excels导入时无法获取到dictType字典值问题</li>
-                <li>优化下载zip方法新增遮罩层</li>
-                <li>优化头像上传参数新增文件名称</li>
-                <li>优化字典标签支持自定义分隔符</li>
-                <li>优化菜单管理类型为按钮状态可选</li>
-                <li>优化前端防重复提交数据大小限制</li>
-                <li>优化TopNav菜单没有图标svg不显示</li>
-                <li>优化数字金额大写转换精度丢失问题</li>
-                <li>优化富文本Editor组件检验图片格式</li>
-                <li>优化页签在Firefox浏览器被遮挡的问题</li>
-                <li>优化个人中心/基本资料修改时数据显示问题</li>
-                <li>优化缓存监控图表支持跟随屏幕大小自适应调整</li>
-                <li>其他细节优化</li>
+                <li>操作日誌記錄部門名稱</li>
+                <li>全域性資料儲存使用者編號</li>
+                <li>新增程式設計式判斷資源訪問許可權</li>
+                <li>操作日誌列表新增IP地址查詢</li>
+                <li>定時任務新增頁去除狀態選項</li>
+                <li>程式碼生成支援選擇前端模板型別</li>
+                <li>顯隱列元件支援核取方塊彈出型別</li>
+                <li>通用排序屬性orderBy引數限制長度</li>
+                <li>Excel自定義資料處理器增加單元格/工作簿物件</li>
+                <li>升級oshi到最新版本6.4.8</li>
+                <li>升級druid到最新版本1.2.20</li>
+                <li>升級fastjson到最新版2.0.43</li>
+                <li>升級pagehelper到最新版1.4.7</li>
+                <li>升級commons.io到最新版本2.13.0</li>
+                <li>升級element-ui到最新版本2.15.14</li>
+                <li>修復五級路由快取無效問題</li>
+                <li>修復外鏈帶埠出現的異常</li>
+                <li>修復樹模板父級編碼變數錯誤</li>
+                <li>修復字典表詳情頁面搜尋問題</li>
+                <li>修復內鏈iframe沒有傳遞引數問題</li>
+                <li>修復自定義字典樣式不生效的問題</li>
+                <li>修復字典快取刪除方法引數錯誤問題</li>
+                <li>修復Excel匯入資料臨時檔案無法刪除問題</li>
+                <li>修復未登入帶引數訪問成功後引數丟失問題</li>
+                <li>修復HeaderSearch元件跳轉query引數丟失問題</li>
+                <li>修復程式碼生成匯入後必填項與資料庫不匹配問題</li>
+                <li>修復Excels匯入時無法獲取到dictType字典值問題</li>
+                <li>最佳化下載zip方法新增遮罩層</li>
+                <li>最佳化頭像上傳引數新增檔名稱</li>
+                <li>最佳化字典標籤支援自定義分隔符</li>
+                <li>最佳化選單管理型別為按鈕狀態可選</li>
+                <li>最佳化前端防重複提交資料大小限制</li>
+                <li>最佳化TopNav選單沒有圖示svg不顯示</li>
+                <li>最佳化數字金額大寫轉換精度丟失問題</li>
+                <li>最佳化富文字Editor元件檢驗圖片格式</li>
+                <li>最佳化頁簽在Firefox瀏覽器被遮擋的問題</li>
+                <li>最佳化個人中心/基本資料修改時資料顯示問題</li>
+                <li>最佳化快取監控圖表支援跟隨螢幕大小自適應調整</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.6 - 2023-06-30">
               <ol>
-                <li>支持登录IP黑名单限制</li>
-                <li>新增监控页面图标显示</li>
-                <li>操作日志新增消耗时间属性</li>
-                <li>屏蔽定时任务bean违规的字符</li>
-                <li>日志管理使用索引提升查询性能</li>
-                <li>日志注解支持排除指定的请求参数</li>
-                <li>支持自定义隐藏属性列过滤子对象</li>
-                <li>升级oshi到最新版本6.4.3</li>
-                <li>升级druid到最新版本1.2.16</li>
-                <li>升级fastjson到最新版2.0.34</li>
-                <li>升级spring-boot到最新版本2.5.15</li>
-                <li>升级element-ui到最新版本2.15.13</li>
-                <li>移除apache/commons-fileupload依赖</li>
-                <li>修复页面切换时布局错乱的问题</li>
-                <li>修复匿名注解Anonymous空指针问题</li>
-                <li>修复路由跳转被阻止时内部产生报错信息问题</li>
-                <li>修复isMatchedIp的参数判断产生空指针的问题</li>
-                <li>修复用户多角色数据权限可能出现权限抬升的情况</li>
-                <li>修复开启TopNav后一级菜单路由参数设置无效问题</li>
-                <li>修复DictTag组件value没有匹配的值时则展示value</li>
-                <li>优化文件下载出现的异常</li>
-                <li>优化选择图标组件高亮回显</li>
-                <li>优化弹窗后导航栏偏移的问题</li>
-                <li>优化修改密码日志存储明文问题</li>
-                <li>优化页签栏关闭其他出现的异常问题</li>
-                <li>优化页签关闭左侧选项排除首页选项</li>
-                <li>优化关闭当前tab页跳转最右侧tab页</li>
-                <li>优化缓存列表清除操作提示不变的问题</li>
-                <li>优化字符未使用下划线不进行驼峰式处理</li>
-                <li>优化用户导入更新时需获取用户编号问题</li>
-                <li>优化侧边栏的平台标题与VUE_APP_TITLE保持同步</li>
-                <li>优化导出Excel时设置dictType属性重复查缓存问题</li>
-                <li>连接池Druid支持新的配置connectTimeout和socketTimeout</li>
-                <li>其他细节优化</li>
+                <li>支援登入IP黑名單限制</li>
+                <li>新增監控頁面圖示顯示</li>
+                <li>操作日誌新增消耗時間屬性</li>
+                <li>遮蔽定時任務bean違規的字元</li>
+                <li>日誌管理使用索引提升查詢效能</li>
+                <li>日誌註解支援排除指定的請求引數</li>
+                <li>支援自定義隱藏屬性列過濾子物件</li>
+                <li>升級oshi到最新版本6.4.3</li>
+                <li>升級druid到最新版本1.2.16</li>
+                <li>升級fastjson到最新版2.0.34</li>
+                <li>升級spring-boot到最新版本2.5.15</li>
+                <li>升級element-ui到最新版本2.15.13</li>
+                <li>移除apache/commons-fileupload依賴</li>
+                <li>修復頁面切換時佈局錯亂的問題</li>
+                <li>修復匿名註解Anonymous空指標問題</li>
+                <li>修復路由跳轉被阻止時內部產生報錯資訊問題</li>
+                <li>修復isMatchedIp的引數判斷產生空指標的問題</li>
+                <li>修復使用者多角色資料許可權可能出現許可權抬升的情況</li>
+                <li>修復開啟TopNav後一級選單路由引數設定無效問題</li>
+                <li>修復DictTag元件value沒有匹配的值時則展示value</li>
+                <li>最佳化檔案下載出現的異常</li>
+                <li>最佳化選擇圖示元件高亮回顯</li>
+                <li>最佳化彈窗後導航欄偏移的問題</li>
+                <li>最佳化修改密碼日誌儲存明文問題</li>
+                <li>最佳化頁籤欄關閉其他出現的異常問題</li>
+                <li>最佳化頁籤關閉左側選項排除首頁選項</li>
+                <li>最佳化關閉當前tab頁跳轉最右側tab頁</li>
+                <li>最佳化快取列表清除操作提示不變的問題</li>
+                <li>最佳化字元未使用下劃線不進行駝峰式處理</li>
+                <li>最佳化使用者匯入更新時需獲取使用者編號問題</li>
+                <li>最佳化側邊欄的平臺標題與VUE_APP_TITLE保持同步</li>
+                <li>最佳化匯出Excel時設定dictType屬性重複查快取問題</li>
+                <li>連線池Druid支援新的配置connectTimeout和socketTimeout</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.5 - 2023-01-01">
               <ol>
-                <li>定时任务违规的字符</li>
-                <li>重置时取消部门选中</li>
-                <li>新增返回警告消息提示</li>
-                <li>忽略不必要的属性数据返回</li>
-                <li>修改参数键名时移除前缓存配置</li>
-                <li>导入更新用户数据前校验数据权限</li>
-                <li>兼容Excel下拉框内容过多无法显示的问题</li>
-                <li>升级echarts到最新版本5.4.0</li>
-                <li>升级core-js到最新版本3.25.3</li>
-                <li>升级oshi到最新版本6.4.0</li>
-                <li>升级kaptcha到最新版2.3.3</li>
-                <li>升级druid到最新版本1.2.15</li>
-                <li>升级fastjson到最新版2.0.20</li>
-                <li>升级pagehelper到最新版1.4.6</li>
-                <li>优化弹窗内容过多展示不全问题</li>
-                <li>优化swagger-ui静态资源使用缓存</li>
-                <li>开启TopNav没有子菜单隐藏侧边栏</li>
-                <li>删除fuse无效选项maxPatternLength</li>
-                <li>优化导出对象的子列表为空会出现[]问题</li>
-                <li>优化编辑头像时透明部分会变成黑色问题</li>
-                <li>优化小屏幕上修改头像界面布局错位的问题</li>
-                <li>修复代码生成勾选属性无效问题</li>
-                <li>修复文件上传组件格式验证问题</li>
-                <li>修复回显数据字典数组异常问题</li>
-                <li>修复sheet超出最大行数异常问题</li>
-                <li>修复Log注解GET请求记录不到参数问题</li>
-                <li>修复调度日志点击多次数据不变化的问题</li>
-                <li>修复主题颜色在Drawer组件不会加载问题</li>
-                <li>修复文件名包含特殊字符的文件无法下载问题</li>
-                <li>修复table中更多按钮切换主题色未生效修复问题</li>
-                <li>修复某些特性的环境生成代码变乱码TXT文件问题</li>
-                <li>修复代码生成图片/文件/单选时选择必填无法校验问题</li>
-                <li>修复某些特性的情况用户编辑对话框中角色和部门无法修改问题</li>
-                <li>其他细节优化</li>
+                <li>定時任務違規的字元</li>
+                <li>重置時取消部門選中</li>
+                <li>新增返回警告訊息提示</li>
+                <li>忽略不必要的屬性資料返回</li>
+                <li>修改引數鍵名時移除前快取配置</li>
+                <li>匯入更新使用者資料前校驗資料許可權</li>
+                <li>相容Excel下拉框內容過多無法顯示的問題</li>
+                <li>升級echarts到最新版本5.4.0</li>
+                <li>升級core-js到最新版本3.25.3</li>
+                <li>升級oshi到最新版本6.4.0</li>
+                <li>升級kaptcha到最新版2.3.3</li>
+                <li>升級druid到最新版本1.2.15</li>
+                <li>升級fastjson到最新版2.0.20</li>
+                <li>升級pagehelper到最新版1.4.6</li>
+                <li>最佳化彈窗內容過多展示不全問題</li>
+                <li>最佳化swagger-ui靜態資源使用快取</li>
+                <li>開啟TopNav沒有子選單隱藏側邊欄</li>
+                <li>刪除fuse無效選項maxPatternLength</li>
+                <li>最佳化匯出物件的子列表為空會出現[]問題</li>
+                <li>最佳化編輯頭像時透明部分會變成黑色問題</li>
+                <li>最佳化小螢幕上修改頭像介面佈局錯位的問題</li>
+                <li>修復程式碼生成勾選屬性無效問題</li>
+                <li>修復檔案上傳元件格式驗證問題</li>
+                <li>修復回顯資料字典陣列異常問題</li>
+                <li>修復sheet超出最大行數異常問題</li>
+                <li>修復Log註解GET請求記錄不到引數問題</li>
+                <li>修復排程日誌點選多次資料不變化的問題</li>
+                <li>修復主題顏色在Drawer元件不會載入問題</li>
+                <li>修復檔名包含特殊字元的檔案無法下載問題</li>
+                <li>修復table中更多按鈕切換主題色未生效修復問題</li>
+                <li>修復某些特性的環境生成程式碼變亂碼TXT檔案問題</li>
+                <li>修復程式碼生成圖片/檔案/單選時選擇必填無法校驗問題</li>
+                <li>修復某些特性的情況使用者編輯對話方塊中角色和部門無法修改問題</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.4 - 2022-09-26">
               <ol>
-                <li>数据逻辑删除不进行唯一验证</li>
-                <li>Excel注解支持导出对象的子列表方法</li>
-                <li>Excel注解支持自定义隐藏属性列</li>
-                <li>Excel注解支持backgroundColor属性设置背景色</li>
-                <li>支持配置密码最大错误次数/锁定时间</li>
-                <li>登录日志新增解锁账户功能</li>
-                <li>通用下载方法新增config配置选项</li>
-                <li>支持多权限字符匹配角色数据权限</li>
-                <li>页面内嵌iframe切换tab不刷新数据</li>
-                <li>操作日志记录支持排除敏感属性字段</li>
-                <li>修复多文件上传报错出现的异常问题</li>
-                <li>修复图片预览组件src属性为null值控制台报错问题</li>
-                <li>升级oshi到最新版本6.2.2</li>
-                <li>升级fastjson到最新版2.0.14</li>
-                <li>升级pagehelper到最新版1.4.3</li>
-                <li>升级core-js到最新版本3.25.2</li>
-                <li>升级element-ui到最新版本2.15.10</li>
-                <li>优化任务过期不执行调度</li>
-                <li>优化字典数据使用store存取</li>
-                <li>优化修改资料头像被覆盖的问题</li>
-                <li>优化修改用户登录账号重复验证</li>
-                <li>优化代码生成同步后值NULL问题</li>
-                <li>优化定时任务支持执行父类方法</li>
-                <li>优化用户个人信息接口防止修改部门</li>
-                <li>优化布局设置使用el-drawer抽屉显示</li>
-                <li>优化没有权限的用户编辑部门缺少数据</li>
-                <li>优化日志注解记录限制请求地址的长度</li>
-                <li>优化excel/scale属性导出单元格数值类型</li>
-                <li>优化日志操作中重置按钮时重复查询的问题</li>
-                <li>优化多个相同角色数据导致权限SQL重复问题</li>
-                <li>优化表格上右侧工具条（搜索按钮显隐&右侧样式凸出）</li>
-                <li>其他细节优化</li>
+                <li>資料邏輯刪除不進行唯一驗證</li>
+                <li>Excel註解支援匯出物件的子列表方法</li>
+                <li>Excel註解支援自定義隱藏屬性列</li>
+                <li>Excel註解支援backgroundColor屬性設定背景色</li>
+                <li>支援配置密碼最大錯誤次數/鎖定時間</li>
+                <li>登入日誌新增解鎖賬戶功能</li>
+                <li>通用下載方法新增config配置選項</li>
+                <li>支援多許可權字元匹配角色資料許可權</li>
+                <li>頁面內嵌iframe切換tab不重新整理資料</li>
+                <li>操作日誌記錄支援排除敏感屬性欄位</li>
+                <li>修復多檔案上傳報錯出現的異常問題</li>
+                <li>修復圖片預覽元件src屬性為null值控制檯報錯問題</li>
+                <li>升級oshi到最新版本6.2.2</li>
+                <li>升級fastjson到最新版2.0.14</li>
+                <li>升級pagehelper到最新版1.4.3</li>
+                <li>升級core-js到最新版本3.25.2</li>
+                <li>升級element-ui到最新版本2.15.10</li>
+                <li>最佳化任務過期不執行排程</li>
+                <li>最佳化字典資料使用store存取</li>
+                <li>最佳化修改資料頭像被覆蓋的問題</li>
+                <li>最佳化修改使用者登入賬號重複驗證</li>
+                <li>最佳化程式碼生成同步後值NULL問題</li>
+                <li>最佳化定時任務支援執行父類方法</li>
+                <li>最佳化使用者個人資訊介面防止修改部門</li>
+                <li>最佳化佈局設定使用el-drawer抽屜顯示</li>
+                <li>最佳化沒有許可權的使用者編輯部門缺少資料</li>
+                <li>最佳化日誌註解記錄限制請求地址的長度</li>
+                <li>最佳化excel/scale屬性匯出單元格數值型別</li>
+                <li>最佳化日誌操作中重置按鈕時重複查詢的問題</li>
+                <li>最佳化多個相同角色資料導致許可權SQL重複問題</li>
+                <li>最佳化表格上右側工具條（搜尋按鈕顯隱&右側樣式凸出）</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.3 - 2022-06-27">
               <ol>
-                <li>新增缓存列表菜单功能</li>
-                <li>代码生成树表新增(展开/折叠)</li>
-                <li>Excel注解支持color字体颜色</li>
-                <li>新增Anonymous匿名访问不鉴权注解</li>
-                <li>用户头像上传限制只能为图片格式</li>
-                <li>接口使用泛型使其看到响应属性字段</li>
-                <li>检查定时任务bean所在包名是否为白名单配置</li>
-                <li>添加页签openPage支持传递参数</li>
-                <li>用户缓存信息添加部门ancestors祖级列表</li>
-                <li>升级element-ui到最新版本2.15.8</li>
-                <li>升级oshi到最新版本6.1.6</li>
-                <li>升级druid到最新版本1.2.11</li>
-                <li>升级fastjson到最新版2.0.8</li>
-                <li>升级spring-boot到最新版本2.5.14</li>
-                <li>降级jsencrypt版本兼容IE浏览器</li>
-                <li>删除多余的salt字段</li>
-                <li>新增获取不带后缀文件名称方法</li>
-                <li>新增获取配置文件中的属性值方法</li>
-                <li>新增内容编码/解码方便插件集成使用</li>
-                <li>字典类型必须以字母开头，且只能为（小写字母，数字，下滑线）</li>
-                <li>优化设置分页参数默认值</li>
-                <li>优化对空字符串参数处理的过滤</li>
-                <li>优化显示顺序orderNum类型为整型</li>
-                <li>优化表单构建按钮不显示正则校验</li>
-                <li>优化字典数据回显样式下拉框显示值</li>
-                <li>优化R响应成功状态码与全局保持一致</li>
-                <li>优化druid开启wall过滤器出现的异常问题</li>
-                <li>优化用户管理左侧树型组件增加选中高亮保持</li>
-                <li>优化新增用户与角色信息&用户与岗位信息逻辑</li>
-                <li>优化默认不启用压缩文件缓存防止node_modules过大</li>
-                <li>修复字典数据显示不全问题</li>
-                <li>修复操作日志查询类型条件为0时会查到所有数据</li>
-                <li>修复Excel注解prompt/combo同时使用不生效问题</li>
-                <li>其他细节优化</li>
+                <li>新增快取列表選單功能</li>
+                <li>程式碼生成樹表新增(展開/摺疊)</li>
+                <li>Excel註解支援color字型顏色</li>
+                <li>新增Anonymous匿名訪問不鑑權註解</li>
+                <li>使用者頭像上傳限制只能為圖片格式</li>
+                <li>介面使用泛型使其看到響應屬性欄位</li>
+                <li>檢查定時任務bean所在包名是否為白名單配置</li>
+                <li>新增頁籤openPage支援傳遞引數</li>
+                <li>使用者快取資訊新增部門ancestors祖級列表</li>
+                <li>升級element-ui到最新版本2.15.8</li>
+                <li>升級oshi到最新版本6.1.6</li>
+                <li>升級druid到最新版本1.2.11</li>
+                <li>升級fastjson到最新版2.0.8</li>
+                <li>升級spring-boot到最新版本2.5.14</li>
+                <li>降級jsencrypt版本相容IE瀏覽器</li>
+                <li>刪除多餘的salt欄位</li>
+                <li>新增獲取不帶字尾檔名稱方法</li>
+                <li>新增獲取配置檔案中的屬性值方法</li>
+                <li>新增內容編碼/解碼方便外掛整合使用</li>
+                <li>字典型別必須以字母開頭，且只能為（小寫字母，數字，下滑線）</li>
+                <li>最佳化設定分頁引數預設值</li>
+                <li>最佳化對空字串引數處理的過濾</li>
+                <li>最佳化顯示順序orderNum型別為整型</li>
+                <li>最佳化表單構建按鈕不顯示正則校驗</li>
+                <li>最佳化字典資料回顯樣式下拉框顯示值</li>
+                <li>最佳化R響應成功狀態碼與全域性保持一致</li>
+                <li>最佳化druid開啟wall過濾器出現的異常問題</li>
+                <li>最佳化使用者管理左側樹型元件增加選中高亮保持</li>
+                <li>最佳化新增使用者與角色資訊&使用者與崗位資訊邏輯</li>
+                <li>最佳化預設不啟用壓縮檔案快取防止node_modules過大</li>
+                <li>修復字典資料顯示不全問題</li>
+                <li>修復操作日誌查詢型別條件為0時會查到所有資料</li>
+                <li>修復Excel註解prompt/combo同時使用不生效問題</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.2 - 2022-04-01">
               <ol>
-                <li>前端支持设置是否需要防止数据重复提交</li>
-                <li>开启TopNav没有子菜单情况隐藏侧边栏</li>
-                <li>侧边栏菜单名称过长悬停显示标题</li>
-                <li>用户访问控制时校验数据权限，防止越权</li>
-                <li>导出Excel时屏蔽公式，防止CSV注入风险</li>
-                <li>组件ImagePreview支持多图预览显示</li>
-                <li>组件ImageUpload支持多图同时选择上传</li>
-                <li>组件FileUpload支持多文件同时选择上传</li>
-                <li>服务监控新增运行参数信息显示</li>
-                <li>定时任务目标字符串过滤特殊字符</li>
-                <li>定时任务目标字符串验证包名白名单</li>
-                <li>代码生成列表图片支持预览</li>
-                <li>代码生成编辑修改打开新页签</li>
-                <li>代码生成新增Java类型Boolean</li>
-                <li>代码生成子表支持日期/字典配置</li>
-                <li>代码生成同步保留必填/类型选项</li>
-                <li>升级oshi到最新版本6.1.2</li>
-                <li>升级fastjson到最新版1.2.80</li>
-                <li>升级pagehelper到最新版1.4.1</li>
-                <li>升级spring-boot到最新版本2.5.11</li>
-                <li>升级spring-boot-mybatis到最新版2.2.2</li>
-                <li>添加遗漏的分页参数合理化属性</li>
-                <li>修改npm即将过期的注册源地址</li>
-                <li>修复分页组件请求两次问题</li>
-                <li>修复通用文件下载接口跨域问题</li>
-                <li>修复Xss注解字段值为空时的异常问题</li>
-                <li>修复选项卡点击右键刷新丢失参数问题</li>
-                <li>修复表单清除元素位置未垂直居中问题</li>
-                <li>修复服务监控中运行参数显示条件错误</li>
-                <li>修复导入Excel时字典字段类型为Long转义为空问题</li>
-                <li>修复登录超时刷新页面跳转登录页面还提示重新登录问题</li>
-                <li>优化加载字典缓存数据</li>
-                <li>优化IP地址获取到多个的问题</li>
-                <li>优化任务队列满时任务拒绝策略</li>
-                <li>优化文件上传兼容Weblogic环境</li>
-                <li>优化定时任务默认保存到内存中执行</li>
-                <li>优化部门修改缩放后出现的错位问题</li>
-                <li>优化Excel格式化不同类型的日期对象</li>
-                <li>优化菜单表关键字导致的插件报错问题</li>
-                <li>优化Oracle用户头像列为空时不显示问题</li>
-                <li>优化页面若未匹配到字典标签则返回原字典值</li>
-                <li>优化修复登录失效后多次请求提示多次弹窗问题</li>
-                <li>其他细节优化</li>
+                <li>前端支援設定是否需要防止資料重複提交</li>
+                <li>開啟TopNav沒有子選單情況隱藏側邊欄</li>
+                <li>側邊欄選單名稱過長懸停顯示標題</li>
+                <li>使用者訪問控制時校驗資料許可權，防止越權</li>
+                <li>匯出Excel時遮蔽公式，防止CSV注入風險</li>
+                <li>元件ImagePreview支援多圖預覽顯示</li>
+                <li>元件ImageUpload支援多圖同時選擇上傳</li>
+                <li>元件FileUpload支援多檔案同時選擇上傳</li>
+                <li>服務監控新增執行引數資訊顯示</li>
+                <li>定時任務目標字串過濾特殊字元</li>
+                <li>定時任務目標字串驗證包名白名單</li>
+                <li>程式碼生成列表圖片支援預覽</li>
+                <li>程式碼生成編輯修改開啟新頁籤</li>
+                <li>程式碼生成新增Java型別Boolean</li>
+                <li>程式碼生成子表支援日期/字典配置</li>
+                <li>程式碼生成同步保留必填/型別選項</li>
+                <li>升級oshi到最新版本6.1.2</li>
+                <li>升級fastjson到最新版1.2.80</li>
+                <li>升級pagehelper到最新版1.4.1</li>
+                <li>升級spring-boot到最新版本2.5.11</li>
+                <li>升級spring-boot-mybatis到最新版2.2.2</li>
+                <li>新增遺漏的分頁引數合理化屬性</li>
+                <li>修改npm即將過期的註冊源地址</li>
+                <li>修復分頁元件請求兩次問題</li>
+                <li>修復通用檔案下載介面跨域問題</li>
+                <li>修復Xss註解欄位值為空時的異常問題</li>
+                <li>修復選項卡點選右鍵重新整理丟失引數問題</li>
+                <li>修復表單清除元素位置未垂直居中問題</li>
+                <li>修復服務監控中執行引數顯示條件錯誤</li>
+                <li>修復匯入Excel時字典欄位型別為Long轉義為空問題</li>
+                <li>修復登入超時重新整理頁面跳轉登入頁面還提示重新登入問題</li>
+                <li>最佳化載入字典快取資料</li>
+                <li>最佳化IP地址獲取到多個的問題</li>
+                <li>最佳化任務佇列滿時任務拒絕策略</li>
+                <li>最佳化檔案上傳相容Weblogic環境</li>
+                <li>最佳化定時任務預設儲存到記憶體中執行</li>
+                <li>最佳化部門修改縮放後出現的錯位問題</li>
+                <li>最佳化Excel格式化不同型別的日期物件</li>
+                <li>最佳化選單表關鍵字導致的外掛報錯問題</li>
+                <li>最佳化Oracle使用者頭像列為空時不顯示問題</li>
+                <li>最佳化頁面若未匹配到字典標籤則返回原字典值</li>
+                <li>最佳化修復登入失效後多次請求提示多次彈窗問題</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.1 - 2022-01-01">
               <ol>
-                <li>新增Vue3前端代码生成模板</li>
-                <li>新增图片预览组件</li>
-                <li>新增压缩插件实现打包Gzip</li>
-                <li>自定义xss校验注解实现</li>
-                <li>自定义文字复制剪贴指令</li>
-                <li>代码生成预览支持复制内容</li>
-                <li>路由支持单独配置菜单或角色权限</li>
-                <li>用户管理部门查询选择节点后分页参数初始</li>
-                <li>修复用户分配角色属性错误</li>
-                <li>修复打包后字体图标偶现的乱码问题</li>
-                <li>修复菜单管理重置表单出现的错误</li>
-                <li>修复版本差异导致的懒加载报错问题</li>
-                <li>修复Cron组件中周回显问题</li>
-                <li>修复定时任务多参数逗号分隔的问题</li>
-                <li>修复根据ID查询列表可能出现的主键溢出问题</li>
-                <li>修复tomcat配置参数已过期问题</li>
-                <li>升级clipboard到最新版本2.0.8</li>
-                <li>升级oshi到最新版本v5.8.6</li>
-                <li>升级fastjson到最新版1.2.79</li>
-                <li>升级spring-boot到最新版本2.5.8</li>
-                <li>升级log4j2到2.17.1，防止漏洞风险</li>
-                <li>优化下载解析blob异常提示</li>
-                <li>优化代码生成字典组重复问题</li>
-                <li>优化查询用户的角色组&岗位组代码</li>
-                <li>优化定时任务cron表达式小时设置24</li>
-                <li>优化用户导入提示溢出则显示滚动条</li>
-                <li>优化防重复提交标识组合为(key+url+header)</li>
-                <li>优化分页方法设置成通用方便灵活调用</li>
-                <li>其他细节优化</li>
+                <li>新增Vue3前端程式碼生成模板</li>
+                <li>新增圖片預覽元件</li>
+                <li>新增壓縮外掛實現打包Gzip</li>
+                <li>自定義xss校驗註解實現</li>
+                <li>自定義文字複製剪貼指令</li>
+                <li>程式碼生成預覽支援複製內容</li>
+                <li>路由支援單獨配置選單或角色許可權</li>
+                <li>使用者管理部門查詢選擇節點後分頁引數初始</li>
+                <li>修復使用者分配角色屬性錯誤</li>
+                <li>修復打包後字型圖示偶現的亂碼問題</li>
+                <li>修復選單管理重置表單出現的錯誤</li>
+                <li>修復版本差異導致的懶載入報錯問題</li>
+                <li>修復Cron元件中週迴顯問題</li>
+                <li>修復定時任務多引數逗號分隔的問題</li>
+                <li>修復根據ID查詢列表可能出現的主鍵溢位問題</li>
+                <li>修復tomcat配置引數已過期問題</li>
+                <li>升級clipboard到最新版本2.0.8</li>
+                <li>升級oshi到最新版本v5.8.6</li>
+                <li>升級fastjson到最新版1.2.79</li>
+                <li>升級spring-boot到最新版本2.5.8</li>
+                <li>升級log4j2到2.17.1，防止漏洞風險</li>
+                <li>最佳化下載解析blob異常提示</li>
+                <li>最佳化程式碼生成字典組重複問題</li>
+                <li>最佳化查詢使用者的角色組&崗位組程式碼</li>
+                <li>最佳化定時任務cron表示式小時設定24</li>
+                <li>最佳化使用者匯入提示溢位則顯示捲軸</li>
+                <li>最佳化防重複提交標識組合為(key+url+header)</li>
+                <li>最佳化分頁方法設定成通用方便靈活呼叫</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.8.0 - 2021-12-01">
               <ol>
-                <li>新增配套并同步的Vue3前端版本</li>
-                <li>新增通用方法简化模态/缓存/下载/权限/页签使用</li>
-                <li>优化导出数据/使用通用下载方法</li>
-                <li>Excel注解支持自定义数据处理器</li>
-                <li>Excel注解支持导入导出标题信息</li>
-                <li>Excel导入支持@Excels注解</li>
-                <li>新增组件data-dict，简化数据字典使用</li>
-                <li>新增Jaxb依赖，防止jdk8以上出现的兼容错误</li>
-                <li>生产环境使用路由懒加载提升页面响应速度</li>
-                <li>修复五级以上菜单出现的404问题</li>
-                <li>防重提交注解支持配置间隔时间/提示消息</li>
-                <li>日志注解新增是否保存响应参数</li>
-                <li>任务屏蔽违规字符&参数忽略双引号中的逗号</li>
-                <li>升级SpringBoot到最新版本2.5.6</li>
-                <li>升级pagehelper到最新版1.4.0</li>
-                <li>升级spring-boot-mybatis到最新版2.2.0</li>
-                <li>升级oshi到最新版本v5.8.2</li>
-                <li>升级druid到最新版1.2.8</li>
-                <li>升级velocity到最新版本2.3</li>
-                <li>升级fastjson到最新版1.2.78</li>
-                <li>升级axios到最新版本0.24.0</li>
-                <li>升级dart-sass到版本1.32.13</li>
-                <li>升级core-js到最新版本3.19.1</li>
-                <li>升级jsencrypt到最新版本3.2.1</li>
-                <li>升级js-cookie到最新版本3.0.1</li>
-                <li>升级file-saver到最新版本2.0.5</li>
-                <li>升级sass-loader到最新版本10.1.1</li>
-                <li>升级element-ui到最新版本2.15.6</li>
-                <li>新增sendGet无参请求方法</li>
-                <li>禁用el-tag组件的渐变动画</li>
-                <li>代码生成点击预览重置激活tab</li>
-                <li>AjaxResult重写put方法，以方便链式调用</li>
-                <li>优化登录/验证码请求headers不设置token</li>
-                <li>优化用户个人信息接口防止修改用户名</li>
-                <li>优化Cron表达式生成器关闭时销毁避免缓存</li>
-                <li>优化注册成功提示消息类型success</li>
-                <li>优化aop语法，使用spring自动注入注解</li>
-                <li>优化记录登录信息，移除不必要的修改</li>
-                <li>优化mybatis全局默认的执行器</li>
-                <li>优化Excel导入图片可能出现的异常</li>
-                <li>修复代码生成模板主子表删除缺少事务</li>
-                <li>修复日志记录可能出现的转换异常</li>
-                <li>修复代码生成复选框字典遗漏问题</li>
-                <li>修复关闭xss功能导致可重复读RepeatableFilter失效</li>
-                <li>修复字符串无法被反转义问题</li>
-                <li>修复后端主子表代码模板方法名生成错误问题</li>
-                <li>修复xss过滤后格式出现的异常</li>
-                <li>修复swagger没有指定dataTypeClass导致启动出现warn日志</li>
-                <li>其他细节优化</li>
+                <li>新增配套並同步的Vue3前端版本</li>
+                <li>新增通用方法簡化模態/快取/下載/許可權/頁籤使用</li>
+                <li>最佳化匯出資料/使用通用下載方法</li>
+                <li>Excel註解支援自定義資料處理器</li>
+                <li>Excel註解支援匯入匯出標題資訊</li>
+                <li>Excel匯入支援@Excels註解</li>
+                <li>新增元件data-dict，簡化資料字典使用</li>
+                <li>新增Jaxb依賴，防止jdk8以上出現的相容錯誤</li>
+                <li>生產環境使用路由懶載入提升頁面響應速度</li>
+                <li>修復五級以上選單出現的404問題</li>
+                <li>防重提交註解支援配置間隔時間/提示訊息</li>
+                <li>日誌註解新增是否儲存響應引數</li>
+                <li>任務遮蔽違規字元&引數忽略雙引號中的逗號</li>
+                <li>升級SpringBoot到最新版本2.5.6</li>
+                <li>升級pagehelper到最新版1.4.0</li>
+                <li>升級spring-boot-mybatis到最新版2.2.0</li>
+                <li>升級oshi到最新版本v5.8.2</li>
+                <li>升級druid到最新版1.2.8</li>
+                <li>升級velocity到最新版本2.3</li>
+                <li>升級fastjson到最新版1.2.78</li>
+                <li>升級axios到最新版本0.24.0</li>
+                <li>升級dart-sass到版本1.32.13</li>
+                <li>升級core-js到最新版本3.19.1</li>
+                <li>升級jsencrypt到最新版本3.2.1</li>
+                <li>升級js-cookie到最新版本3.0.1</li>
+                <li>升級file-saver到最新版本2.0.5</li>
+                <li>升級sass-loader到最新版本10.1.1</li>
+                <li>升級element-ui到最新版本2.15.6</li>
+                <li>新增sendGet無參請求方法</li>
+                <li>禁用el-tag元件的漸變動畫</li>
+                <li>程式碼生成點選預覽重置啟用tab</li>
+                <li>AjaxResult重寫put方法，以方便鏈式呼叫</li>
+                <li>最佳化登入/驗證碼請求headers不設定token</li>
+                <li>最佳化使用者個人資訊介面防止修改使用者名稱</li>
+                <li>最佳化Cron表示式生成器關閉時銷燬避免快取</li>
+                <li>最佳化註冊成功提示訊息型別success</li>
+                <li>最佳化aop語法，使用spring自動注入註解</li>
+                <li>最佳化記錄登入資訊，移除不必要的修改</li>
+                <li>最佳化mybatis全域性預設的執行器</li>
+                <li>最佳化Excel匯入圖片可能出現的異常</li>
+                <li>修復程式碼生成模板主子表刪除缺少事務</li>
+                <li>修復日誌記錄可能出現的轉換異常</li>
+                <li>修復程式碼生成核取方塊字典遺漏問題</li>
+                <li>修復關閉xss功能導致可重複讀RepeatableFilter失效</li>
+                <li>修復字串無法被反轉義問題</li>
+                <li>修復後端主子表程式碼模板方法名生成錯誤問題</li>
+                <li>修復xss過濾後格式出現的異常</li>
+                <li>修復swagger沒有指定dataTypeClass導致啟動出現warn日誌</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.7.0 - 2021-09-13">
               <ol>
-                <li>参数管理支持配置验证码开关</li>
-                <li>新增是否开启用户注册功能</li>
-                <li>定时任务支持在线生成cron表达式</li>
-                <li>菜单管理支持配置路由参数</li>
-                <li>支持自定义注解实现接口限流</li>
-                <li>Excel注解支持Image图片导入</li>
-                <li>自定义弹层溢出滚动样式</li>
-                <li>自定义可拖动弹窗宽度指令</li>
-                <li>自定义可拖动弹窗高度指令</li>
-                <li>修复任意账户越权问题</li>
-                <li>修改时检查用户数据权限范围</li>
-                <li>修复保存配置主题颜色失效问题</li>
-                <li>新增暗色菜单风格主题</li>
-                <li>菜单&部门新增展开/折叠功能</li>
-                <li>页签新增关闭左侧&添加图标</li>
-                <li>顶部菜单排除隐藏的默认路由</li>
-                <li>顶部菜单同步系统主题样式</li>
-                <li>跳转路由高亮相对应的菜单栏</li>
-                <li>代码生成主子表多选行数据</li>
-                <li>日期范围支持添加多组</li>
-                <li>升级element-ui到最新版本2.15.5</li>
-                <li>升级oshi到最新版本v5.8.0</li>
-                <li>升级commons.io到最新版本v2.11.0</li>
-                <li>定时任务屏蔽ldap远程调用</li>
-                <li>定时任务屏蔽http(s)远程调用</li>
-                <li>补充定时任务表字段注释</li>
-                <li>定时任务对检查异常进行事务回滚</li>
-                <li>启用父部门状态排除顶级节点</li>
-                <li>富文本新增上传文件大小限制</li>
-                <li>默认首页使用keep-alive缓存</li>
-                <li>修改代码生成字典回显样式</li>
-                <li>自定义分页合理化传入参数</li>
-                <li>修复字典组件值为整形不显示问题</li>
-                <li>修复定时任务日志执行状态显示</li>
-                <li>角色&菜单新增字段属性提示信息</li>
-                <li>修复角色分配用户页面参数类型错误提醒</li>
-                <li>优化布局设置动画特效</li>
-                <li>优化异常处理信息</li>
-                <li>优化错误token导致的解析异常</li>
-                <li>密码框新增显示切换密码图标</li>
-                <li>定时任务新增更多操作</li>
-                <li>更多操作按钮添加权限控制</li>
-                <li>导入用户样式优化</li>
-                <li>提取通用方法到基类控制器</li>
-                <li>优化使用权限工具获取用户信息</li>
-                <li>优化用户不能删除自己</li>
-                <li>优化XSS跨站脚本过滤</li>
-                <li>优化代码生成模板</li>
-                <li>验证码默认20s超时</li>
-                <li>BLOB下载时清除URL对象引用</li>
-                <li>代码生成导入表按创建时间排序</li>
-                <li>修复代码生成页面数据编辑保存之后总是跳转第一页的问题</li>
-                <li>修复带safari浏览器无法格式化utc日期格式yyyy-MM-dd'T'HH:mm:ss.SSS问题</li>
-                <li>多图上传组件移除多余的api地址&验证失败导致图片删除问题&无法删除相应图片修复</li>
-                <li>其他细节优化</li>
+                <li>引數管理支援配置驗證碼開關</li>
+                <li>新增是否開啟使用者註冊功能</li>
+                <li>定時任務支援線上生成cron表示式</li>
+                <li>選單管理支援配置路由引數</li>
+                <li>支援自定義註解實現介面限流</li>
+                <li>Excel註解支援Image圖片匯入</li>
+                <li>自定義彈層溢位滾動樣式</li>
+                <li>自定義可拖動彈窗寬度指令</li>
+                <li>自定義可拖動彈窗高度指令</li>
+                <li>修復任意賬戶越權問題</li>
+                <li>修改時檢查使用者資料許可權範圍</li>
+                <li>修復儲存配置主題顏色失效問題</li>
+                <li>新增暗色選單風格主題</li>
+                <li>選單&部門新增展開/摺疊功能</li>
+                <li>頁籤新增關閉左側&新增圖示</li>
+                <li>頂部選單排除隱藏的預設路由</li>
+                <li>頂部選單同步系統主題樣式</li>
+                <li>跳轉路由高亮相對應的選單欄</li>
+                <li>程式碼生成主子表多選行資料</li>
+                <li>日期範圍支援新增多組</li>
+                <li>升級element-ui到最新版本2.15.5</li>
+                <li>升級oshi到最新版本v5.8.0</li>
+                <li>升級commons.io到最新版本v2.11.0</li>
+                <li>定時任務遮蔽ldap遠端呼叫</li>
+                <li>定時任務遮蔽http(s)遠端呼叫</li>
+                <li>補充定時任務表欄位註釋</li>
+                <li>定時任務對檢查異常進行事務回滾</li>
+                <li>啟用父部門狀態排除頂級節點</li>
+                <li>富文字新增上傳檔案大小限制</li>
+                <li>預設首頁使用keep-alive快取</li>
+                <li>修改程式碼生成字典回顯樣式</li>
+                <li>自定義分頁合理化傳入引數</li>
+                <li>修復字典元件值為整形不顯示問題</li>
+                <li>修復定時任務日誌執行狀態顯示</li>
+                <li>角色&選單新增欄位屬性提示資訊</li>
+                <li>修復角色分配使用者頁面引數型別錯誤提醒</li>
+                <li>最佳化佈局設定動畫特效</li>
+                <li>最佳化異常處理資訊</li>
+                <li>最佳化錯誤token導致的解析異常</li>
+                <li>密碼框新增顯示切換密碼圖示</li>
+                <li>定時任務新增更多操作</li>
+                <li>更多操作按鈕新增許可權控制</li>
+                <li>匯入使用者樣式最佳化</li>
+                <li>提取通用方法到基類控制器</li>
+                <li>最佳化使用許可權工具獲取使用者資訊</li>
+                <li>最佳化使用者不能刪除自己</li>
+                <li>最佳化XSS跨站指令碼過濾</li>
+                <li>最佳化程式碼生成模板</li>
+                <li>驗證碼預設20s超時</li>
+                <li>BLOB下載時清除URL物件引用</li>
+                <li>程式碼生成匯入表按建立時間排序</li>
+                <li>修復程式碼生成頁面資料編輯儲存之後總是跳轉第一頁的問題</li>
+                <li>修復帶safari瀏覽器無法格式化utc日期格式yyyy-MM-dd'T'HH:mm:ss.SSS問題</li>
+                <li>多圖上傳元件移除多餘的api地址&驗證失敗導致圖片刪除問題&無法刪除相應圖片修復</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.6.0 - 2021-07-12">
               <ol>
-                <li>角色管理新增分配用户功能</li>
-                <li>用户管理新增分配角色功能</li>
-                <li>日志列表支持排序操作</li>
-                <li>优化参数&字典缓存操作</li>
-                <li>系统布局配置支持动态标题开关</li>
-                <li>菜单路由配置支持内链访问</li>
-                <li>默认访问后端首页新增提示语</li>
-                <li>富文本默认上传返回url类型</li>
-                <li>新增自定义弹窗拖拽指令</li>
-                <li>全局注册常用通用组件</li>
-                <li>全局挂载字典标签组件</li>
-                <li>ImageUpload组件支持多图片上传</li>
-                <li>FileUpload组件支持多文件上传</li>
-                <li>文件上传组件添加数量限制属性</li>
-                <li>富文本编辑组件添加类型属性</li>
-                <li>富文本组件工具栏配置视频</li>
-                <li>封装通用iframe组件</li>
-                <li>限制超级管理员不允许操作</li>
-                <li>用户信息长度校验限制</li>
-                <li>分页组件新增pagerCount属性</li>
-                <li>添加bat脚本执行应用</li>
-                <li>升级oshi到最新版本v5.7.4</li>
-                <li>升级element-ui到最新版本2.15.2</li>
-                <li>升级pagehelper到最新版1.3.1</li>
-                <li>升级commons.io到最新版本v2.10.0</li>
-                <li>升级commons.fileupload到最新版本v1.4</li>
-                <li>升级swagger到最新版本v3.0.0</li>
-                <li>修复关闭confirm提示框控制台报错问题</li>
-                <li>修复存在的SQL注入漏洞问题</li>
-                <li>定时任务屏蔽rmi远程调用</li>
-                <li>修复用户搜索分页变量错误</li>
-                <li>修复导出角色数据范围翻译缺少仅本人</li>
-                <li>修复表单构建选择下拉选择控制台报错问题</li>
-                <li>优化图片工具类读取文件</li>
-                <li>其他细节优化</li>
+                <li>角色管理新增分配使用者功能</li>
+                <li>使用者管理新增分配角色功能</li>
+                <li>日誌列表支援排序操作</li>
+                <li>最佳化引數&字典快取操作</li>
+                <li>系統佈局配置支援動態標題開關</li>
+                <li>選單路由配置支援內鏈訪問</li>
+                <li>預設訪問後端首頁新增提示語</li>
+                <li>富文字預設上傳返回url型別</li>
+                <li>新增自定義彈窗拖拽指令</li>
+                <li>全域性註冊常用通用元件</li>
+                <li>全域性掛載字典標籤元件</li>
+                <li>ImageUpload元件支援多圖片上傳</li>
+                <li>FileUpload元件支援多檔案上傳</li>
+                <li>檔案上傳元件新增數量限制屬性</li>
+                <li>富文字編輯元件新增型別屬性</li>
+                <li>富文字元件工具欄配置影片</li>
+                <li>封裝通用iframe元件</li>
+                <li>限制超級管理員不允許操作</li>
+                <li>使用者資訊長度校驗限制</li>
+                <li>分頁元件新增pagerCount屬性</li>
+                <li>新增bat指令碼執行應用</li>
+                <li>升級oshi到最新版本v5.7.4</li>
+                <li>升級element-ui到最新版本2.15.2</li>
+                <li>升級pagehelper到最新版1.3.1</li>
+                <li>升級commons.io到最新版本v2.10.0</li>
+                <li>升級commons.fileupload到最新版本v1.4</li>
+                <li>升級swagger到最新版本v3.0.0</li>
+                <li>修復關閉confirm提示框控制檯報錯問題</li>
+                <li>修復存在的SQL隱碼攻擊漏洞問題</li>
+                <li>定時任務遮蔽rmi遠端呼叫</li>
+                <li>修復使用者搜尋分頁變數錯誤</li>
+                <li>修復匯出角色資料範圍翻譯缺少僅本人</li>
+                <li>修復表單構建選擇下拉選擇控制檯報錯問題</li>
+                <li>最佳化圖片工具類讀取檔案</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.5.0 - 2021-05-25">
               <ol>
-                <li>新增菜单导航显示风格TopNav（false为左侧导航菜单，true为顶部导航菜单）</li>
-                <li>布局设置支持保存&重置配置</li>
-                <li>修复树表数据显示不全&加载慢问题</li>
-                <li>新增IE浏览器版本过低提示页面</li>
-                <li>用户登录后记录最后登录IP&时间</li>
-                <li>页面导出按钮点击之后添加遮罩</li>
-                <li>富文本编辑器支持自定义上传地址</li>
-                <li>富文本编辑组件新增readOnly属性</li>
-                <li>页签TagsView新增关闭右侧功能</li>
-                <li>显隐列组件加载初始默认隐藏列</li>
-                <li>关闭头像上传窗口还原默认图片</li>
-                <li>个人信息添加手机&邮箱重复验证</li>
-                <li>代码生成模板导出按钮点击后添加遮罩</li>
-                <li>代码生成模板树表操作列添加新增按钮</li>
-                <li>代码生成模板修复主子表字段重名问题</li>
-                <li>升级fastjson到最新版1.2.76</li>
-                <li>升级druid到最新版本v1.2.6</li>
-                <li>升级mybatis到最新版3.5.6 阻止远程代码执行漏洞</li>
-                <li>升级oshi到最新版本v5.6.0</li>
+                <li>新增選單導航顯示風格TopNav（false為左側導航選單，true為頂部導航選單）</li>
+                <li>佈局設定支援儲存&重置配置</li>
+                <li>修復樹表資料顯示不全&載入慢問題</li>
+                <li>新增IE瀏覽器版本過低提示頁面</li>
+                <li>使用者登入後記錄最後登入IP&時間</li>
+                <li>頁面匯出按鈕點選之後新增遮罩</li>
+                <li>富文字編輯器支援自定義上傳地址</li>
+                <li>富文字編輯元件新增readOnly屬性</li>
+                <li>頁籤TagsView新增關閉右側功能</li>
+                <li>顯隱列元件載入初始預設隱藏列</li>
+                <li>關閉頭像上傳視窗還原預設圖片</li>
+                <li>個人資訊新增手機&郵箱重複驗證</li>
+                <li>程式碼生成模板匯出按鈕點選後新增遮罩</li>
+                <li>程式碼生成模板樹表操作列新增新增按鈕</li>
+                <li>程式碼生成模板修復主子表欄位重名問題</li>
+                <li>升級fastjson到最新版1.2.76</li>
+                <li>升級druid到最新版本v1.2.6</li>
+                <li>升級mybatis到最新版3.5.6 阻止遠端程式碼執行漏洞</li>
+                <li>升級oshi到最新版本v5.6.0</li>
                 <li>velocity剔除commons-collections版本，防止3.2.1版本的反序列化漏洞</li>
-                <li>数据监控页默认账户密码防止越权访问</li>
-                <li>修复firefox下表单构建拖拽会新打卡一个选项卡</li>
-                <li>修正后端导入表权限标识</li>
-                <li>修正前端操作日志&登录日志权限标识</li>
-                <li>设置Redis配置HashKey序列化</li>
-                <li>删除操作日志记录信息</li>
-                <li>上传媒体类型添加视频格式</li>
-                <li>修复请求形参未传值记录日志异常问题</li>
-                <li>优化xss校验json请求条件</li>
-                <li>树级结构更新子节点使用replaceFirst</li>
-                <li>优化ExcelUtil空值处理</li>
-                <li>日志记录过滤BindingResult对象，防止异常</li>
-                <li>修改主题后mini类型按钮无效问题</li>
-                <li>优化通用下载完成后删除节点</li>
-                <li>通用Controller添加响应返回消息</li>
-                <li>其他细节优化</li>
+                <li>資料監控頁預設賬戶密碼防止越權訪問</li>
+                <li>修復firefox下表單構建拖拽會新打卡一個選項卡</li>
+                <li>修正後端匯入表許可權標識</li>
+                <li>修正前端操作日誌&登入日誌許可權標識</li>
+                <li>設定Redis配置HashKey序列化</li>
+                <li>刪除操作日誌記錄資訊</li>
+                <li>上傳媒體型別新增影片格式</li>
+                <li>修復請求形參未傳值記錄日誌異常問題</li>
+                <li>最佳化xss校驗json請求條件</li>
+                <li>樹級結構更新子節點使用replaceFirst</li>
+                <li>最佳化ExcelUtil空值處理</li>
+                <li>日誌記錄過濾BindingResult物件，防止異常</li>
+                <li>修改主題後mini型別按鈕無效問題</li>
+                <li>最佳化通用下載完成後刪除節點</li>
+                <li>通用Controller新增響應返回訊息</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.4.0 - 2021-02-22">
               <ol>
-                <li>代码生成模板支持主子表</li>
-                <li>表格右侧工具栏组件支持显隐列</li>
-                <li>图片组件添加预览&移除功能</li>
-                <li>Excel注解支持Image图片导出</li>
-                <li>操作按钮组调整为朴素按钮样式</li>
-                <li>代码生成支持文件上传组件</li>
-                <li>代码生成日期控件区分范围</li>
-                <li>代码生成数据库文本类型生成表单文本域</li>
-                <li>用户手机邮箱&菜单组件修改允许空字符串</li>
-                <li>升级SpringBoot到最新版本2.2.13 提升启动速度</li>
-                <li>升级druid到最新版本v1.2.4</li>
-                <li>升级fastjson到最新版1.2.75</li>
-                <li>升级element-ui到最新版本2.15.0</li>
-                <li>修复IE11浏览器报错问题</li>
-                <li>优化多级菜单之间切换无法缓存的问题</li>
-                <li>修复四级菜单无法显示问题</li>
-                <li>修正侧边栏静态路由丢失问题</li>
-                <li>修复角色管理-编辑角色-功能权限显示异常</li>
-                <li>配置文件新增redis数据库索引属性</li>
-                <li>权限工具类增加admin判断</li>
-                <li>角色非自定义权限范围清空选择值</li>
-                <li>修复导入数据为负浮点数时丢失精度问题</li>
-                <li>移除path-to-regexp正则匹配插件</li>
-                <li>修复生成树表代码异常</li>
-                <li>修改ip字段长度防止ipv6地址长度不够</li>
-                <li>防止get请求参数值为false或0等特殊值会导致无法正确的传参</li>
-                <li>登录后push添加catch防止出现检查错误</li>
-                <li>其他细节优化</li>
+                <li>程式碼生成模板支援主子表</li>
+                <li>表格右側工具欄元件支援顯隱列</li>
+                <li>圖片元件新增預覽&移除功能</li>
+                <li>Excel註解支援Image圖片匯出</li>
+                <li>操作按鈕組調整為樸素按鈕樣式</li>
+                <li>程式碼生成支援檔案上傳元件</li>
+                <li>程式碼生成日期控制元件區分範圍</li>
+                <li>程式碼生成資料庫文字型別生成表單文字域</li>
+                <li>使用者手機郵箱&選單元件修改允許空字串</li>
+                <li>升級SpringBoot到最新版本2.2.13 提升啟動速度</li>
+                <li>升級druid到最新版本v1.2.4</li>
+                <li>升級fastjson到最新版1.2.75</li>
+                <li>升級element-ui到最新版本2.15.0</li>
+                <li>修復IE11瀏覽器報錯問題</li>
+                <li>最佳化多級選單之間切換無法快取的問題</li>
+                <li>修復四級選單無法顯示問題</li>
+                <li>修正側邊欄靜態路由丟失問題</li>
+                <li>修復角色管理-編輯角色-功能許可權顯示異常</li>
+                <li>配置檔案新增redis資料庫索引屬性</li>
+                <li>許可權工具類增加admin判斷</li>
+                <li>角色非自定義許可權範圍清空選擇值</li>
+                <li>修復匯入資料為負浮點數時丟失精度問題</li>
+                <li>移除path-to-regexp正則匹配外掛</li>
+                <li>修復生成樹表程式碼異常</li>
+                <li>修改ip欄位長度防止ipv6地址長度不夠</li>
+                <li>防止get請求引數值為false或0等特殊值會導致無法正確的傳參</li>
+                <li>登入後push新增catch防止出現檢查錯誤</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.3.0 - 2020-12-14">
               <ol>
-                <li>新增缓存监控功能</li>
-                <li>支持主题风格配置</li>
-                <li>修复多级菜单之间切换无法缓存的问题</li>
-                <li>多级菜单自动配置组件</li>
-                <li>代码生成预览支持高亮显示</li>
-                <li>支持Get请求映射Params参数</li>
-                <li>删除用户和角色解绑关联</li>
-                <li>去除用户手机邮箱部门必填验证</li>
-                <li>Excel支持注解align对齐方式</li>
-                <li>Excel支持导入Boolean型数据</li>
-                <li>优化头像样式，鼠标移入悬停遮罩</li>
-                <li>代码生成预览提供滚动机制</li>
-                <li>代码生成删除多余的数字float类型</li>
-                <li>修正转换字符串的目标字符集属性</li>
-                <li>回显数据字典防止空值报错</li>
-                <li>日志记录增加过滤多文件场景</li>
-                <li>修改缓存Set方法可能导致嵌套的问题</li>
-                <li>移除前端一些多余的依赖</li>
-                <li>防止安全扫描YUI出现的风险提示</li>
-                <li>修改node-sass为dart-sass</li>
-                <li>升级SpringBoot到最新版本2.1.18</li>
-                <li>升级poi到最新版本4.1.2</li>
-                <li>升级oshi到最新版本v5.3.6</li>
-                <li>升级bitwalker到最新版本1.21</li>
-                <li>升级axios到最新版本0.21.0</li>
-                <li>升级element-ui到最新版本2.14.1</li>
-                <li>升级vue到最新版本2.6.12</li>
-                <li>升级vuex到最新版本3.6.0</li>
-                <li>升级vue-cli到版本4.5.9</li>
-                <li>升级vue-router到最新版本3.4.9</li>
-                <li>升级vue-cli到最新版本4.4.6</li>
-                <li>升级vue-cropper到最新版本0.5.5</li>
-                <li>升级clipboard到最新版本2.0.6</li>
-                <li>升级core-js到最新版本3.8.1</li>
-                <li>升级echarts到最新版本4.9.0</li>
-                <li>升级file-saver到最新版本2.0.4</li>
-                <li>升级fuse.js到最新版本6.4.3</li>
-                <li>升级js-beautify到最新版本1.13.0</li>
-                <li>升级js-cookie到最新版本2.2.1</li>
-                <li>升级path-to-regexp到最新版本6.2.0</li>
-                <li>升级quill到最新版本1.3.7</li>
-                <li>升级screenfull到最新版本5.0.2</li>
-                <li>升级sortablejs到最新版本1.10.2</li>
-                <li>升级vuedraggable到最新版本2.24.3</li>
-                <li>升级chalk到最新版本4.1.0</li>
-                <li>升级eslint到最新版本7.15.0</li>
-                <li>升级eslint-plugin-vue到最新版本7.2.0</li>
-                <li>升级lint-staged到最新版本10.5.3</li>
-                <li>升级runjs到最新版本4.4.2</li>
-                <li>升级sass-loader到最新版本10.1.0</li>
-                <li>升级script-ext-html-webpack-plugin到最新版本2.1.5</li>
-                <li>升级svg-sprite-loader到最新版本5.1.1</li>
-                <li>升级vue-template-compiler到最新版本2.6.12</li>
-                <li>其他细节优化</li>
+                <li>新增快取監控功能</li>
+                <li>支援主題風格配置</li>
+                <li>修復多級選單之間切換無法快取的問題</li>
+                <li>多級選單自動配置元件</li>
+                <li>程式碼生成預覽支援高亮顯示</li>
+                <li>支援Get請求對映Params引數</li>
+                <li>刪除使用者和角色解綁關聯</li>
+                <li>去除使用者手機郵箱部門必填驗證</li>
+                <li>Excel支援註解align對齊方式</li>
+                <li>Excel支援匯入Boolean型資料</li>
+                <li>最佳化頭像樣式，滑鼠移入懸停遮罩</li>
+                <li>程式碼生成預覽提供滾動機制</li>
+                <li>程式碼生成刪除多餘的數字float型別</li>
+                <li>修正轉換字串的目標字符集屬性</li>
+                <li>回顯資料字典防止空值報錯</li>
+                <li>日誌記錄增加過濾多檔案場景</li>
+                <li>修改快取Set方法可能導致巢狀的問題</li>
+                <li>移除前端一些多餘的依賴</li>
+                <li>防止安全掃描YUI出現的風險提示</li>
+                <li>修改node-sass為dart-sass</li>
+                <li>升級SpringBoot到最新版本2.1.18</li>
+                <li>升級poi到最新版本4.1.2</li>
+                <li>升級oshi到最新版本v5.3.6</li>
+                <li>升級bitwalker到最新版本1.21</li>
+                <li>升級axios到最新版本0.21.0</li>
+                <li>升級element-ui到最新版本2.14.1</li>
+                <li>升級vue到最新版本2.6.12</li>
+                <li>升級vuex到最新版本3.6.0</li>
+                <li>升級vue-cli到版本4.5.9</li>
+                <li>升級vue-router到最新版本3.4.9</li>
+                <li>升級vue-cli到最新版本4.4.6</li>
+                <li>升級vue-cropper到最新版本0.5.5</li>
+                <li>升級clipboard到最新版本2.0.6</li>
+                <li>升級core-js到最新版本3.8.1</li>
+                <li>升級echarts到最新版本4.9.0</li>
+                <li>升級file-saver到最新版本2.0.4</li>
+                <li>升級fuse.js到最新版本6.4.3</li>
+                <li>升級js-beautify到最新版本1.13.0</li>
+                <li>升級js-cookie到最新版本2.2.1</li>
+                <li>升級path-to-regexp到最新版本6.2.0</li>
+                <li>升級quill到最新版本1.3.7</li>
+                <li>升級screenfull到最新版本5.0.2</li>
+                <li>升級sortablejs到最新版本1.10.2</li>
+                <li>升級vuedraggable到最新版本2.24.3</li>
+                <li>升級chalk到最新版本4.1.0</li>
+                <li>升級eslint到最新版本7.15.0</li>
+                <li>升級eslint-plugin-vue到最新版本7.2.0</li>
+                <li>升級lint-staged到最新版本10.5.3</li>
+                <li>升級runjs到最新版本4.4.2</li>
+                <li>升級sass-loader到最新版本10.1.0</li>
+                <li>升級script-ext-html-webpack-plugin到最新版本2.1.5</li>
+                <li>升級svg-sprite-loader到最新版本5.1.1</li>
+                <li>升級vue-template-compiler到最新版本2.6.12</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.2.1 - 2020-11-18">
               <ol>
-                <li>阻止任意文件下载漏洞</li>
-                <li>代码生成支持上传控件</li>
-                <li>新增图片上传组件</li>
-                <li>调整默认首页</li>
-                <li>升级druid到最新版本v1.2.2</li>
-                <li>mapperLocations配置支持分隔符</li>
-                <li>权限信息调整</li>
-                <li>调整sql默认时间</li>
-                <li>解决代码生成没有bit类型的问题</li>
-                <li>升级pagehelper到最新版1.3.0</li>
+                <li>阻止任意檔案下載漏洞</li>
+                <li>程式碼生成支援上傳控制元件</li>
+                <li>新增圖片上傳元件</li>
+                <li>調整預設首頁</li>
+                <li>升級druid到最新版本v1.2.2</li>
+                <li>mapperLocations配置支援分隔符</li>
+                <li>許可權資訊調整</li>
+                <li>調整sql預設時間</li>
+                <li>解決程式碼生成沒有bit型別的問題</li>
+                <li>升級pagehelper到最新版1.3.0</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v3.2.0 - 2020-10-10">
               <ol>
-                <li>升级springboot版本到2.1.17 提升安全性</li>
-                <li>升级oshi到最新版本v5.2.5</li>
-                <li>升级druid到最新版本v1.2.1</li>
-                <li>升级jjwt到版本0.9.1</li>
-                <li>升级fastjson到最新版1.2.74</li>
-                <li>修改sass为node-sass，避免el-icon图标乱码</li>
-                <li>代码生成支持同步数据库</li>
-                <li>代码生成支持富文本控件</li>
-                <li>代码生成页面时不忽略remark属性</li>
-                <li>代码生成添加select必填选项</li>
-                <li>Excel导出类型NUMERIC支持精度浮点类型</li>
-                <li>Excel导出targetAttr优化获取值，防止get方法不规范</li>
-                <li>Excel注解支持自动统计数据总和</li>
-                <li>Excel注解支持设置BigDecimal精度&舍入规则</li>
-                <li>菜单&数据权限新增（展开/折叠 全选/全不选 父子联动）</li>
-                <li>允许用户分配到部门父节点</li>
-                <li>菜单新增是否缓存keep-alive</li>
-                <li>表格操作列间距调整</li>
-                <li>限制系统内置参数不允许删除</li>
-                <li>富文本组件优化，支持自定义高度&图片冲突问题</li>
-                <li>富文本工具栏样式对齐</li>
-                <li>导入excel整形值校验优化</li>
-                <li>修复页签关闭所有时固定标签路由不刷新问题</li>
-                <li>表单构建布局型组件新增按钮</li>
-                <li>左侧菜单文字过长显示省略号</li>
-                <li>修正根节点为子部门时，树状结构显示问题</li>
-                <li>修正调用目标字符串最大长度</li>
-                <li>修正菜单提示信息错误</li>
-                <li>修正定时任务执行一次权限标识</li>
-                <li>修正数据库字符串类型nvarchar</li>
-                <li>优化递归子节点</li>
-                <li>优化数据权限判断</li>
-                <li>其他细节优化</li>
+                <li>升級springboot版本到2.1.17 提升安全性</li>
+                <li>升級oshi到最新版本v5.2.5</li>
+                <li>升級druid到最新版本v1.2.1</li>
+                <li>升級jjwt到版本0.9.1</li>
+                <li>升級fastjson到最新版1.2.74</li>
+                <li>修改sass為node-sass，避免el-icon圖示亂碼</li>
+                <li>程式碼生成支援同步資料庫</li>
+                <li>程式碼生成支援富文字控制元件</li>
+                <li>程式碼生成頁面時不忽略remark屬性</li>
+                <li>程式碼生成新增select必填選項</li>
+                <li>Excel匯出型別NUMERIC支援精度浮點型別</li>
+                <li>Excel匯出targetAttr最佳化獲取值，防止get方法不規範</li>
+                <li>Excel註解支援自動統計資料總和</li>
+                <li>Excel註解支援設定BigDecimal精度&舍入規則</li>
+                <li>選單&資料許可權新增（展開/摺疊 全選/全不選 父子聯動）</li>
+                <li>允許使用者分配到部門父節點</li>
+                <li>選單新增是否快取keep-alive</li>
+                <li>表格操作列間距調整</li>
+                <li>限制系統內建引數不允許刪除</li>
+                <li>富文字元件最佳化，支援自定義高度&圖片衝突問題</li>
+                <li>富文字工具欄樣式對齊</li>
+                <li>匯入excel整形值校驗最佳化</li>
+                <li>修復頁籤關閉所有時固定標籤路由不重新整理問題</li>
+                <li>表單構建佈局型元件新增按鈕</li>
+                <li>左側選單文字過長顯示省略號</li>
+                <li>修正根節點為子部門時，樹狀結構顯示問題</li>
+                <li>修正呼叫目標字串最大長度</li>
+                <li>修正選單提示資訊錯誤</li>
+                <li>修正定時任務執行一次許可權標識</li>
+                <li>修正資料庫字串型別nvarchar</li>
+                <li>最佳化遞迴子節點</li>
+                <li>最佳化資料許可權判斷</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
 
             <el-collapse-item title="v3.1.0 - 2020-08-13">
               <ol>
-                <li>表格工具栏右侧添加刷新&显隐查询组件</li>
-                <li>后端支持CORS跨域请求</li>
-                <li>代码生成支持选择上级菜单</li>
-                <li>代码生成支持自定义路径</li>
-                <li>代码生成支持复选框</li>
-                <li>Excel导出导入支持dictType字典类型</li>
-                <li>Excel支持分割字符串组内容</li>
-                <li>验证码类型支持（数组计算、字符验证）</li>
-                <li>升级vue-cli版本到4.4.4</li>
-                <li>修改 node-sass 为 dart-sass</li>
-                <li>表单类型为Integer/Long设置整形默认值</li>
-                <li>代码生成器默认mapper路径与默认mapperScan路径不一致</li>
-                <li>优化防重复提交拦截器</li>
-                <li>优化上级菜单不能选择自己</li>
-                <li>修复角色的权限分配后，未实时生效问题</li>
-                <li>修复在线用户日志记录类型</li>
-                <li>修复富文本空格和缩进保存后不生效问题</li>
-                <li>修复在线用户判断逻辑</li>
-                <li>唯一限制条件只返回单条数据</li>
-                <li>添加获取当前的环境配置方法</li>
-                <li>超时登录后页面跳转到首页</li>
-                <li>全局异常状态汉化拦截处理</li>
-                <li>HTML过滤器改为将html转义</li>
-                <li>检查字符支持小数点&降级改成异常提醒</li>
-                <li>其他细节优化</li>
+                <li>表格工具欄右側新增重新整理&顯隱查詢元件</li>
+                <li>後端支援CORS跨域請求</li>
+                <li>程式碼生成支援選擇上級選單</li>
+                <li>程式碼生成支援自定義路徑</li>
+                <li>程式碼生成支援核取方塊</li>
+                <li>Excel匯出匯入支援dictType字典型別</li>
+                <li>Excel支援分割字串組內容</li>
+                <li>驗證碼型別支援（陣列計算、字元驗證）</li>
+                <li>升級vue-cli版本到4.4.4</li>
+                <li>修改 node-sass 為 dart-sass</li>
+                <li>表單型別為Integer/Long設定整形預設值</li>
+                <li>程式碼生成器預設mapper路徑與預設mapperScan路徑不一致</li>
+                <li>最佳化防重複提交攔截器</li>
+                <li>最佳化上級選單不能選擇自己</li>
+                <li>修復角色的許可權分配後，未實時生效問題</li>
+                <li>修復線上使用者日誌記錄型別</li>
+                <li>修復富文字空格和縮排儲存後不生效問題</li>
+                <li>修復線上使用者判斷邏輯</li>
+                <li>唯一限制條件只返回單條資料</li>
+                <li>新增獲取當前的環境配置方法</li>
+                <li>超時登入後頁面跳轉到首頁</li>
+                <li>全域性異常狀態漢化攔截處理</li>
+                <li>HTML過濾器改為將html轉義</li>
+                <li>檢查字元支援小數點&降級改成異常提醒</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
 
             <el-collapse-item title="v3.0.0 - 2020-07-20">
               <ol>
-                <li>单应用调整为多模块项目</li>
-                <li>升级element-ui版本到2.13.2</li>
-                <li>删除babel，提高编译速度。</li>
-                <li>新增菜单默认主类目</li>
-                <li>编码文件名修改为uuid方式</li>
-                <li>定时任务cron表达式验证</li>
-                <li>角色权限修改时已有权限未自动勾选异常修复</li>
-                <li>防止切换权限用户后登录出现404</li>
-                <li>Excel支持sort导出排序</li>
-                <li>创建用户不允许选择超级管理员角色</li>
-                <li>修复代码生成导入表结构出现异常页面不提醒问题</li>
-                <li>修复代码生成点击多次表修改数据不变化的问题</li>
-                <li>修复头像上传成功二次打开无法改变裁剪框大小和位置问题</li>
-                <li>修复布局为small者mini用户表单显示错位问题</li>
-                <li>修复热部署导致的强换异常问题</li>
-                <li>修改用户管理复选框宽度，防止部分浏览器出现省略号</li>
-                <li>IpUtils工具，清除Xss特殊字符，防止Xff注入攻击</li>
-                <li>生成domain 如果是浮点型 统一用BigDecimal</li>
-                <li>定时任务调整label-width，防止部署出现错位</li>
-                <li>调整表头固定列默认样式</li>
-                <li>代码生成模板调整，字段为String并且必填则加空串条件</li>
-                <li>代码生成字典Integer/Long使用parseInt</li>
+                <li>單應用調整為多模組專案</li>
+                <li>升級element-ui版本到2.13.2</li>
+                <li>刪除babel，提高編譯速度。</li>
+                <li>新增選單預設主類目</li>
+                <li>編碼檔名修改為uuid方式</li>
+                <li>定時任務cron表示式驗證</li>
+                <li>角色許可權修改時已有許可權未自動勾選異常修復</li>
+                <li>防止切換許可權使用者後登入出現404</li>
+                <li>Excel支援sort匯出排序</li>
+                <li>建立使用者不允許選擇超級管理員角色</li>
+                <li>修復程式碼生成匯入表結構出現異常頁面不提醒問題</li>
+                <li>修復程式碼生成點選多次表修改資料不變化的問題</li>
+                <li>修復頭像上傳成功二次開啟無法改變裁剪框大小和位置問題</li>
+                <li>修復佈局為small者mini使用者表單顯示錯位問題</li>
+                <li>修復熱部署導致的強換異常問題</li>
+                <li>修改使用者管理核取方塊寬度，防止部分瀏覽器出現省略號</li>
+                <li>IpUtils工具，清除Xss特殊字元，防止Xff注入攻擊</li>
+                <li>生成domain 如果是浮點型 統一用BigDecimal</li>
+                <li>定時任務調整label-width，防止部署出現錯位</li>
+                <li>調整表頭固定列預設樣式</li>
+                <li>程式碼生成模板調整，欄位為String並且必填則加空串條件</li>
+                <li>程式碼生成字典Integer/Long使用parseInt</li>
                 <li>
-                  修复dict_sort不可update为0的问题&查询返回增加dict_sort升序排序
+                  修復dict_sort不可update為0的問題&查詢返回增加dict_sort升序排序
                 </li>
-                <li>修正岗位导出权限注解</li>
+                <li>修正崗位匯出許可權註解</li>
                 <li>禁止加密密文返回前端</li>
-                <li>修复代码生成页面中的查询条件创建时间未生效的问题</li>
-                <li>修复首页搜索菜单外链无法点击跳转问题</li>
-                <li>修复菜单管理选择图标，backspace删除时不过滤数据</li>
-                <li>用户管理部门分支节点不可检查&显示计数</li>
-                <li>数据范围过滤属性调整</li>
-                <li>其他细节优化</li>
+                <li>修復程式碼生成頁面中的查詢條件建立時間未生效的問題</li>
+                <li>修復首頁搜尋選單外鏈無法點選跳轉問題</li>
+                <li>修復選單管理選擇圖示，backspace刪除時不過濾資料</li>
+                <li>使用者管理部門分支節點不可檢查&顯示計數</li>
+                <li>資料範圍過濾屬性調整</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
 
             <el-collapse-item title="v2.3.0 - 2020-06-01">
               <ol>
-                <li>升级fastjson到最新版1.2.70 修复高危安全漏洞</li>
-                <li>dev启动默认打开浏览器</li>
-                <li>vue-cli使用默认source-map</li>
-                <li>slidebar eslint报错优化</li>
-                <li>当tags-view滚动关闭右键菜单</li>
-                <li>字典管理添加缓存读取</li>
-                <li>参数管理支持缓存操作</li>
-                <li>支持一级菜单（和主页同级）在main区域显示</li>
-                <li>限制外链地址必须以http(s)开头</li>
-                <li>tagview & sidebar 主题颜色与element ui(全局)同步</li>
-                <li>修改数据源类型优先级，先根据方法，再根据类</li>
-                <li>支持是否需要设置token属性，自定义返回码消息。</li>
-                <li>swagger请求前缀加入配置。</li>
-                <li>登录地点设置内容过长则隐藏显示</li>
-                <li>修复定时任务执行一次按钮后不提示消息问题</li>
-                <li>修改上级部门（选择项排除本身和下级）</li>
-                <li>通用http发送方法增加参数 contentType 编码类型</li>
-                <li>更换IP地址查询接口</li>
-                <li>修复页签变量undefined</li>
-                <li>添加校验部门包含未停用的子部门</li>
-                <li>修改定时任务详情下次执行时间日期显示错误</li>
-                <li>角色管理查询设置默认排序字段</li>
-                <li>swagger添加enable参数控制是否启用</li>
-                <li>只对json类型请求构建可重复读取inputStream的request</li>
-                <li>修改代码生成字典字段int类型没有自动选中问题</li>
-                <li>vuex用户名取值修正</li>
-                <li>表格树模板去掉多余的)</li>
-                <li>代码生成序号修正</li>
-                <li>全屏情况下不调整上外边距</li>
-                <li>代码生成Date字段添加默认格式</li>
-                <li>用户管理角色选择权限控制</li>
-                <li>修复路由懒加载报错问题</li>
-                <li>模板sql.vm添加菜单状态</li>
-                <li>设置用户名称不能修改</li>
-                <li>dialog添加append-to-body属性，防止ie遮罩</li>
-                <li>菜单区分状态和显示隐藏功能</li>
-                <li>升级fastjson到最新版1.2.68 修复安全加固</li>
-                <li>修复代码生成如果选择字典类型缺失逗号问题</li>
-                <li>登录请求params更换为data，防止暴露url</li>
-                <li>日志返回时间格式处理</li>
-                <li>添加handle控制允许拖动的元素</li>
-                <li>布局设置点击扩大范围</li>
-                <li>代码生成列属性排序查询</li>
-                <li>代码生成列支持拖动排序</li>
-                <li>修复时间格式不支持ios问题</li>
-                <li>表单构建添加父级class，防止冲突</li>
-                <li>定时任务并发属性修正</li>
-                <li>角色禁用&菜单隐藏不查询权限</li>
-                <li>其他细节优化</li>
+                <li>升級fastjson到最新版1.2.70 修復高危安全漏洞</li>
+                <li>dev啟動預設開啟瀏覽器</li>
+                <li>vue-cli使用預設source-map</li>
+                <li>slidebar eslint報錯最佳化</li>
+                <li>當tags-view滾動關閉右鍵選單</li>
+                <li>字典管理新增快取讀取</li>
+                <li>引數管理支援快取操作</li>
+                <li>支援一級選單（和主頁同級）在main區域顯示</li>
+                <li>限制外鏈地址必須以http(s)開頭</li>
+                <li>tagview & sidebar 主題顏色與element ui(全域性)同步</li>
+                <li>修改資料來源型別優先順序，先根據方法，再根據類</li>
+                <li>支援是否需要設定token屬性，自定義返回碼訊息。</li>
+                <li>swagger請求字首加入配置。</li>
+                <li>登入地點設定內容過長則隱藏顯示</li>
+                <li>修復定時任務執行一次按鈕後不提示訊息問題</li>
+                <li>修改上級部門（選擇項排除本身和下級）</li>
+                <li>通用http傳送方法增加引數 contentType 編碼型別</li>
+                <li>更換IP地址查詢介面</li>
+                <li>修復頁籤變數undefined</li>
+                <li>新增校驗部門包含未停用的子部門</li>
+                <li>修改定時任務詳情下次執行時間日期顯示錯誤</li>
+                <li>角色管理查詢設定預設排序欄位</li>
+                <li>swagger新增enable引數控制是否啟用</li>
+                <li>只對json型別請求構建可重複讀取inputStream的request</li>
+                <li>修改程式碼生成字典欄位int型別沒有自動選中問題</li>
+                <li>vuex使用者名稱取值修正</li>
+                <li>表格樹模板去掉多餘的)</li>
+                <li>程式碼生成序號修正</li>
+                <li>全屏情況下不調整上外邊距</li>
+                <li>程式碼生成Date欄位新增預設格式</li>
+                <li>使用者管理角色選擇許可權控制</li>
+                <li>修復路由懶載入報錯問題</li>
+                <li>模板sql.vm新增選單狀態</li>
+                <li>設定使用者名稱稱不能修改</li>
+                <li>dialog新增append-to-body屬性，防止ie遮罩</li>
+                <li>選單區分狀態和顯示隱藏功能</li>
+                <li>升級fastjson到最新版1.2.68 修復安全加固</li>
+                <li>修復程式碼生成如果選擇字典型別缺失逗號問題</li>
+                <li>登入請求params更換為data，防止暴露url</li>
+                <li>日誌返回時間格式處理</li>
+                <li>新增handle控制允許拖動的元素</li>
+                <li>佈局設定點選擴大範圍</li>
+                <li>程式碼生成列屬性排序查詢</li>
+                <li>程式碼生成列支援拖動排序</li>
+                <li>修復時間格式不支援ios問題</li>
+                <li>表單構建新增父級class，防止衝突</li>
+                <li>定時任務併發屬性修正</li>
+                <li>角色禁用&選單隱藏不查詢許可權</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
 
             <el-collapse-item title="v2.2.0 - 2020-03-18">
               <ol>
-                <li>系统监控新增定时任务功能</li>
-                <li>添加一个打包Web工程bat</li>
-                <li>修复页签鼠标滚轮按下的时候，可以关闭不可关闭的tag</li>
-                <li>修复点击退出登录有时会无提示问题</li>
-                <li>修复防重复提交注解无效问题</li>
-                <li>修复通知公告批量删除异常问题</li>
-                <li>添加菜单时路由地址必填限制</li>
-                <li>代码生成字段描述可编辑</li>
-                <li>修复用户修改个人信息导致缓存不过期问题</li>
-                <li>个人信息创建时间获取正确属性值</li>
-                <li>操作日志详细显示正确类型</li>
-                <li>导入表单击行数据时选中对应的复选框</li>
-                <li>批量替换表前缀逻辑调整</li>
-                <li>固定重定向路径表达式</li>
-                <li>升级element-ui版本到2.13.0</li>
-                <li>操作日志排序调整</li>
-                <li>修复charts切换侧边栏或者缩放窗口显示bug</li>
-                <li>其他细节优化</li>
+                <li>系統監控新增定時任務功能</li>
+                <li>新增一個打包Web工程bat</li>
+                <li>修復頁籤滑鼠滾輪按下的時候，可以關閉不可關閉的tag</li>
+                <li>修復點選退出登入有時會無提示問題</li>
+                <li>修復防重複提交註解無效問題</li>
+                <li>修復通知公告批次刪除異常問題</li>
+                <li>新增選單時路由地址必填限制</li>
+                <li>程式碼生成欄位描述可編輯</li>
+                <li>修復使用者修改個人資訊導致快取不過期問題</li>
+                <li>個人資訊建立時間獲取正確屬性值</li>
+                <li>操作日誌詳細顯示正確型別</li>
+                <li>匯入表單擊行資料時選中對應的核取方塊</li>
+                <li>批次替換表字首邏輯調整</li>
+                <li>固定重定向路徑表示式</li>
+                <li>升級element-ui版本到2.13.0</li>
+                <li>操作日誌排序調整</li>
+                <li>修復charts切換側邊欄或者縮放視窗顯示bug</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
 
             <el-collapse-item title="v2.1.0 - 2020-02-24">
               <ol>
-                <li>新增表单构建</li>
-                <li>代码生成支持树表结构</li>
-                <li>新增用户导入</li>
-                <li>修复动态加载路由页面刷新问题</li>
-                <li>修复地址开关无效问题</li>
-                <li>汉化错误提示页面</li>
-                <li>代码生成已知问题修改</li>
-                <li>修复多数据源下配置关闭出现异常处理</li>
-                <li>添加HTML过滤器，用于去除XSS漏洞隐患</li>
-                <li>修复上传头像控制台出现异常</li>
-                <li>修改用户管理分页不正确的问题</li>
-                <li>修复验证码记录提示错误</li>
-                <li>修复request.js缺少Message引用</li>
-                <li>修复表格时间为空出现的异常</li>
-                <li>添加Jackson日期反序列化时区配置</li>
-                <li>调整根据用户权限加载菜单数据树形结构</li>
-                <li>调整成功登录不恢复按钮，防止多次点击</li>
-                <li>修改用户个人资料同步缓存信息</li>
-                <li>修复页面同时出现el-upload和Editor不显示处理</li>
-                <li>修复在角色管理页修改菜单权限偶尔未选中问题</li>
-                <li>配置文件新增redis密码属性</li>
-                <li>设置mybatis全局的配置文件</li>
-                <li>其他细节优化</li>
+                <li>新增表單構建</li>
+                <li>程式碼生成支援樹表結構</li>
+                <li>新增使用者匯入</li>
+                <li>修復動態載入路由頁面重新整理問題</li>
+                <li>修復地址開關無效問題</li>
+                <li>漢化錯誤提示頁面</li>
+                <li>程式碼生成已知問題修改</li>
+                <li>修復多資料來源下配置關閉出現異常處理</li>
+                <li>新增HTML過濾器，用於去除XSS漏洞隱患</li>
+                <li>修復上傳頭像控制檯出現異常</li>
+                <li>修改使用者管理分頁不正確的問題</li>
+                <li>修復驗證碼記錄提示錯誤</li>
+                <li>修復request.js缺少Message引用</li>
+                <li>修復表格時間為空出現的異常</li>
+                <li>新增Jackson日期反序列化時區配置</li>
+                <li>調整根據使用者許可權載入選單資料樹形結構</li>
+                <li>調整成功登入不恢復按鈕，防止多次點選</li>
+                <li>修改使用者個人資料同步快取資訊</li>
+                <li>修復頁面同時出現el-upload和Editor不顯示處理</li>
+                <li>修復在角色管理頁修改選單許可權偶爾未選中問題</li>
+                <li>配置檔案新增redis密碼屬性</li>
+                <li>設定mybatis全域性的配置檔案</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
 
             <el-collapse-item title="v2.0.0 - 2019-12-02">
               <ol>
-                <li>新增代码生成</li>
-                <li>新增@RepeatSubmit注解，防止重复提交</li>
-                <li>新增菜单主目录添加/删除操作</li>
-                <li>日志记录过滤特殊对象，防止转换异常</li>
-                <li>修改代码生成路由脚本错误</li>
-                <li>用户上传头像实时同步缓存，无需重新登录</li>
-                <li>调整切换页签后不重新加载数据</li>
-                <li>添加jsencrypt实现参数的前端加密</li>
-                <li>系统退出删除用户缓存记录</li>
-                <li>其他细节优化</li>
+                <li>新增程式碼生成</li>
+                <li>新增@RepeatSubmit註解，防止重複提交</li>
+                <li>新增選單主目錄新增/刪除操作</li>
+                <li>日誌記錄過濾特殊物件，防止轉換異常</li>
+                <li>修改程式碼生成路由指令碼錯誤</li>
+                <li>使用者上傳頭像實時同步快取，無需重新登入</li>
+                <li>調整切換頁籤後不重新載入資料</li>
+                <li>新增jsencrypt實現引數的前端加密</li>
+                <li>系統退出刪除使用者快取記錄</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v1.1.0 - 2019-11-11">
               <ol>
-                <li>新增在线用户管理</li>
-                <li>新增按钮组功能实现（批量删除、导出、清空）</li>
-                <li>新增查询条件重置按钮</li>
-                <li>新增Swagger全局Token配置</li>
-                <li>新增后端参数校验</li>
-                <li>修复字典管理页面的日期查询异常</li>
-                <li>修改时间函数命名防止冲突</li>
-                <li>去除菜单上级校验，默认为顶级</li>
-                <li>修复用户密码无法修改问题</li>
-                <li>修复菜单类型为按钮时不显示权限标识</li>
-                <li>其他细节优化</li>
+                <li>新增線上使用者管理</li>
+                <li>新增按鈕組功能實現（批次刪除、匯出、清空）</li>
+                <li>新增查詢條件重置按鈕</li>
+                <li>新增Swagger全域性Token配置</li>
+                <li>新增後端引數校驗</li>
+                <li>修復字典管理頁面的日期查詢異常</li>
+                <li>修改時間函式命名防止衝突</li>
+                <li>去除選單上級校驗，預設為頂級</li>
+                <li>修復使用者密碼無法修改問題</li>
+                <li>修復選單型別為按鈕時不顯示許可權標識</li>
+                <li>其他細節最佳化</li>
               </ol>
             </el-collapse-item>
             <el-collapse-item title="v1.0.0 - 2019-10-08">
               <ol>
-                <li>若依前后端分离系统正式发布</li>
+                <li>若依前後端分離系統正式釋出</li>
               </ol>
             </el-collapse-item>
           </el-collapse>
@@ -1035,7 +1035,7 @@
       <el-col :xs="24" :sm="24" :md="12" :lg="8">
         <el-card class="update-log">
           <div slot="header" class="clearfix">
-            <span>捐赠支持</span>
+            <span>捐贈支援</span>
           </div>
           <div class="body">
             <img
@@ -1044,7 +1044,7 @@
               width="100%"
             />
             <span style="display: inline-block; height: 30px; line-height: 30px"
-              >你可以请作者喝杯咖啡表示鼓励</span
+              >你可以請作者喝杯咖啡表示鼓勵</span
             >
           </div>
         </el-card>
@@ -1058,7 +1058,7 @@ export default {
   name: "Index",
   data() {
     return {
-      // 版本号
+      // 版本號
       version: "3.9.0"
     }
   },

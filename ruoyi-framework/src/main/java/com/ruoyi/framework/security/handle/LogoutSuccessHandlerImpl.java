@@ -20,7 +20,7 @@ import com.ruoyi.framework.manager.factory.AsyncFactory;
 import com.ruoyi.framework.web.service.TokenService;
 
 /**
- * 自定义退出处理类 返回成功
+ * 自定義退出處理類 返回成功
  * 
  * @author ruoyi
  */
@@ -31,7 +31,7 @@ public class LogoutSuccessHandlerImpl implements LogoutSuccessHandler
     private TokenService tokenService;
 
     /**
-     * 退出处理
+     * 退出處理
      * 
      * @return
      */
@@ -43,9 +43,9 @@ public class LogoutSuccessHandlerImpl implements LogoutSuccessHandler
         if (StringUtils.isNotNull(loginUser))
         {
             String userName = loginUser.getUsername();
-            // 删除用户缓存记录
+            // 刪除使用者快取記錄
             tokenService.delLoginUser(loginUser.getToken());
-            // 记录用户退出日志
+            // 記錄使用者退出日誌
             AsyncManager.me().execute(AsyncFactory.recordLogininfor(userName, Constants.LOGOUT, MessageUtils.message("user.logout.success")));
         }
         ServletUtils.renderString(response, JSON.toJSONString(AjaxResult.success(MessageUtils.message("user.logout.success"))));

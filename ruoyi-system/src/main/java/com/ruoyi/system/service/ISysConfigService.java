@@ -4,86 +4,86 @@ import java.util.List;
 import com.ruoyi.system.domain.SysConfig;
 
 /**
- * 参数配置 服务层
+ * 引數配置 服務層
  * 
  * @author ruoyi
  */
 public interface ISysConfigService
 {
     /**
-     * 查询参数配置信息
+     * 查詢引數配置資訊
      * 
-     * @param configId 参数配置ID
-     * @return 参数配置信息
+     * @param configId 引數配置ID
+     * @return 引數配置資訊
      */
     public SysConfig selectConfigById(Long configId);
 
     /**
-     * 根据键名查询参数配置信息
+     * 根據鍵名查詢引數配置資訊
      * 
-     * @param configKey 参数键名
-     * @return 参数键值
+     * @param configKey 引數鍵名
+     * @return 引數鍵值
      */
     public String selectConfigByKey(String configKey);
 
     /**
-     * 获取验证码开关
+     * 獲取驗證碼開關
      * 
-     * @return true开启，false关闭
+     * @return true開啟，false關閉
      */
     public boolean selectCaptchaEnabled();
 
     /**
-     * 查询参数配置列表
+     * 查詢引數配置列表
      * 
-     * @param config 参数配置信息
-     * @return 参数配置集合
+     * @param config 引數配置資訊
+     * @return 引數配置集合
      */
     public List<SysConfig> selectConfigList(SysConfig config);
 
     /**
-     * 新增参数配置
+     * 新增引數配置
      * 
-     * @param config 参数配置信息
-     * @return 结果
+     * @param config 引數配置資訊
+     * @return 結果
      */
     public int insertConfig(SysConfig config);
 
     /**
-     * 修改参数配置
+     * 修改引數配置
      * 
-     * @param config 参数配置信息
-     * @return 结果
+     * @param config 引數配置資訊
+     * @return 結果
      */
     public int updateConfig(SysConfig config);
 
     /**
-     * 批量删除参数信息
+     * 批次刪除引數資訊
      * 
-     * @param configIds 需要删除的参数ID
+     * @param configIds 需要刪除的引數ID
      */
     public void deleteConfigByIds(Long[] configIds);
 
     /**
-     * 加载参数缓存数据
+     * 載入引數快取資料
      */
     public void loadingConfigCache();
 
     /**
-     * 清空参数缓存数据
+     * 清空引數快取資料
      */
     public void clearConfigCache();
 
     /**
-     * 重置参数缓存数据
+     * 重置引數快取資料
      */
     public void resetConfigCache();
 
     /**
-     * 校验参数键名是否唯一
+     * 校驗引數鍵名是否唯一
      * 
-     * @param config 参数信息
-     * @return 结果
+     * @param config 引數資訊
+     * @return 結果
      */
     public boolean checkConfigKeyUnique(SysConfig config);
 }

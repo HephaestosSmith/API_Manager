@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: ruoyi-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ry-vue
+      TZ: Asia/Taipei
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+      - mysql-data:/var/lib/mysql
+    command:
+      --character-set-server=utf8
+      --collation-server=utf8_unicode_ci
+      --default-time-zone='+08:00'
+    networks:
+      ruoyi-net:
+        ipv4_address: 172.20.0.2
+
+  redis:
+    image: redis:6.2
+    container_name: ruoyi-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: ["redis-server", "--appendonly", "yes"]
+    networks:
+      ruoyi-net:
+        ipv4_address: 172.20.0.3
+
+  backend:
+    build:
+      context: ./ruoyi-admin
+    container_name: ruoyi-backend
+    restart: always
+    depends_on:
+      - mysql
+      - redis
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://172.20.0.2:3306/ry-vue?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Taipei&useSSL=false
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_REDIS_HOST: 172.20.0.3
+      SPRING_REDIS_PORT: 6379
+    networks:
+      ruoyi-net:
+        ipv4_address: 172.20.0.4
+
+  frontend:
+    build:
+      context: ./ruoyi-ui
+    container_name: ruoyi-frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    networks:
+      ruoyi-net:
+        ipv4_address: 172.20.0.5
+
+volumes:
+  mysql-data:
+  redis-data:
+
+networks:
+  ruoyi-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

@@ -27,11 +27,11 @@ public class RedisConfig extends CachingConfigurerSupport
 
         FastJson2JsonRedisSerializer serializer = new FastJson2JsonRedisSerializer(Object.class);
 
-        // 使用StringRedisSerializer来序列化和反序列化redis的key值
+        // 使用StringRedisSerializer來序列化和反序列化redis的key值
         template.setKeySerializer(new StringRedisSerializer());
         template.setValueSerializer(serializer);
 
-        // Hash的key也采用StringRedisSerializer的序列化方式
+        // Hash的key也採用StringRedisSerializer的序列化方式
         template.setHashKeySerializer(new StringRedisSerializer());
         template.setHashValueSerializer(serializer);
 
@@ -49,7 +49,7 @@ public class RedisConfig extends CachingConfigurerSupport
     }
 
     /**
-     * 限流脚本
+     * 限流指令碼
      */
     private String limitScriptText()
     {

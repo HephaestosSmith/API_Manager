@@ -18,7 +18,7 @@ import com.ruoyi.common.utils.StringUtils;
 import com.ruoyi.framework.security.context.PermissionContextHolder;
 
 /**
- * 数据过滤处理
+ * 資料過濾處理
  *
  * @author ruoyi
  */
@@ -27,32 +27,32 @@ import com.ruoyi.framework.security.context.PermissionContextHolder;
 public class DataScopeAspect
 {
     /**
-     * 全部数据权限
+     * 全部資料許可權
      */
     public static final String DATA_SCOPE_ALL = "1";
 
     /**
-     * 自定数据权限
+     * 自定資料許可權
      */
     public static final String DATA_SCOPE_CUSTOM = "2";
 
     /**
-     * 部门数据权限
+     * 部門資料許可權
      */
     public static final String DATA_SCOPE_DEPT = "3";
 
     /**
-     * 部门及以下数据权限
+     * 部門及以下資料許可權
      */
     public static final String DATA_SCOPE_DEPT_AND_CHILD = "4";
 
     /**
-     * 仅本人数据权限
+     * 僅本人資料許可權
      */
     public static final String DATA_SCOPE_SELF = "5";
 
     /**
-     * 数据权限过滤关键字
+     * 資料許可權過濾關鍵字
      */
     public static final String DATA_SCOPE = "dataScope";
 
@@ -65,12 +65,12 @@ public class DataScopeAspect
 
     protected void handleDataScope(final JoinPoint joinPoint, DataScope controllerDataScope)
     {
-        // 获取当前的用户
+        // 獲取當前的使用者
         LoginUser loginUser = SecurityUtils.getLoginUser();
         if (StringUtils.isNotNull(loginUser))
         {
             SysUser currentUser = loginUser.getUser();
-            // 如果是超级管理员，则不过滤数据
+            // 如果是超級管理員，則不過濾資料
             if (StringUtils.isNotNull(currentUser) && !currentUser.isAdmin())
             {
                 String permission = StringUtils.defaultIfEmpty(controllerDataScope.permission(), PermissionContextHolder.getContext());
@@ -80,13 +80,13 @@ public class DataScopeAspect
     }
 
     /**
-     * 数据范围过滤
+     * 資料範圍過濾
      *
-     * @param joinPoint 切点
-     * @param user 用户
-     * @param deptAlias 部门别名
-     * @param userAlias 用户别名
-     * @param permission 权限字符
+     * @param joinPoint 切點
+     * @param user 使用者
+     * @param deptAlias 部門別名
+     * @param userAlias 使用者別名
+     * @param permission 許可權字元
      */
     public static void dataScopeFilter(JoinPoint joinPoint, SysUser user, String deptAlias, String userAlias, String permission)
     {
@@ -121,7 +121,7 @@ public class DataScopeAspect
             {
                 if (scopeCustomIds.size() > 1)
                 {
-                    // 多个自定数据权限使用in查询，避免多次拼接。
+                    // 多個自定資料許可權使用in查詢，避免多次拼接。
                     sqlString.append(StringUtils.format(" OR {}.dept_id IN ( SELECT dept_id FROM sys_role_dept WHERE role_id in ({}) ) ", deptAlias, String.join(",", scopeCustomIds)));
                 }
                 else
@@ -145,14 +145,14 @@ public class DataScopeAspect
                 }
                 else
                 {
-                    // 数据权限为仅本人且没有userAlias别名不查询任何数据
+                    // 資料許可權為僅本人且沒有userAlias別名不查詢任何資料
                     sqlString.append(StringUtils.format(" OR {}.dept_id = 0 ", deptAlias));
                 }
             }
             conditions.add(dataScope);
         }
 
-        // 角色都不包含传递过来的权限字符，这个时候sqlString也会为空，所以要限制一下,不查询任何数据
+        // 角色都不包含傳遞過來的許可權字元，這個時候sqlString也會為空，所以要限制一下,不查詢任何資料
         if (StringUtils.isEmpty(conditions))
         {
             sqlString.append(StringUtils.format(" OR {}.dept_id = 0 ", deptAlias));
@@ -170,7 +170,7 @@ public class DataScopeAspect
     }
 
     /**
-     * 拼接权限sql前先清空params.dataScope参数防止注入
+     * 拼接許可權sql前先清空params.dataScope引數防止注入
      */
     private void clearDataScope(final JoinPoint joinPoint)
     {

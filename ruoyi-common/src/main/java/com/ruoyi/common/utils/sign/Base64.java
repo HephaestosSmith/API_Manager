@@ -1,7 +1,7 @@
 package com.ruoyi.common.utils.sign;
 
 /**
- * Base64工具类
+ * Base64工具類
  * 
  * @author ruoyi
  */

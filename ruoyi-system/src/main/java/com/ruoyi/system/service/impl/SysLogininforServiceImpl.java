@@ -8,7 +8,7 @@ import com.ruoyi.system.mapper.SysLogininforMapper;
 import com.ruoyi.system.service.ISysLogininforService;
 
 /**
- * 系统访问日志情况信息 服务层处理
+ * 系統訪問日誌情況資訊 服務層處理
  * 
  * @author ruoyi
  */
@@ -20,9 +20,9 @@ public class SysLogininforServiceImpl implements ISysLogininforService
     private SysLogininforMapper logininforMapper;
 
     /**
-     * 新增系统登录日志
+     * 新增系統登入日誌
      * 
-     * @param logininfor 访问日志对象
+     * @param logininfor 訪問日誌物件
      */
     @Override
     public void insertLogininfor(SysLogininfor logininfor)
@@ -31,10 +31,10 @@ public class SysLogininforServiceImpl implements ISysLogininforService
     }
 
     /**
-     * 查询系统登录日志集合
+     * 查詢系統登入日誌集合
      * 
-     * @param logininfor 访问日志对象
-     * @return 登录记录集合
+     * @param logininfor 訪問日誌物件
+     * @return 登入記錄集合
      */
     @Override
     public List<SysLogininfor> selectLogininforList(SysLogininfor logininfor)
@@ -43,10 +43,10 @@ public class SysLogininforServiceImpl implements ISysLogininforService
     }
 
     /**
-     * 批量删除系统登录日志
+     * 批次刪除系統登入日誌
      * 
-     * @param infoIds 需要删除的登录日志ID
-     * @return 结果
+     * @param infoIds 需要刪除的登入日誌ID
+     * @return 結果
      */
     @Override
     public int deleteLogininforByIds(Long[] infoIds)
@@ -55,7 +55,7 @@ public class SysLogininforServiceImpl implements ISysLogininforService
     }
 
     /**
-     * 清空系统登录日志
+     * 清空系統登入日誌
      */
     @Override
     public void cleanLogininfor()

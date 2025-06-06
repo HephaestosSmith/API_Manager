@@ -14,7 +14,7 @@ import com.ruoyi.common.core.domain.model.LoginUser;
 import com.ruoyi.common.exception.ServiceException;
 
 /**
- * 安全服务工具类
+ * 安全服務工具類
  * 
  * @author ruoyi
  */
@@ -22,7 +22,7 @@ public class SecurityUtils
 {
 
     /**
-     * 用户ID
+     * 使用者ID
      **/
     public static Long getUserId()
     {
@@ -32,12 +32,12 @@ public class SecurityUtils
         }
         catch (Exception e)
         {
-            throw new ServiceException("获取用户ID异常", HttpStatus.UNAUTHORIZED);
+            throw new ServiceException("獲取使用者ID異常", HttpStatus.UNAUTHORIZED);
         }
     }
 
     /**
-     * 获取部门ID
+     * 獲取部門ID
      **/
     public static Long getDeptId()
     {
@@ -47,12 +47,12 @@ public class SecurityUtils
         }
         catch (Exception e)
         {
-            throw new ServiceException("获取部门ID异常", HttpStatus.UNAUTHORIZED);
+            throw new ServiceException("獲取部門ID異常", HttpStatus.UNAUTHORIZED);
         }
     }
 
     /**
-     * 获取用户账户
+     * 獲取使用者賬戶
      **/
     public static String getUsername()
     {
@@ -62,12 +62,12 @@ public class SecurityUtils
         }
         catch (Exception e)
         {
-            throw new ServiceException("获取用户账户异常", HttpStatus.UNAUTHORIZED);
+            throw new ServiceException("獲取使用者賬戶異常", HttpStatus.UNAUTHORIZED);
         }
     }
 
     /**
-     * 获取用户
+     * 獲取使用者
      **/
     public static LoginUser getLoginUser()
     {
@@ -77,12 +77,12 @@ public class SecurityUtils
         }
         catch (Exception e)
         {
-            throw new ServiceException("获取用户信息异常", HttpStatus.UNAUTHORIZED);
+            throw new ServiceException("獲取使用者資訊異常", HttpStatus.UNAUTHORIZED);
         }
     }
 
     /**
-     * 获取Authentication
+     * 獲取Authentication
      */
     public static Authentication getAuthentication()
     {
@@ -90,10 +90,10 @@ public class SecurityUtils
     }
 
     /**
-     * 生成BCryptPasswordEncoder密码
+     * 生成BCryptPasswordEncoder密碼
      *
-     * @param password 密码
-     * @return 加密字符串
+     * @param password 密碼
+     * @return 加密字串
      */
     public static String encryptPassword(String password)
     {
@@ -102,11 +102,11 @@ public class SecurityUtils
     }
 
     /**
-     * 判断密码是否相同
+     * 判斷密碼是否相同
      *
-     * @param rawPassword 真实密码
-     * @param encodedPassword 加密后字符
-     * @return 结果
+     * @param rawPassword 真實密碼
+     * @param encodedPassword 加密後字元
+     * @return 結果
      */
     public static boolean matchesPassword(String rawPassword, String encodedPassword)
     {
@@ -115,10 +115,10 @@ public class SecurityUtils
     }
 
     /**
-     * 是否为管理员
+     * 是否為管理員
      * 
-     * @param userId 用户ID
-     * @return 结果
+     * @param userId 使用者ID
+     * @return 結果
      */
     public static boolean isAdmin(Long userId)
     {
@@ -126,10 +126,10 @@ public class SecurityUtils
     }
 
     /**
-     * 验证用户是否具备某权限
+     * 驗證使用者是否具備某許可權
      * 
-     * @param permission 权限字符串
-     * @return 用户是否具备某权限
+     * @param permission 許可權字串
+     * @return 使用者是否具備某許可權
      */
     public static boolean hasPermi(String permission)
     {
@@ -137,11 +137,11 @@ public class SecurityUtils
     }
 
     /**
-     * 判断是否包含权限
+     * 判斷是否包含許可權
      * 
-     * @param authorities 权限列表
-     * @param permission 权限字符串
-     * @return 用户是否具备某权限
+     * @param authorities 許可權列表
+     * @param permission 許可權字串
+     * @return 使用者是否具備某許可權
      */
     public static boolean hasPermi(Collection<String> authorities, String permission)
     {
@@ -150,10 +150,10 @@ public class SecurityUtils
     }
 
     /**
-     * 验证用户是否拥有某个角色
+     * 驗證使用者是否擁有某個角色
      * 
-     * @param role 角色标识
-     * @return 用户是否具备某角色
+     * @param role 角色標識
+     * @return 使用者是否具備某角色
      */
     public static boolean hasRole(String role)
     {
@@ -163,11 +163,11 @@ public class SecurityUtils
     }
 
     /**
-     * 判断是否包含角色
+     * 判斷是否包含角色
      * 
      * @param roles 角色列表
      * @param role 角色
-     * @return 用户是否具备某角色权限
+     * @return 使用者是否具備某角色許可權
      */
     public static boolean hasRole(Collection<String> roles, String role)
     {

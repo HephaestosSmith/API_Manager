@@ -23,7 +23,7 @@ import com.ruoyi.system.domain.SysConfig;
 import com.ruoyi.system.service.ISysConfigService;
 
 /**
- * 参数配置 信息操作处理
+ * 引數配置 資訊操作處理
  * 
  * @author ruoyi
  */
@@ -35,7 +35,7 @@ public class SysConfigController extends BaseController
     private ISysConfigService configService;
 
     /**
-     * 获取参数配置列表
+     * 獲取引數配置列表
      */
     @PreAuthorize("@ss.hasPermi('system:config:list')")
     @GetMapping("/list")
@@ -46,18 +46,18 @@ public class SysConfigController extends BaseController
         return getDataTable(list);
     }
 
-    @Log(title = "参数管理", businessType = BusinessType.EXPORT)
+    @Log(title = "引數管理", businessType = BusinessType.EXPORT)
     @PreAuthorize("@ss.hasPermi('system:config:export')")
     @PostMapping("/export")
     public void export(HttpServletResponse response, SysConfig config)
     {
         List<SysConfig> list = configService.selectConfigList(config);
         ExcelUtil<SysConfig> util = new ExcelUtil<SysConfig>(SysConfig.class);
-        util.exportExcel(response, list, "参数数据");
+        util.exportExcel(response, list, "引數資料");
     }
 
     /**
-     * 根据参数编号获取详细信息
+     * 根據引數編號獲取詳細資訊
      */
     @PreAuthorize("@ss.hasPermi('system:config:query')")
     @GetMapping(value = "/{configId}")
@@ -67,7 +67,7 @@ public class SysConfigController extends BaseController
     }
 
     /**
-     * 根据参数键名查询参数值
+     * 根據引數鍵名查詢引數值
      */
     @GetMapping(value = "/configKey/{configKey}")
     public AjaxResult getConfigKey(@PathVariable String configKey)
@@ -76,42 +76,42 @@ public class SysConfigController extends BaseController
     }
 
     /**
-     * 新增参数配置
+     * 新增引數配置
      */
     @PreAuthorize("@ss.hasPermi('system:config:add')")
-    @Log(title = "参数管理", businessType = BusinessType.INSERT)
+    @Log(title = "引數管理", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@Validated @RequestBody SysConfig config)
     {
         if (!configService.checkConfigKeyUnique(config))
         {
-            return error("新增参数'" + config.getConfigName() + "'失败，参数键名已存在");
+            return error("新增引數'" + config.getConfigName() + "'失敗，引數鍵名已存在");
         }
         config.setCreateBy(getUsername());
         return toAjax(configService.insertConfig(config));
     }
 
     /**
-     * 修改参数配置
+     * 修改引數配置
      */
     @PreAuthorize("@ss.hasPermi('system:config:edit')")
-    @Log(title = "参数管理", businessType = BusinessType.UPDATE)
+    @Log(title = "引數管理", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@Validated @RequestBody SysConfig config)
     {
         if (!configService.checkConfigKeyUnique(config))
         {
-            return error("修改参数'" + config.getConfigName() + "'失败，参数键名已存在");
+            return error("修改引數'" + config.getConfigName() + "'失敗，引數鍵名已存在");
         }
         config.setUpdateBy(getUsername());
         return toAjax(configService.updateConfig(config));
     }
 
     /**
-     * 删除参数配置
+     * 刪除引數配置
      */
     @PreAuthorize("@ss.hasPermi('system:config:remove')")
-    @Log(title = "参数管理", businessType = BusinessType.DELETE)
+    @Log(title = "引數管理", businessType = BusinessType.DELETE)
     @DeleteMapping("/{configIds}")
     public AjaxResult remove(@PathVariable Long[] configIds)
     {
@@ -120,10 +120,10 @@ public class SysConfigController extends BaseController
     }
 
     /**
-     * 刷新参数缓存
+     * 重新整理引數快取
      */
     @PreAuthorize("@ss.hasPermi('system:config:remove')")
-    @Log(title = "参数管理", businessType = BusinessType.CLEAN)
+    @Log(title = "引數管理", businessType = BusinessType.CLEAN)
     @DeleteMapping("/refreshCache")
     public AjaxResult refreshCache()
     {

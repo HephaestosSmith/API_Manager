@@ -22,7 +22,7 @@ import com.ruoyi.system.mapper.SysRoleMapper;
 import com.ruoyi.system.service.ISysDeptService;
 
 /**
- * 部门管理 服务实现
+ * 部門管理 服務實現
  * 
  * @author ruoyi
  */
@@ -36,10 +36,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     private SysRoleMapper roleMapper;
 
     /**
-     * 查询部门管理数据
+     * 查詢部門管理資料
      * 
-     * @param dept 部门信息
-     * @return 部门信息集合
+     * @param dept 部門資訊
+     * @return 部門資訊集合
      */
     @Override
     @DataScope(deptAlias = "d")
@@ -49,10 +49,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 查询部门树结构信息
+     * 查詢部門樹結構資訊
      * 
-     * @param dept 部门信息
-     * @return 部门树信息集合
+     * @param dept 部門資訊
+     * @return 部門樹資訊集合
      */
     @Override
     public List<TreeSelect> selectDeptTreeList(SysDept dept)
@@ -62,10 +62,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 构建前端所需要树结构
+     * 構建前端所需要樹結構
      * 
-     * @param depts 部门列表
-     * @return 树结构列表
+     * @param depts 部門列表
+     * @return 樹結構列表
      */
     @Override
     public List<SysDept> buildDeptTree(List<SysDept> depts)
@@ -74,7 +74,7 @@ public class SysDeptServiceImpl implements ISysDeptService
         List<Long> tempList = depts.stream().map(SysDept::getDeptId).collect(Collectors.toList());
         for (SysDept dept : depts)
         {
-            // 如果是顶级节点, 遍历该父节点的所有子节点
+            // 如果是頂級節點, 遍歷該父節點的所有子節點
             if (!tempList.contains(dept.getParentId()))
             {
                 recursionFn(depts, dept);
@@ -89,10 +89,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 构建前端所需要下拉树结构
+     * 構建前端所需要下拉樹結構
      * 
-     * @param depts 部门列表
-     * @return 下拉树结构列表
+     * @param depts 部門列表
+     * @return 下拉樹結構列表
      */
     @Override
     public List<TreeSelect> buildDeptTreeSelect(List<SysDept> depts)
@@ -102,10 +102,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 根据角色ID查询部门树信息
+     * 根據角色ID查詢部門樹資訊
      * 
      * @param roleId 角色ID
-     * @return 选中部门列表
+     * @return 選中部門列表
      */
     @Override
     public List<Long> selectDeptListByRoleId(Long roleId)
@@ -115,10 +115,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 根据部门ID查询信息
+     * 根據部門ID查詢資訊
      * 
-     * @param deptId 部门ID
-     * @return 部门信息
+     * @param deptId 部門ID
+     * @return 部門資訊
      */
     @Override
     public SysDept selectDeptById(Long deptId)
@@ -127,10 +127,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 根据ID查询所有子部门（正常状态）
+     * 根據ID查詢所有子部門（正常狀態）
      * 
-     * @param deptId 部门ID
-     * @return 子部门数
+     * @param deptId 部門ID
+     * @return 子部門數
      */
     @Override
     public int selectNormalChildrenDeptById(Long deptId)
@@ -139,10 +139,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 是否存在子节点
+     * 是否存在子節點
      * 
-     * @param deptId 部门ID
-     * @return 结果
+     * @param deptId 部門ID
+     * @return 結果
      */
     @Override
     public boolean hasChildByDeptId(Long deptId)
@@ -152,10 +152,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 查询部门是否存在用户
+     * 查詢部門是否存在使用者
      * 
-     * @param deptId 部门ID
-     * @return 结果 true 存在 false 不存在
+     * @param deptId 部門ID
+     * @return 結果 true 存在 false 不存在
      */
     @Override
     public boolean checkDeptExistUser(Long deptId)
@@ -165,10 +165,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 校验部门名称是否唯一
+     * 校驗部門名稱是否唯一
      * 
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept 部門資訊
+     * @return 結果
      */
     @Override
     public boolean checkDeptNameUnique(SysDept dept)
@@ -183,9 +183,9 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 校验部门是否有数据权限
+     * 校驗部門是否有資料許可權
      * 
-     * @param deptId 部门id
+     * @param deptId 部門id
      */
     @Override
     public void checkDeptDataScope(Long deptId)
@@ -197,35 +197,35 @@ public class SysDeptServiceImpl implements ISysDeptService
             List<SysDept> depts = SpringUtils.getAopProxy(this).selectDeptList(dept);
             if (StringUtils.isEmpty(depts))
             {
-                throw new ServiceException("没有权限访问部门数据！");
+                throw new ServiceException("沒有許可權訪問部門資料！");
             }
         }
     }
 
     /**
-     * 新增保存部门信息
+     * 新增儲存部門資訊
      * 
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept 部門資訊
+     * @return 結果
      */
     @Override
     public int insertDept(SysDept dept)
     {
         SysDept info = deptMapper.selectDeptById(dept.getParentId());
-        // 如果父节点不为正常状态,则不允许新增子节点
+        // 如果父節點不為正常狀態,則不允許新增子節點
         if (!UserConstants.DEPT_NORMAL.equals(info.getStatus()))
         {
-            throw new ServiceException("部门停用，不允许新增");
+            throw new ServiceException("部門停用，不允許新增");
         }
         dept.setAncestors(info.getAncestors() + "," + dept.getParentId());
         return deptMapper.insertDept(dept);
     }
 
     /**
-     * 修改保存部门信息
+     * 修改儲存部門資訊
      * 
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept 部門資訊
+     * @return 結果
      */
     @Override
     public int updateDept(SysDept dept)
@@ -243,16 +243,16 @@ public class SysDeptServiceImpl implements ISysDeptService
         if (UserConstants.DEPT_NORMAL.equals(dept.getStatus()) && StringUtils.isNotEmpty(dept.getAncestors())
                 && !StringUtils.equals("0", dept.getAncestors()))
         {
-            // 如果该部门是启用状态，则启用该部门的所有上级部门
+            // 如果該部門是啟用狀態，則啟用該部門的所有上級部門
             updateParentDeptStatusNormal(dept);
         }
         return result;
     }
 
     /**
-     * 修改该部门的父级部门状态
+     * 修改該部門的父級部門狀態
      * 
-     * @param dept 当前部门
+     * @param dept 當前部門
      */
     private void updateParentDeptStatusNormal(SysDept dept)
     {
@@ -262,11 +262,11 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 修改子元素关系
+     * 修改子元素關係
      * 
-     * @param deptId 被修改的部门ID
+     * @param deptId 被修改的部門ID
      * @param newAncestors 新的父ID集合
-     * @param oldAncestors 旧的父ID集合
+     * @param oldAncestors 舊的父ID集合
      */
     public void updateDeptChildren(Long deptId, String newAncestors, String oldAncestors)
     {
@@ -282,10 +282,10 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 删除部门管理信息
+     * 刪除部門管理資訊
      * 
-     * @param deptId 部门ID
-     * @return 结果
+     * @param deptId 部門ID
+     * @return 結果
      */
     @Override
     public int deleteDeptById(Long deptId)
@@ -294,11 +294,11 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 递归列表
+     * 遞迴列表
      */
     private void recursionFn(List<SysDept> list, SysDept t)
     {
-        // 得到子节点列表
+        // 得到子節點列表
         List<SysDept> childList = getChildList(list, t);
         t.setChildren(childList);
         for (SysDept tChild : childList)
@@ -311,7 +311,7 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 得到子节点列表
+     * 得到子節點列表
      */
     private List<SysDept> getChildList(List<SysDept> list, SysDept t)
     {
@@ -329,7 +329,7 @@ public class SysDeptServiceImpl implements ISysDeptService
     }
 
     /**
-     * 判断是否有子节点
+     * 判斷是否有子節點
      */
     private boolean hasChild(List<SysDept> list, SysDept t)
     {

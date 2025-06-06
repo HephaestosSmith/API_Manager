@@ -1,7 +1,7 @@
 package com.ruoyi.common.exception;
 
 /**
- * 演示模式异常
+ * 演示模式異常
  * 
  * @author ruoyi
  */

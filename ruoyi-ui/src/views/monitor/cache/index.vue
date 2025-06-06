@@ -3,38 +3,38 @@
     <el-row :gutter="10">
       <el-col :span="24" class="card-box">
         <el-card>
-          <div slot="header"><span><i class="el-icon-monitor"></i> 基本信息</span></div>
+          <div slot="header"><span><i class="el-icon-monitor"></i> 基本資訊</span></div>
           <div class="el-table el-table--enable-row-hover el-table--medium">
             <table cellspacing="0" style="width: 100%">
               <tbody>
                 <tr>
                   <td class="el-table__cell is-leaf"><div class="cell">Redis版本</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.redis_version }}</div></td>
-                  <td class="el-table__cell is-leaf"><div class="cell">运行模式</div></td>
-                  <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.redis_mode == "standalone" ? "单机" : "集群" }}</div></td>
-                  <td class="el-table__cell is-leaf"><div class="cell">端口</div></td>
+                  <td class="el-table__cell is-leaf"><div class="cell">執行模式</div></td>
+                  <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.redis_mode == "standalone" ? "單機" : "叢集" }}</div></td>
+                  <td class="el-table__cell is-leaf"><div class="cell">埠</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.tcp_port }}</div></td>
-                  <td class="el-table__cell is-leaf"><div class="cell">客户端数</div></td>
+                  <td class="el-table__cell is-leaf"><div class="cell">客戶端數</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.connected_clients }}</div></td>
                 </tr>
                 <tr>
-                  <td class="el-table__cell is-leaf"><div class="cell">运行时间(天)</div></td>
+                  <td class="el-table__cell is-leaf"><div class="cell">執行時間(天)</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.uptime_in_days }}</div></td>
-                  <td class="el-table__cell is-leaf"><div class="cell">使用内存</div></td>
+                  <td class="el-table__cell is-leaf"><div class="cell">使用記憶體</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.used_memory_human }}</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell">使用CPU</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ parseFloat(cache.info.used_cpu_user_children).toFixed(2) }}</div></td>
-                  <td class="el-table__cell is-leaf"><div class="cell">内存配置</div></td>
+                  <td class="el-table__cell is-leaf"><div class="cell">記憶體配置</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.maxmemory_human }}</div></td>
                 </tr>
                 <tr>
-                  <td class="el-table__cell is-leaf"><div class="cell">AOF是否开启</div></td>
+                  <td class="el-table__cell is-leaf"><div class="cell">AOF是否開啟</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.aof_enabled == "0" ? "否" : "是" }}</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell">RDB是否成功</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.rdb_last_bgsave_status }}</div></td>
-                  <td class="el-table__cell is-leaf"><div class="cell">Key数量</div></td>
+                  <td class="el-table__cell is-leaf"><div class="cell">Key數量</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.dbSize">{{ cache.dbSize }} </div></td>
-                  <td class="el-table__cell is-leaf"><div class="cell">网络入口/出口</div></td>
+                  <td class="el-table__cell is-leaf"><div class="cell">網路入口/出口</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.instantaneous_input_kbps }}kps/{{cache.info.instantaneous_output_kbps}}kps</div></td>
                 </tr>
               </tbody>
@@ -45,7 +45,7 @@
 
       <el-col :span="12" class="card-box">
         <el-card>
-          <div slot="header"><span><i class="el-icon-pie-chart"></i> 命令统计</span></div>
+          <div slot="header"><span><i class="el-icon-pie-chart"></i> 命令統計</span></div>
           <div class="el-table el-table--enable-row-hover el-table--medium">
             <div ref="commandstats" style="height: 420px" />
           </div>
@@ -54,7 +54,7 @@
 
       <el-col :span="12" class="card-box">
         <el-card>
-          <div slot="header"><span><i class="el-icon-odometer"></i> 内存信息</span></div>
+          <div slot="header"><span><i class="el-icon-odometer"></i> 記憶體資訊</span></div>
           <div class="el-table el-table--enable-row-hover el-table--medium">
             <div ref="usedmemory" style="height: 420px" />
           </div>
@@ -72,11 +72,11 @@ export default {
   name: "Cache",
   data() {
     return {
-      // 统计命令信息
+      // 統計命令資訊
       commandstats: null,
-      // 使用内存
+      // 使用記憶體
       usedmemory: null,
-      // cache信息
+      // cache資訊
       cache: []
     }
   },
@@ -85,7 +85,7 @@ export default {
     this.openLoading()
   },
   methods: {
-    /** 查缓存询信息 */
+    /** 查快取詢資訊 */
     getList() {
       getCache().then((response) => {
         this.cache = response.data
@@ -127,7 +127,7 @@ export default {
               data: [
                 {
                   value: parseFloat(this.cache.info.used_memory_human),
-                  name: "内存消耗",
+                  name: "記憶體消耗",
                 }
               ]
             }
@@ -139,9 +139,9 @@ export default {
         })
       })
     },
-    // 打开加载层
+    // 開啟載入層
     openLoading() {
-      this.$modal.loading("正在加载缓存监控数据，请稍候！")
+      this.$modal.loading("正在載入快取監控資料，請稍候！")
     }
   }
 }

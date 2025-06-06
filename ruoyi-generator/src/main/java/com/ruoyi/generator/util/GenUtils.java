@@ -9,14 +9,14 @@ import com.ruoyi.generator.domain.GenTable;
 import com.ruoyi.generator.domain.GenTableColumn;
 
 /**
- * 代码生成器 工具类
+ * 程式碼生成器 工具類
  * 
  * @author ruoyi
  */
 public class GenUtils
 {
     /**
-     * 初始化表信息
+     * 初始化表資訊
      */
     public static void initTable(GenTable genTable, String operName)
     {
@@ -30,7 +30,7 @@ public class GenUtils
     }
 
     /**
-     * 初始化列属性字段
+     * 初始化列屬性欄位
      */
     public static void initColumnField(GenTableColumn column, GenTable table)
     {
@@ -38,15 +38,15 @@ public class GenUtils
         String columnName = column.getColumnName();
         column.setTableId(table.getTableId());
         column.setCreateBy(table.getCreateBy());
-        // 设置java字段名
+        // 設定java欄位名
         column.setJavaField(StringUtils.toCamelCase(columnName));
-        // 设置默认类型
+        // 設定預設型別
         column.setJavaType(GenConstants.TYPE_STRING);
         column.setQueryType(GenConstants.QUERY_EQ);
 
         if (arraysContains(GenConstants.COLUMNTYPE_STR, dataType) || arraysContains(GenConstants.COLUMNTYPE_TEXT, dataType))
         {
-            // 字符串长度超过500设置为文本域
+            // 字串長度超過500設定為文字域
             Integer columnLength = getColumnLength(column.getColumnType());
             String htmlType = columnLength >= 500 || arraysContains(GenConstants.COLUMNTYPE_TEXT, dataType) ? GenConstants.HTML_TEXTAREA : GenConstants.HTML_INPUT;
             column.setHtmlType(htmlType);
@@ -60,7 +60,7 @@ public class GenUtils
         {
             column.setHtmlType(GenConstants.HTML_INPUT);
 
-            // 如果是浮点型 统一用BigDecimal
+            // 如果是浮點型 統一用BigDecimal
             String[] str = StringUtils.split(StringUtils.substringBetween(column.getColumnType(), "(", ")"), ",");
             if (str != null && str.length == 2 && Integer.parseInt(str[1]) > 0)
             {
@@ -71,59 +71,59 @@ public class GenUtils
             {
                 column.setJavaType(GenConstants.TYPE_INTEGER);
             }
-            // 长整形
+            // 長整形
             else
             {
                 column.setJavaType(GenConstants.TYPE_LONG);
             }
         }
 
-        // 插入字段（默认所有字段都需要插入）
+        // 插入欄位（預設所有欄位都需要插入）
         column.setIsInsert(GenConstants.REQUIRE);
 
-        // 编辑字段
+        // 編輯欄位
         if (!arraysContains(GenConstants.COLUMNNAME_NOT_EDIT, columnName) && !column.isPk())
         {
             column.setIsEdit(GenConstants.REQUIRE);
         }
-        // 列表字段
+        // 列表欄位
         if (!arraysContains(GenConstants.COLUMNNAME_NOT_LIST, columnName) && !column.isPk())
         {
             column.setIsList(GenConstants.REQUIRE);
         }
-        // 查询字段
+        // 查詢欄位
         if (!arraysContains(GenConstants.COLUMNNAME_NOT_QUERY, columnName) && !column.isPk())
         {
             column.setIsQuery(GenConstants.REQUIRE);
         }
 
-        // 查询字段类型
+        // 查詢欄位型別
         if (StringUtils.endsWithIgnoreCase(columnName, "name"))
         {
             column.setQueryType(GenConstants.QUERY_LIKE);
         }
-        // 状态字段设置单选框
+        // 狀態欄位設定單選框
         if (StringUtils.endsWithIgnoreCase(columnName, "status"))
         {
             column.setHtmlType(GenConstants.HTML_RADIO);
         }
-        // 类型&性别字段设置下拉框
+        // 型別&性別欄位設定下拉框
         else if (StringUtils.endsWithIgnoreCase(columnName, "type")
                 || StringUtils.endsWithIgnoreCase(columnName, "sex"))
         {
             column.setHtmlType(GenConstants.HTML_SELECT);
         }
-        // 图片字段设置图片上传控件
+        // 圖片欄位設定圖片上傳控制元件
         else if (StringUtils.endsWithIgnoreCase(columnName, "image"))
         {
             column.setHtmlType(GenConstants.HTML_IMAGE_UPLOAD);
         }
-        // 文件字段设置文件上传控件
+        // 檔案欄位設定檔案上傳控制元件
         else if (StringUtils.endsWithIgnoreCase(columnName, "file"))
         {
             column.setHtmlType(GenConstants.HTML_FILE_UPLOAD);
         }
-        // 内容字段设置富文本控件
+        // 內容欄位設定富文字控制元件
         else if (StringUtils.endsWithIgnoreCase(columnName, "content"))
         {
             column.setHtmlType(GenConstants.HTML_EDITOR);
@@ -131,9 +131,9 @@ public class GenUtils
     }
 
     /**
-     * 校验数组是否包含指定值
+     * 校驗陣列是否包含指定值
      * 
-     * @param arr 数组
+     * @param arr 陣列
      * @param targetValue 值
      * @return 是否包含
      */
@@ -143,10 +143,10 @@ public class GenUtils
     }
 
     /**
-     * 获取模块名
+     * 獲取模組名
      * 
      * @param packageName 包名
-     * @return 模块名
+     * @return 模組名
      */
     public static String getModuleName(String packageName)
     {
@@ -156,10 +156,10 @@ public class GenUtils
     }
 
     /**
-     * 获取业务名
+     * 獲取業務名
      * 
      * @param tableName 表名
-     * @return 业务名
+     * @return 業務名
      */
     public static String getBusinessName(String tableName)
     {
@@ -169,10 +169,10 @@ public class GenUtils
     }
 
     /**
-     * 表名转换成Java类名
+     * 表名轉換成Java類名
      * 
-     * @param tableName 表名称
-     * @return 类名
+     * @param tableName 表名稱
+     * @return 類名
      */
     public static String convertClassName(String tableName)
     {
@@ -187,10 +187,10 @@ public class GenUtils
     }
 
     /**
-     * 批量替换前缀
+     * 批次替換字首
      * 
-     * @param replacementm 替换值
-     * @param searchList 替换列表
+     * @param replacementm 替換值
+     * @param searchList 替換列表
      * @return
      */
     public static String replaceFirst(String replacementm, String[] searchList)
@@ -208,10 +208,10 @@ public class GenUtils
     }
 
     /**
-     * 关键字替换
+     * 關鍵字替換
      * 
-     * @param text 需要被替换的名字
-     * @return 替换后的名字
+     * @param text 需要被替換的名字
+     * @return 替換後的名字
      */
     public static String replaceText(String text)
     {
@@ -219,10 +219,10 @@ public class GenUtils
     }
 
     /**
-     * 获取数据库类型字段
+     * 獲取資料庫型別欄位
      * 
-     * @param columnType 列类型
-     * @return 截取后的列类型
+     * @param columnType 列型別
+     * @return 擷取後的列型別
      */
     public static String getDbType(String columnType)
     {
@@ -237,10 +237,10 @@ public class GenUtils
     }
 
     /**
-     * 获取字段长度
+     * 獲取欄位長度
      * 
-     * @param columnType 列类型
-     * @return 截取后的列类型
+     * @param columnType 列型別
+     * @return 擷取後的列型別
      */
     public static Integer getColumnLength(String columnType)
     {

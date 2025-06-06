@@ -6,97 +6,97 @@ import com.ruoyi.common.exception.job.TaskException;
 import com.ruoyi.quartz.domain.SysJob;
 
 /**
- * 定时任务调度信息信息 服务层
+ * 定時任務排程資訊資訊 服務層
  * 
  * @author ruoyi
  */
 public interface ISysJobService
 {
     /**
-     * 获取quartz调度器的计划任务
+     * 獲取quartz排程器的計劃任務
      * 
-     * @param job 调度信息
-     * @return 调度任务集合
+     * @param job 排程資訊
+     * @return 排程任務集合
      */
     public List<SysJob> selectJobList(SysJob job);
 
     /**
-     * 通过调度任务ID查询调度信息
+     * 透過排程任務ID查詢排程資訊
      * 
-     * @param jobId 调度任务ID
-     * @return 调度任务对象信息
+     * @param jobId 排程任務ID
+     * @return 排程任務物件資訊
      */
     public SysJob selectJobById(Long jobId);
 
     /**
-     * 暂停任务
+     * 暫停任務
      * 
-     * @param job 调度信息
-     * @return 结果
+     * @param job 排程資訊
+     * @return 結果
      */
     public int pauseJob(SysJob job) throws SchedulerException;
 
     /**
-     * 恢复任务
+     * 恢復任務
      * 
-     * @param job 调度信息
-     * @return 结果
+     * @param job 排程資訊
+     * @return 結果
      */
     public int resumeJob(SysJob job) throws SchedulerException;
 
     /**
-     * 删除任务后，所对应的trigger也将被删除
+     * 刪除任務後，所對應的trigger也將被刪除
      * 
-     * @param job 调度信息
-     * @return 结果
+     * @param job 排程資訊
+     * @return 結果
      */
     public int deleteJob(SysJob job) throws SchedulerException;
 
     /**
-     * 批量删除调度信息
+     * 批次刪除排程資訊
      * 
-     * @param jobIds 需要删除的任务ID
-     * @return 结果
+     * @param jobIds 需要刪除的任務ID
+     * @return 結果
      */
     public void deleteJobByIds(Long[] jobIds) throws SchedulerException;
 
     /**
-     * 任务调度状态修改
+     * 任務排程狀態修改
      * 
-     * @param job 调度信息
-     * @return 结果
+     * @param job 排程資訊
+     * @return 結果
      */
     public int changeStatus(SysJob job) throws SchedulerException;
 
     /**
-     * 立即运行任务
+     * 立即執行任務
      * 
-     * @param job 调度信息
-     * @return 结果
+     * @param job 排程資訊
+     * @return 結果
      */
     public boolean run(SysJob job) throws SchedulerException;
 
     /**
-     * 新增任务
+     * 新增任務
      * 
-     * @param job 调度信息
-     * @return 结果
+     * @param job 排程資訊
+     * @return 結果
      */
     public int insertJob(SysJob job) throws SchedulerException, TaskException;
 
     /**
-     * 更新任务
+     * 更新任務
      * 
-     * @param job 调度信息
-     * @return 结果
+     * @param job 排程資訊
+     * @return 結果
      */
     public int updateJob(SysJob job) throws SchedulerException, TaskException;
 
     /**
-     * 校验cron表达式是否有效
+     * 校驗cron表示式是否有效
      * 
-     * @param cronExpression 表达式
-     * @return 结果
+     * @param cronExpression 表示式
+     * @return 結果
      */
     public boolean checkCronExpressionIsValid(String cronExpression);
 }

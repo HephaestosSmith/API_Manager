@@ -2,7 +2,7 @@
 	<el-form size="small">
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="1">
-				日，允许的通配符[, - * ? / L W]
+				日，允許的萬用字元[, - * ? / L W]
 			</el-radio>
 		</el-form-item>
 
@@ -14,7 +14,7 @@
 
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="3">
-				周期从
+				週期從
 				<el-input-number v-model='cycle01' :min="1" :max="30" /> -
 				<el-input-number v-model='cycle02' :min="cycle01 ? cycle01 + 1 : 2" :max="31" /> 日
 			</el-radio>
@@ -22,29 +22,29 @@
 
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="4">
-				从
-				<el-input-number v-model='average01' :min="1" :max="30" /> 号开始，每
-				<el-input-number v-model='average02' :min="1" :max="31 - average01 || 1" /> 日执行一次
+				從
+				<el-input-number v-model='average01' :min="1" :max="30" /> 號開始，每
+				<el-input-number v-model='average02' :min="1" :max="31 - average01 || 1" /> 日執行一次
 			</el-radio>
 		</el-form-item>
 
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="5">
 				每月
-				<el-input-number v-model='workday' :min="1" :max="31" /> 号最近的那个工作日
+				<el-input-number v-model='workday' :min="1" :max="31" /> 號最近的那個工作日
 			</el-radio>
 		</el-form-item>
 
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="6">
-				本月最后一天
+				本月最後一天
 			</el-radio>
 		</el-form-item>
 
 		<el-form-item>
 			<el-radio v-model='radioValue' :label="7">
 				指定
-				<el-select clearable v-model="checkboxList" placeholder="可多选" multiple style="width:100%">
+				<el-select clearable v-model="checkboxList" placeholder="可多選" multiple style="width:100%">
 					<el-option v-for="item in 31" :key="item" :value="item">{{item}}</el-option>
 				</el-select>
 			</el-radio>
@@ -69,7 +69,7 @@ export default {
 	name: 'crontab-day',
 	props: ['check', 'cron'],
 	methods: {
-		// 单选按钮值变化时
+		// 單選按鈕值變化時
 		radioChange() {
 			('day rachange')
 			if (this.radioValue !== 2 && this.cron.week !== '?') {
@@ -101,25 +101,25 @@ export default {
 			}
 			('day rachange end')
 		},
-		// 周期两个值变化时
+		// 週期兩個值變化時
 		cycleChange() {
 			if (this.radioValue == '3') {
 				this.$emit('update', 'day', this.cycleTotal)
 			}
 		},
-		// 平均两个值变化时
+		// 平均兩個值變化時
 		averageChange() {
 			if (this.radioValue == '4') {
 				this.$emit('update', 'day', this.averageTotal)
 			}
 		},
-		// 最近工作日值变化时
+		// 最近工作日值變化時
 		workdayChange() {
 			if (this.radioValue == '5') {
 				this.$emit('update', 'day', this.workdayCheck + 'W')
 			}
 		},
-		// checkbox值变化时
+		// checkbox值變化時
 		checkboxChange() {
 			if (this.radioValue == '7') {
 				this.$emit('update', 'day', this.checkboxString)
@@ -134,24 +134,24 @@ export default {
 		'checkboxString': 'checkboxChange',
 	},
 	computed: {
-		// 计算两个周期值
+		// 計算兩個週期值
 		cycleTotal: function () {
 			const cycle01 = this.checkNum(this.cycle01, 1, 30)
 			const cycle02 = this.checkNum(this.cycle02, cycle01 ? cycle01 + 1 : 2, 31, 31)
 			return cycle01 + '-' + cycle02
 		},
-		// 计算平均用到的值
+		// 計算平均用到的值
 		averageTotal: function () {
 			const average01 = this.checkNum(this.average01, 1, 30)
 			const average02 = this.checkNum(this.average02, 1, 31 - average01 || 0)
 			return average01 + '/' + average02
 		},
-		// 计算工作日格式
+		// 計算工作日格式
 		workdayCheck: function () {
 			const workday = this.checkNum(this.workday, 1, 31)
 			return workday
 		},
-		// 计算勾选的checkbox值合集
+		// 計算勾選的checkbox值合集
 		checkboxString: function () {
 			let str = this.checkboxList.join()
 			return str == '' ? '*' : str

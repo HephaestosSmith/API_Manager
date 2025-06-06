@@ -19,24 +19,24 @@ import './permission' // permission control
 import { getDicts } from "@/api/system/dict/data"
 import { getConfigKey } from "@/api/system/config"
 import { parseTime, resetForm, addDateRange, selectDictLabel, selectDictLabels, handleTree } from "@/utils/ruoyi"
-// 分页组件
+// 分頁元件
 import Pagination from "@/components/Pagination"
-// 自定义表格工具组件
+// 自定義表格工具元件
 import RightToolbar from "@/components/RightToolbar"
-// 富文本组件
+// 富文字元件
 import Editor from "@/components/Editor"
-// 文件上传组件
+// 檔案上傳元件
 import FileUpload from "@/components/FileUpload"
-// 图片上传组件
+// 圖片上傳元件
 import ImageUpload from "@/components/ImageUpload"
-// 图片预览组件
+// 圖片預覽元件
 import ImagePreview from "@/components/ImagePreview"
-// 字典标签组件
+// 字典標籤元件
 import DictTag from '@/components/DictTag'
-// 字典数据组件
+// 字典資料元件
 import DictData from '@/components/DictData'
 
-// 全局方法挂载
+// 全域性方法掛載
 Vue.prototype.getDicts = getDicts
 Vue.prototype.getConfigKey = getConfigKey
 Vue.prototype.parseTime = parseTime
@@ -47,7 +47,7 @@ Vue.prototype.selectDictLabels = selectDictLabels
 Vue.prototype.download = download
 Vue.prototype.handleTree = handleTree
 
-// 全局组件挂载
+// 全域性元件掛載
 Vue.component('DictTag', DictTag)
 Vue.component('Pagination', Pagination)
 Vue.component('RightToolbar', RightToolbar)

@@ -4,7 +4,7 @@
       <el-col :span="8">
         <el-card style="height: calc(100vh - 125px)">
           <div slot="header">
-            <span><i class="el-icon-collection"></i> 缓存列表</span>
+            <span><i class="el-icon-collection"></i> 快取列表</span>
             <el-button
               style="float: right; padding: 3px 0"
               type="text"
@@ -21,13 +21,13 @@
             style="width: 100%"
           >
             <el-table-column
-              label="序号"
+              label="序號"
               width="60"
               type="index"
             ></el-table-column>
 
             <el-table-column
-              label="缓存名称"
+              label="快取名稱"
               align="center"
               prop="cacheName"
               :show-overflow-tooltip="true"
@@ -35,7 +35,7 @@
             ></el-table-column>
 
             <el-table-column
-              label="备注"
+              label="備註"
               align="center"
               prop="remark"
               :show-overflow-tooltip="true"
@@ -62,7 +62,7 @@
       <el-col :span="8">
         <el-card style="height: calc(100vh - 125px)">
           <div slot="header">
-            <span><i class="el-icon-key"></i> 键名列表</span>
+            <span><i class="el-icon-key"></i> 鍵名列表</span>
             <el-button
               style="float: right; padding: 3px 0"
               type="text"
@@ -79,12 +79,12 @@
             style="width: 100%"
           >
             <el-table-column
-              label="序号"
+              label="序號"
               width="60"
               type="index"
             ></el-table-column>
             <el-table-column
-              label="缓存键名"
+              label="快取鍵名"
               align="center"
               :show-overflow-tooltip="true"
               :formatter="keyFormatter"
@@ -112,7 +112,7 @@
       <el-col :span="8">
         <el-card :bordered="false" style="height: calc(100vh - 125px)">
           <div slot="header">
-            <span><i class="el-icon-document"></i> 缓存内容</span>
+            <span><i class="el-icon-document"></i> 快取內容</span>
             <el-button
               style="float: right; padding: 3px 0"
               type="text"
@@ -124,17 +124,17 @@
           <el-form :model="cacheForm">
             <el-row :gutter="32">
               <el-col :offset="1" :span="22">
-                <el-form-item label="缓存名称:" prop="cacheName">
+                <el-form-item label="快取名稱:" prop="cacheName">
                   <el-input v-model="cacheForm.cacheName" :readOnly="true" />
                 </el-form-item>
               </el-col>
               <el-col :offset="1" :span="22">
-                <el-form-item label="缓存键名:" prop="cacheKey">
+                <el-form-item label="快取鍵名:" prop="cacheKey">
                   <el-input v-model="cacheForm.cacheKey" :readOnly="true" />
                 </el-form-item>
               </el-col>
               <el-col :offset="1" :span="22">
-                <el-form-item label="缓存内容:" prop="cacheValue">
+                <el-form-item label="快取內容:" prop="cacheValue">
                   <el-input
                     v-model="cacheForm.cacheValue"
                     type="textarea"
@@ -171,7 +171,7 @@ export default {
     this.getCacheNames()
   },
   methods: {
-    /** 查询缓存名称列表 */
+    /** 查詢快取名稱列表 */
     getCacheNames() {
       this.loading = true
       listCacheName().then(response => {
@@ -179,19 +179,19 @@ export default {
         this.loading = false
       })
     },
-    /** 刷新缓存名称列表 */
+    /** 重新整理快取名稱列表 */
     refreshCacheNames() {
       this.getCacheNames()
-      this.$modal.msgSuccess("刷新缓存列表成功")
+      this.$modal.msgSuccess("重新整理快取列表成功")
     },
-    /** 清理指定名称缓存 */
+    /** 清理指定名稱快取 */
     handleClearCacheName(row) {
       clearCacheName(row.cacheName).then(response => {
-        this.$modal.msgSuccess("清理缓存名称[" + row.cacheName + "]成功")
+        this.$modal.msgSuccess("清理快取名稱[" + row.cacheName + "]成功")
         this.getCacheKeys()
       })
     },
-    /** 查询缓存键名列表 */
+    /** 查詢快取鍵名列表 */
     getCacheKeys(row) {
       const cacheName = row !== undefined ? row.cacheName : this.nowCacheName
       if (cacheName === "") {
@@ -204,36 +204,36 @@ export default {
         this.nowCacheName = cacheName
       })
     },
-    /** 刷新缓存键名列表 */
+    /** 重新整理快取鍵名列表 */
     refreshCacheKeys() {
       this.getCacheKeys()
-      this.$modal.msgSuccess("刷新键名列表成功")
+      this.$modal.msgSuccess("重新整理鍵名列表成功")
     },
-    /** 清理指定键名缓存 */
+    /** 清理指定鍵名快取 */
     handleClearCacheKey(cacheKey) {
       clearCacheKey(cacheKey).then(response => {
-        this.$modal.msgSuccess("清理缓存键名[" + cacheKey + "]成功")
+        this.$modal.msgSuccess("清理快取鍵名[" + cacheKey + "]成功")
         this.getCacheKeys()
       })
     },
-    /** 列表前缀去除 */
+    /** 列表字首去除 */
     nameFormatter(row) {
       return row.cacheName.replace(":", "")
     },
-    /** 键名前缀去除 */
+    /** 鍵名字首去除 */
     keyFormatter(cacheKey) {
       return cacheKey.replace(this.nowCacheName, "")
     },
-    /** 查询缓存内容详细 */
+    /** 查詢快取內容詳細 */
     handleCacheValue(cacheKey) {
       getCacheValue(this.nowCacheName, cacheKey).then(response => {
         this.cacheForm = response.data
       })
     },
-    /** 清理全部缓存 */
+    /** 清理全部快取 */
     handleClearCacheAll() {
       clearCacheAll().then(response => {
-        this.$modal.msgSuccess("清理全部缓存成功")
+        this.$modal.msgSuccess("清理全部快取成功")
       })
     }
   }

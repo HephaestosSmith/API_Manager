@@ -39,7 +39,7 @@ export default {
         return [10, 20, 30, 50]
       }
     },
-    // 移动端页码按钮的数量端默认值5
+    // 移動端頁碼按鈕的數量端預設值5
     pagerCount: {
       type: Number,
       default: document.body.clientWidth < 992 ? 5 : 7

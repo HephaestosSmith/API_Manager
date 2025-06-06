@@ -4,13 +4,13 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
- * 用户和角色关联 sys_user_role
+ * 使用者和角色關聯 sys_user_role
  * 
  * @author ruoyi
  */
 public class SysUserRole
 {
-    /** 用户ID */
+    /** 使用者ID */
     private Long userId;
     
     /** 角色ID */

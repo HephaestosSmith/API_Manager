@@ -17,8 +17,8 @@ import com.ruoyi.common.utils.http.HttpHelper;
 import com.ruoyi.framework.interceptor.RepeatSubmitInterceptor;
 
 /**
- * 判断请求url和数据是否和上一次相同，
- * 如果和上次相同，则是重复提交表单。 有效时间为10秒内。
+ * 判斷請求url和資料是否和上一次相同，
+ * 如果和上次相同，則是重複提交表單。 有效時間為10秒內。
  * 
  * @author ruoyi
  */
@@ -29,7 +29,7 @@ public class SameUrlDataInterceptor extends RepeatSubmitInterceptor
 
     public final String REPEAT_TIME = "repeatTime";
 
-    // 令牌自定义标识
+    // 令牌自定義標識
     @Value("${token.header}")
     private String header;
 
@@ -47,7 +47,7 @@ public class SameUrlDataInterceptor extends RepeatSubmitInterceptor
             nowParams = HttpHelper.getBodyString(repeatedlyRequest);
         }
 
-        // body参数为空，获取Parameter的数据
+        // body引數為空，獲取Parameter的資料
         if (StringUtils.isEmpty(nowParams))
         {
             nowParams = JSON.toJSONString(request.getParameterMap());
@@ -56,13 +56,13 @@ public class SameUrlDataInterceptor extends RepeatSubmitInterceptor
         nowDataMap.put(REPEAT_PARAMS, nowParams);
         nowDataMap.put(REPEAT_TIME, System.currentTimeMillis());
 
-        // 请求地址（作为存放cache的key值）
+        // 請求地址（作為存放cache的key值）
         String url = request.getRequestURI();
 
-        // 唯一值（没有消息头则使用请求地址）
+        // 唯一值（沒有訊息頭則使用請求地址）
         String submitKey = StringUtils.trimToEmpty(request.getHeader(header));
 
-        // 唯一标识（指定key + url + 消息头）
+        // 唯一標識（指定key + url + 訊息頭）
         String cacheRepeatKey = CacheConstants.REPEAT_SUBMIT_KEY + url + submitKey;
 
         Object sessionObj = redisCache.getCacheObject(cacheRepeatKey);
@@ -85,7 +85,7 @@ public class SameUrlDataInterceptor extends RepeatSubmitInterceptor
     }
 
     /**
-     * 判断参数是否相同
+     * 判斷引數是否相同
      */
     private boolean compareParams(Map<String, Object> nowMap, Map<String, Object> preMap)
     {
@@ -95,7 +95,7 @@ public class SameUrlDataInterceptor extends RepeatSubmitInterceptor
     }
 
     /**
-     * 判断两次间隔时间
+     * 判斷兩次間隔時間
      */
     private boolean compareTime(Map<String, Object> nowMap, Map<String, Object> preMap, int interval)
     {

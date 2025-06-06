@@ -13,7 +13,7 @@ import com.ruoyi.common.core.domain.BaseEntity;
 import com.ruoyi.common.xss.Xss;
 
 /**
- * 用户对象 sys_user
+ * 使用者物件 sys_user
  * 
  * @author ruoyi
  */
@@ -21,72 +21,72 @@ public class SysUser extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /** 用户ID */
-    @Excel(name = "用户序号", type = Type.EXPORT, cellType = ColumnType.NUMERIC, prompt = "用户编号")
+    /** 使用者ID */
+    @Excel(name = "使用者序號", type = Type.EXPORT, cellType = ColumnType.NUMERIC, prompt = "使用者編號")
     private Long userId;
 
-    /** 部门ID */
-    @Excel(name = "部门编号", type = Type.IMPORT)
+    /** 部門ID */
+    @Excel(name = "部門編號", type = Type.IMPORT)
     private Long deptId;
 
-    /** 用户账号 */
-    @Excel(name = "登录名称")
+    /** 使用者賬號 */
+    @Excel(name = "登入名稱")
     private String userName;
 
-    /** 用户昵称 */
-    @Excel(name = "用户名称")
+    /** 使用者暱稱 */
+    @Excel(name = "使用者名稱稱")
     private String nickName;
 
-    /** 用户邮箱 */
-    @Excel(name = "用户邮箱")
+    /** 使用者郵箱 */
+    @Excel(name = "使用者郵箱")
     private String email;
 
-    /** 手机号码 */
-    @Excel(name = "手机号码", cellType = ColumnType.TEXT)
+    /** 手機號碼 */
+    @Excel(name = "手機號碼", cellType = ColumnType.TEXT)
     private String phonenumber;
 
-    /** 用户性别 */
-    @Excel(name = "用户性别", readConverterExp = "0=男,1=女,2=未知")
+    /** 使用者性別 */
+    @Excel(name = "使用者性別", readConverterExp = "0=男,1=女,2=未知")
     private String sex;
 
-    /** 用户头像 */
+    /** 使用者頭像 */
     private String avatar;
 
-    /** 密码 */
+    /** 密碼 */
     private String password;
 
-    /** 账号状态（0正常 1停用） */
-    @Excel(name = "账号状态", readConverterExp = "0=正常,1=停用")
+    /** 賬號狀態（0正常 1停用） */
+    @Excel(name = "賬號狀態", readConverterExp = "0=正常,1=停用")
     private String status;
 
-    /** 删除标志（0代表存在 2代表删除） */
+    /** 刪除標誌（0代表存在 2代表刪除） */
     private String delFlag;
 
-    /** 最后登录IP */
-    @Excel(name = "最后登录IP", type = Type.EXPORT)
+    /** 最後登入IP */
+    @Excel(name = "最後登入IP", type = Type.EXPORT)
     private String loginIp;
 
-    /** 最后登录时间 */
-    @Excel(name = "最后登录时间", width = 30, dateFormat = "yyyy-MM-dd HH:mm:ss", type = Type.EXPORT)
+    /** 最後登入時間 */
+    @Excel(name = "最後登入時間", width = 30, dateFormat = "yyyy-MM-dd HH:mm:ss", type = Type.EXPORT)
     private Date loginDate;
 
-    /** 密码最后更新时间 */
+    /** 密碼最後更新時間 */
     private Date pwdUpdateDate;
 
-    /** 部门对象 */
+    /** 部門物件 */
     @Excels({
-        @Excel(name = "部门名称", targetAttr = "deptName", type = Type.EXPORT),
-        @Excel(name = "部门负责人", targetAttr = "leader", type = Type.EXPORT)
+        @Excel(name = "部門名稱", targetAttr = "deptName", type = Type.EXPORT),
+        @Excel(name = "部門負責人", targetAttr = "leader", type = Type.EXPORT)
     })
     private SysDept dept;
 
-    /** 角色对象 */
+    /** 角色物件 */
     private List<SysRole> roles;
 
-    /** 角色组 */
+    /** 角色組 */
     private Long[] roleIds;
 
-    /** 岗位组 */
+    /** 崗位組 */
     private Long[] postIds;
 
     /** 角色ID */
@@ -132,8 +132,8 @@ public class SysUser extends BaseEntity
         this.deptId = deptId;
     }
 
-    @Xss(message = "用户昵称不能包含脚本字符")
-    @Size(min = 0, max = 30, message = "用户昵称长度不能超过30个字符")
+    @Xss(message = "使用者暱稱不能包含指令碼字元")
+    @Size(min = 0, max = 30, message = "使用者暱稱長度不能超過30個字元")
     public String getNickName()
     {
         return nickName;
@@ -144,9 +144,9 @@ public class SysUser extends BaseEntity
         this.nickName = nickName;
     }
 
-    @Xss(message = "用户账号不能包含脚本字符")
-    @NotBlank(message = "用户账号不能为空")
-    @Size(min = 0, max = 30, message = "用户账号长度不能超过30个字符")
+    @Xss(message = "使用者賬號不能包含指令碼字元")
+    @NotBlank(message = "使用者賬號不能為空")
+    @Size(min = 0, max = 30, message = "使用者賬號長度不能超過30個字元")
     public String getUserName()
     {
         return userName;
@@ -157,8 +157,8 @@ public class SysUser extends BaseEntity
         this.userName = userName;
     }
 
-    @Email(message = "邮箱格式不正确")
-    @Size(min = 0, max = 50, message = "邮箱长度不能超过50个字符")
+    @Email(message = "郵箱格式不正確")
+    @Size(min = 0, max = 50, message = "郵箱長度不能超過50個字元")
     public String getEmail()
     {
         return email;
@@ -169,7 +169,7 @@ public class SysUser extends BaseEntity
         this.email = email;
     }
 
-    @Size(min = 0, max = 11, message = "手机号码长度不能超过11个字符")
+    @Size(min = 0, max = 11, message = "手機號碼長度不能超過11個字元")
     public String getPhonenumber()
     {
         return phonenumber;

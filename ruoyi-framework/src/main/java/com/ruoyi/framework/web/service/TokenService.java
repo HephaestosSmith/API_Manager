@@ -24,7 +24,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 /**
- * token验证处理
+ * token驗證處理
  * 
  * @author ruoyi
  */
@@ -33,15 +33,15 @@ public class TokenService
 {
     private static final Logger log = LoggerFactory.getLogger(TokenService.class);
 
-    // 令牌自定义标识
+    // 令牌自定義標識
     @Value("${token.header}")
     private String header;
 
-    // 令牌秘钥
+    // 令牌秘鑰
     @Value("${token.secret}")
     private String secret;
 
-    // 令牌有效期（默认30分钟）
+    // 令牌有效期（預設30分鐘）
     @Value("${token.expireTime}")
     private int expireTime;
 
@@ -55,20 +55,20 @@ public class TokenService
     private RedisCache redisCache;
 
     /**
-     * 获取用户身份信息
+     * 獲取使用者身份資訊
      * 
-     * @return 用户信息
+     * @return 使用者資訊
      */
     public LoginUser getLoginUser(HttpServletRequest request)
     {
-        // 获取请求携带的令牌
+        // 獲取請求攜帶的令牌
         String token = getToken(request);
         if (StringUtils.isNotEmpty(token))
         {
             try
             {
                 Claims claims = parseToken(token);
-                // 解析对应的权限以及用户信息
+                // 解析對應的許可權以及使用者資訊
                 String uuid = (String) claims.get(Constants.LOGIN_USER_KEY);
                 String userKey = getTokenKey(uuid);
                 LoginUser user = redisCache.getCacheObject(userKey);
@@ -76,14 +76,14 @@ public class TokenService
             }
             catch (Exception e)
             {
-                log.error("获取用户信息异常'{}'", e.getMessage());
+                log.error("獲取使用者資訊異常'{}'", e.getMessage());
             }
         }
         return null;
     }
 
     /**
-     * 设置用户身份信息
+     * 設定使用者身份資訊
      */
     public void setLoginUser(LoginUser loginUser)
     {
@@ -94,7 +94,7 @@ public class TokenService
     }
 
     /**
-     * 删除用户身份信息
+     * 刪除使用者身份資訊
      */
     public void delLoginUser(String token)
     {
@@ -106,9 +106,9 @@ public class TokenService
     }
 
     /**
-     * 创建令牌
+     * 建立令牌
      * 
-     * @param loginUser 用户信息
+     * @param loginUser 使用者資訊
      * @return 令牌
      */
     public String createToken(LoginUser loginUser)
@@ -125,9 +125,9 @@ public class TokenService
     }
 
     /**
-     * 验证令牌有效期，相差不足20分钟，自动刷新缓存
+     * 驗證令牌有效期，相差不足20分鐘，自動重新整理快取
      * 
-     * @param loginUser 登录信息
+     * @param loginUser 登入資訊
      * @return 令牌
      */
     public void verifyToken(LoginUser loginUser)
@@ -141,23 +141,23 @@ public class TokenService
     }
 
     /**
-     * 刷新令牌有效期
+     * 重新整理令牌有效期
      * 
-     * @param loginUser 登录信息
+     * @param loginUser 登入資訊
      */
     public void refreshToken(LoginUser loginUser)
     {
         loginUser.setLoginTime(System.currentTimeMillis());
         loginUser.setExpireTime(loginUser.getLoginTime() + expireTime * MILLIS_MINUTE);
-        // 根据uuid将loginUser缓存
+        // 根據uuid將loginUser快取
         String userKey = getTokenKey(loginUser.getToken());
         redisCache.setCacheObject(userKey, loginUser, expireTime, TimeUnit.MINUTES);
     }
 
     /**
-     * 设置用户代理信息
+     * 設定使用者代理資訊
      * 
-     * @param loginUser 登录信息
+     * @param loginUser 登入資訊
      */
     public void setUserAgent(LoginUser loginUser)
     {
@@ -170,9 +170,9 @@ public class TokenService
     }
 
     /**
-     * 从数据声明生成令牌
+     * 從資料宣告生成令牌
      *
-     * @param claims 数据声明
+     * @param claims 資料宣告
      * @return 令牌
      */
     private String createToken(Map<String, Object> claims)
@@ -184,10 +184,10 @@ public class TokenService
     }
 
     /**
-     * 从令牌中获取数据声明
+     * 從令牌中獲取資料宣告
      *
      * @param token 令牌
-     * @return 数据声明
+     * @return 資料宣告
      */
     private Claims parseToken(String token)
     {
@@ -198,10 +198,10 @@ public class TokenService
     }
 
     /**
-     * 从令牌中获取用户名
+     * 從令牌中獲取使用者名稱
      *
      * @param token 令牌
-     * @return 用户名
+     * @return 使用者名稱
      */
     public String getUsernameFromToken(String token)
     {
@@ -210,7 +210,7 @@ public class TokenService
     }
 
     /**
-     * 获取请求token
+     * 獲取請求token
      *
      * @param request
      * @return token

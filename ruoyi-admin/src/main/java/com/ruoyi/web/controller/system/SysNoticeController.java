@@ -21,7 +21,7 @@ import com.ruoyi.system.domain.SysNotice;
 import com.ruoyi.system.service.ISysNoticeService;
 
 /**
- * 公告 信息操作处理
+ * 公告 資訊操作處理
  * 
  * @author ruoyi
  */
@@ -33,7 +33,7 @@ public class SysNoticeController extends BaseController
     private ISysNoticeService noticeService;
 
     /**
-     * 获取通知公告列表
+     * 獲取通知公告列表
      */
     @PreAuthorize("@ss.hasPermi('system:notice:list')")
     @GetMapping("/list")
@@ -45,7 +45,7 @@ public class SysNoticeController extends BaseController
     }
 
     /**
-     * 根据通知公告编号获取详细信息
+     * 根據通知公告編號獲取詳細資訊
      */
     @PreAuthorize("@ss.hasPermi('system:notice:query')")
     @GetMapping(value = "/{noticeId}")
@@ -79,7 +79,7 @@ public class SysNoticeController extends BaseController
     }
 
     /**
-     * 删除通知公告
+     * 刪除通知公告
      */
     @PreAuthorize("@ss.hasPermi('system:notice:remove')")
     @Log(title = "通知公告", businessType = BusinessType.DELETE)

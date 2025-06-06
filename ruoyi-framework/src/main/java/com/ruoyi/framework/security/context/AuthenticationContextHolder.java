@@ -3,7 +3,7 @@ package com.ruoyi.framework.security.context;
 import org.springframework.security.core.Authentication;
 
 /**
- * 身份验证信息
+ * 身份驗證資訊
  * 
  * @author ruoyi
  */

@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询生成表数据
+// 查詢生成表資料
 export function listTable(query) {
   return request({
     url: '/tool/gen/list',
@@ -8,7 +8,7 @@ export function listTable(query) {
     params: query
   })
 }
-// 查询db数据库列表
+// 查詢db資料庫列表
 export function listDbTable(query) {
   return request({
     url: '/tool/gen/db/list',
@@ -17,7 +17,7 @@ export function listDbTable(query) {
   })
 }
 
-// 查询表详细信息
+// 查詢表詳細資訊
 export function getGenTable(tableId) {
   return request({
     url: '/tool/gen/' + tableId,
@@ -25,7 +25,7 @@ export function getGenTable(tableId) {
   })
 }
 
-// 修改代码生成信息
+// 修改程式碼生成資訊
 export function updateGenTable(data) {
   return request({
     url: '/tool/gen',
@@ -34,7 +34,7 @@ export function updateGenTable(data) {
   })
 }
 
-// 导入表
+// 匯入表
 export function importTable(data) {
   return request({
     url: '/tool/gen/importTable',
@@ -43,7 +43,7 @@ export function importTable(data) {
   })
 }
 
-// 创建表
+// 建立表
 export function createTable(data) {
   return request({
     url: '/tool/gen/createTable',
@@ -52,7 +52,7 @@ export function createTable(data) {
   })
 }
 
-// 预览生成代码
+// 預覽生成程式碼
 export function previewTable(tableId) {
   return request({
     url: '/tool/gen/preview/' + tableId,
@@ -60,7 +60,7 @@ export function previewTable(tableId) {
   })
 }
 
-// 删除表数据
+// 刪除表資料
 export function delTable(tableId) {
   return request({
     url: '/tool/gen/' + tableId,
@@ -68,7 +68,7 @@ export function delTable(tableId) {
   })
 }
 
-// 生成代码（自定义路径）
+// 生成程式碼（自定義路徑）
 export function genCode(tableName) {
   return request({
     url: '/tool/gen/genCode/' + tableName,
@@ -76,7 +76,7 @@ export function genCode(tableName) {
   })
 }
 
-// 同步数据库
+// 同步資料庫
 export function synchDb(tableName) {
   return request({
     url: '/tool/gen/synchDb/' + tableName,

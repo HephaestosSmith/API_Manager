@@ -4,203 +4,203 @@ import java.util.List;
 import com.ruoyi.common.core.domain.entity.SysUser;
 
 /**
- * 用户 业务层
+ * 使用者 業務層
  * 
  * @author ruoyi
  */
 public interface ISysUserService
 {
     /**
-     * 根据条件分页查询用户列表
+     * 根據條件分頁查詢使用者列表
      * 
-     * @param user 用户信息
-     * @return 用户信息集合信息
+     * @param user 使用者資訊
+     * @return 使用者資訊集合資訊
      */
     public List<SysUser> selectUserList(SysUser user);
 
     /**
-     * 根据条件分页查询已分配用户角色列表
+     * 根據條件分頁查詢已分配使用者角色列表
      * 
-     * @param user 用户信息
-     * @return 用户信息集合信息
+     * @param user 使用者資訊
+     * @return 使用者資訊集合資訊
      */
     public List<SysUser> selectAllocatedList(SysUser user);
 
     /**
-     * 根据条件分页查询未分配用户角色列表
+     * 根據條件分頁查詢未分配使用者角色列表
      * 
-     * @param user 用户信息
-     * @return 用户信息集合信息
+     * @param user 使用者資訊
+     * @return 使用者資訊集合資訊
      */
     public List<SysUser> selectUnallocatedList(SysUser user);
 
     /**
-     * 通过用户名查询用户
+     * 透過使用者名稱查詢使用者
      * 
-     * @param userName 用户名
-     * @return 用户对象信息
+     * @param userName 使用者名稱
+     * @return 使用者物件資訊
      */
     public SysUser selectUserByUserName(String userName);
 
     /**
-     * 通过用户ID查询用户
+     * 透過使用者ID查詢使用者
      * 
-     * @param userId 用户ID
-     * @return 用户对象信息
+     * @param userId 使用者ID
+     * @return 使用者物件資訊
      */
     public SysUser selectUserById(Long userId);
 
     /**
-     * 根据用户ID查询用户所属角色组
+     * 根據使用者ID查詢使用者所屬角色組
      * 
-     * @param userName 用户名
-     * @return 结果
+     * @param userName 使用者名稱
+     * @return 結果
      */
     public String selectUserRoleGroup(String userName);
 
     /**
-     * 根据用户ID查询用户所属岗位组
+     * 根據使用者ID查詢使用者所屬崗位組
      * 
-     * @param userName 用户名
-     * @return 结果
+     * @param userName 使用者名稱
+     * @return 結果
      */
     public String selectUserPostGroup(String userName);
 
     /**
-     * 校验用户名称是否唯一
+     * 校驗使用者名稱稱是否唯一
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user 使用者資訊
+     * @return 結果
      */
     public boolean checkUserNameUnique(SysUser user);
 
     /**
-     * 校验手机号码是否唯一
+     * 校驗手機號碼是否唯一
      *
-     * @param user 用户信息
-     * @return 结果
+     * @param user 使用者資訊
+     * @return 結果
      */
     public boolean checkPhoneUnique(SysUser user);
 
     /**
-     * 校验email是否唯一
+     * 校驗email是否唯一
      *
-     * @param user 用户信息
-     * @return 结果
+     * @param user 使用者資訊
+     * @return 結果
      */
     public boolean checkEmailUnique(SysUser user);
 
     /**
-     * 校验用户是否允许操作
+     * 校驗使用者是否允許操作
      * 
-     * @param user 用户信息
+     * @param user 使用者資訊
      */
     public void checkUserAllowed(SysUser user);
 
     /**
-     * 校验用户是否有数据权限
+     * 校驗使用者是否有資料許可權
      * 
-     * @param userId 用户id
+     * @param userId 使用者id
      */
     public void checkUserDataScope(Long userId);
 
     /**
-     * 新增用户信息
+     * 新增使用者資訊
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user 使用者資訊
+     * @return 結果
      */
     public int insertUser(SysUser user);
 
     /**
-     * 注册用户信息
+     * 註冊使用者資訊
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user 使用者資訊
+     * @return 結果
      */
     public boolean registerUser(SysUser user);
 
     /**
-     * 修改用户信息
+     * 修改使用者資訊
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user 使用者資訊
+     * @return 結果
      */
     public int updateUser(SysUser user);
 
     /**
-     * 用户授权角色
+     * 使用者授權角色
      * 
-     * @param userId 用户ID
-     * @param roleIds 角色组
+     * @param userId 使用者ID
+     * @param roleIds 角色組
      */
     public void insertUserAuth(Long userId, Long[] roleIds);
 
     /**
-     * 修改用户状态
+     * 修改使用者狀態
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user 使用者資訊
+     * @return 結果
      */
     public int updateUserStatus(SysUser user);
 
     /**
-     * 修改用户基本信息
+     * 修改使用者基本資訊
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user 使用者資訊
+     * @return 結果
      */
     public int updateUserProfile(SysUser user);
 
     /**
-     * 修改用户头像
+     * 修改使用者頭像
      * 
-     * @param userName 用户名
-     * @param avatar 头像地址
-     * @return 结果
+     * @param userName 使用者名稱
+     * @param avatar 頭像地址
+     * @return 結果
      */
     public boolean updateUserAvatar(String userName, String avatar);
 
     /**
-     * 重置用户密码
+     * 重置使用者密碼
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user 使用者資訊
+     * @return 結果
      */
     public int resetPwd(SysUser user);
 
     /**
-     * 重置用户密码
+     * 重置使用者密碼
      * 
-     * @param userName 用户名
-     * @param password 密码
-     * @return 结果
+     * @param userName 使用者名稱
+     * @param password 密碼
+     * @return 結果
      */
     public int resetUserPwd(String userName, String password);
 
     /**
-     * 通过用户ID删除用户
+     * 透過使用者ID刪除使用者
      * 
-     * @param userId 用户ID
-     * @return 结果
+     * @param userId 使用者ID
+     * @return 結果
      */
     public int deleteUserById(Long userId);
 
     /**
-     * 批量删除用户信息
+     * 批次刪除使用者資訊
      * 
-     * @param userIds 需要删除的用户ID
-     * @return 结果
+     * @param userIds 需要刪除的使用者ID
+     * @return 結果
      */
     public int deleteUserByIds(Long[] userIds);
 
     /**
-     * 导入用户数据
+     * 匯入使用者資料
      * 
-     * @param userList 用户数据列表
-     * @param isUpdateSupport 是否更新支持，如果已存在，则进行更新数据
-     * @param operName 操作用户
-     * @return 结果
+     * @param userList 使用者資料列表
+     * @param isUpdateSupport 是否更新支援，如果已存在，則進行更新資料
+     * @param operName 操作使用者
+     * @return 結果
      */
     public String importUser(List<SysUser> userList, Boolean isUpdateSupport, String operName);
 }

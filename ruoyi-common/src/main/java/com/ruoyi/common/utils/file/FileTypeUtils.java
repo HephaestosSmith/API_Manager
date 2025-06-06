@@ -4,19 +4,19 @@ import java.io.File;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * 文件类型工具类
+ * 檔案型別工具類
  *
  * @author ruoyi
  */
 public class FileTypeUtils
 {
     /**
-     * 获取文件类型
+     * 獲取檔案型別
      * <p>
      * 例如: ruoyi.txt, 返回: txt
      * 
-     * @param file 文件名
-     * @return 后缀（不含".")
+     * @param file 檔名
+     * @return 字尾（不含".")
      */
     public static String getFileType(File file)
     {
@@ -28,12 +28,12 @@ public class FileTypeUtils
     }
 
     /**
-     * 获取文件类型
+     * 獲取檔案型別
      * <p>
      * 例如: ruoyi.txt, 返回: txt
      *
-     * @param fileName 文件名
-     * @return 后缀（不含".")
+     * @param fileName 檔名
+     * @return 字尾（不含".")
      */
     public static String getFileType(String fileName)
     {
@@ -46,10 +46,10 @@ public class FileTypeUtils
     }
 
     /**
-     * 获取文件类型
+     * 獲取檔案型別
      * 
-     * @param photoByte 文件字节码
-     * @return 后缀（不含".")
+     * @param photoByte 檔案位元組碼
+     * @return 字尾（不含".")
      */
     public static String getFileExtendName(byte[] photoByte)
     {

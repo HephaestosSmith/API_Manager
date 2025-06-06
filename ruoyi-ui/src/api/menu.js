@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 获取路由
+// 獲取路由
 export const getRouters = () => {
   return request({
     url: '/getRouters',

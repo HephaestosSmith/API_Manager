@@ -27,11 +27,11 @@ const mutations = {
 }
 
 const actions = {
-  // 设置字典
+  // 設定字典
   setDict({ commit }, data) {
     commit('SET_DICT', data)
   },
-  // 删除字典
+  // 刪除字典
   removeDict({ commit }, key) {
     commit('REMOVE_DICT', key)
   },

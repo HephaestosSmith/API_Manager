@@ -7,7 +7,7 @@ import com.ruoyi.common.utils.ServletUtils;
 import com.ruoyi.common.utils.StringUtils;
 
 /**
- * 获取IP方法
+ * 獲取IP方法
  * 
  * @author ruoyi
  */
@@ -17,11 +17,11 @@ public class IpUtils
     // 匹配 ip
     public final static String REGX_IP = "((" + REGX_0_255 + "\\.){3}" + REGX_0_255 + ")";
     public final static String REGX_IP_WILDCARD = "(((\\*\\.){3}\\*)|(" + REGX_0_255 + "(\\.\\*){3})|(" + REGX_0_255 + "\\." + REGX_0_255 + ")(\\.\\*){2}" + "|((" + REGX_0_255 + "\\.){3}\\*))";
-    // 匹配网段
+    // 匹配網段
     public final static String REGX_IP_SEG = "(" + REGX_IP + "\\-" + REGX_IP + ")";
 
     /**
-     * 获取客户端IP
+     * 獲取客戶端IP
      * 
      * @return IP地址
      */
@@ -31,9 +31,9 @@ public class IpUtils
     }
 
     /**
-     * 获取客户端IP
+     * 獲取客戶端IP
      * 
-     * @param request 请求对象
+     * @param request 請求物件
      * @return IP地址
      */
     public static String getIpAddr(HttpServletRequest request)
@@ -69,10 +69,10 @@ public class IpUtils
     }
 
     /**
-     * 检查是否为内部IP地址
+     * 檢查是否為內部IP地址
      * 
      * @param ip IP地址
-     * @return 结果
+     * @return 結果
      */
     public static boolean internalIp(String ip)
     {
@@ -81,10 +81,10 @@ public class IpUtils
     }
 
     /**
-     * 检查是否为内部IP地址
+     * 檢查是否為內部IP地址
      * 
      * @param addr byte地址
-     * @return 结果
+     * @return 結果
      */
     private static boolean internalIp(byte[] addr)
     {
@@ -124,10 +124,10 @@ public class IpUtils
     }
 
     /**
-     * 将IPv4地址转换成字节
+     * 將IPv4地址轉換成位元組
      * 
      * @param text IPv4地址
-     * @return byte 字节
+     * @return byte 位元組
      */
     public static byte[] textToNumericFormatV4(String text)
     {
@@ -212,7 +212,7 @@ public class IpUtils
     }
 
     /**
-     * 获取IP地址
+     * 獲取IP地址
      * 
      * @return 本地IP地址
      */
@@ -229,9 +229,9 @@ public class IpUtils
     }
 
     /**
-     * 获取主机名
+     * 獲取主機名
      * 
-     * @return 本地主机名
+     * @return 本地主機名
      */
     public static String getHostName()
     {
@@ -246,14 +246,14 @@ public class IpUtils
     }
 
     /**
-     * 从多级反向代理中获得第一个非unknown IP地址
+     * 從多級反向代理中獲得第一個非unknown IP地址
      *
-     * @param ip 获得的IP地址
-     * @return 第一个非unknown IP地址
+     * @param ip 獲得的IP地址
+     * @return 第一個非unknown IP地址
      */
     public static String getMultistageReverseProxyIp(String ip)
     {
-        // 多级反向代理检测
+        // 多級反向代理檢測
         if (ip != null && ip.indexOf(",") > 0)
         {
             final String[] ips = ip.trim().split(",");
@@ -270,9 +270,9 @@ public class IpUtils
     }
 
     /**
-     * 检测给定字符串是否为未知，多用于检测HTTP请求相关
+     * 檢測給定字串是否為未知，多用於檢測HTTP請求相關
      *
-     * @param checkString 被检测的字符串
+     * @param checkString 被檢測的字串
      * @return 是否未知
      */
     public static boolean isUnknown(String checkString)
@@ -281,7 +281,7 @@ public class IpUtils
     }
 
     /**
-     * 是否为IP
+     * 是否為IP
      */
     public static boolean isIP(String ip)
     {
@@ -289,7 +289,7 @@ public class IpUtils
     }
 
     /**
-     * 是否为IP，或 *为间隔的通配符地址
+     * 是否為IP，或 *為間隔的萬用字元地址
      */
     public static boolean isIpWildCard(String ip)
     {
@@ -297,7 +297,7 @@ public class IpUtils
     }
 
     /**
-     * 检测参数是否在ip通配符里
+     * 檢測引數是否在ip萬用字元裡
      */
     public static boolean ipIsInWildCardNoCheck(String ipWildCard, String ip)
     {
@@ -316,7 +316,7 @@ public class IpUtils
     }
 
     /**
-     * 是否为特定格式如:“10.10.10.1-10.10.10.99”的ip段字符串
+     * 是否為特定格式如:“10.10.10.1-10.10.10.99”的ip段字串
      */
     public static boolean isIPSegment(String ipSeg)
     {
@@ -324,7 +324,7 @@ public class IpUtils
     }
 
     /**
-     * 判断ip是否在指定网段中
+     * 判斷ip是否在指定網段中
      */
     public static boolean ipIsInNetNoCheck(String iparea, String ip)
     {
@@ -349,11 +349,11 @@ public class IpUtils
     }
 
     /**
-     * 校验ip是否符合过滤串规则
+     * 校驗ip是否符合過濾串規則
      * 
-     * @param filter 过滤IP列表,支持后缀'*'通配,支持网段如:`10.10.10.1-10.10.10.99`
-     * @param ip 校验IP地址
-     * @return boolean 结果
+     * @param filter 過濾IP列表,支援字尾'*'通配,支援網段如:`10.10.10.1-10.10.10.99`
+     * @param ip 校驗IP地址
+     * @return boolean 結果
      */
     public static boolean isMatchedIp(String filter, String ip)
     {

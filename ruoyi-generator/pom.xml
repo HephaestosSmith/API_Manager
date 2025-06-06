@@ -12,12 +12,12 @@
     <artifactId>ruoyi-generator</artifactId>
 
     <description>
-        generator代码生成
+        generator程式碼生成
     </description>
 
     <dependencies>
 
-        <!-- velocity代码生成使用模板 -->
+        <!-- velocity程式碼生成使用模板 -->
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-core</artifactId>
@@ -29,7 +29,7 @@
             <artifactId>ruoyi-common</artifactId>
         </dependency>
 
-        <!-- 阿里数据库连接池 -->
+        <!-- 阿里資料庫連線池 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>

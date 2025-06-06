@@ -1,5 +1,5 @@
 /**
- * 通用js方法封装处理
+ * 通用js方法封裝處理
  * Copyright (c) 2019 ruoyi
  */
 
@@ -44,14 +44,14 @@ export function parseTime(time, pattern) {
   return time_str
 }
 
-// 表单重置
+// 表單重置
 export function resetForm(refName) {
   if (this.$refs[refName]) {
     this.$refs[refName].resetFields()
   }
 }
 
-// 添加日期范围
+// 新增日期範圍
 export function addDateRange(params, dateRange, propName) {
   let search = params
   search.params = typeof (search.params) === 'object' && search.params !== null && !Array.isArray(search.params) ? search.params : {}
@@ -66,7 +66,7 @@ export function addDateRange(params, dateRange, propName) {
   return search
 }
 
-// 回显数据字典
+// 回顯資料字典
 export function selectDictLabel(datas, value) {
   if (value === undefined) {
     return ""
@@ -84,7 +84,7 @@ export function selectDictLabel(datas, value) {
   return actions.join('')
 }
 
-// 回显数据字典（字符串、数组）
+// 回顯資料字典（字串、陣列）
 export function selectDictLabels(datas, value, separator) {
   if (value === undefined || value.length ===0) {
     return ""
@@ -110,7 +110,7 @@ export function selectDictLabels(datas, value, separator) {
   return actions.join('').substring(0, actions.join('').length - 1)
 }
 
-// 字符串格式化(%s )
+// 字串格式化(%s )
 export function sprintf(str) {
   var args = arguments, flag = true, i = 1
   str = str.replace(/%s/g, function () {
@@ -124,7 +124,7 @@ export function sprintf(str) {
   return flag ? str : ''
 }
 
-// 转换字符串，undefined,null等转化为""
+// 轉換字串，undefined,null等轉化為""
 export function parseStrEmpty(str) {
   if (!str || str == "undefined" || str == "null") {
     return ""
@@ -132,7 +132,7 @@ export function parseStrEmpty(str) {
   return str
 }
 
-// 数据合并
+// 資料合併
 export function mergeRecursive(source, target) {
   for (var p in target) {
     try {
@@ -149,11 +149,11 @@ export function mergeRecursive(source, target) {
 }
 
 /**
- * 构造树型结构数据
- * @param {*} data 数据源
- * @param {*} id id字段 默认 'id'
- * @param {*} parentId 父节点字段 默认 'parentId'
- * @param {*} children 孩子节点字段 默认 'children'
+ * 構造樹型結構資料
+ * @param {*} data 資料來源
+ * @param {*} id id欄位 預設 'id'
+ * @param {*} parentId 父節點欄位 預設 'parentId'
+ * @param {*} children 孩子節點欄位 預設 'children'
  */
 export function handleTree(data, id, parentId, children) {
   let config = {
@@ -185,8 +185,8 @@ export function handleTree(data, id, parentId, children) {
 }
 
 /**
-* 参数处理
-* @param {*} params  参数
+* 引數處理
+* @param {*} params  引數
 */
 export function tansParams(params) {
   let result = ''
@@ -210,7 +210,7 @@ export function tansParams(params) {
   return result
 }
 
-// 返回项目路径
+// 返回專案路徑
 export function getNormalPath(p) {
   if (p.length === 0 || !p || p == 'undefined') {
     return p
@@ -222,7 +222,7 @@ export function getNormalPath(p) {
   return res
 }
 
-// 验证是否为blob格式
+// 驗證是否為blob格式
 export function blobValidate(data) {
   return data.type !== 'application/json'
 }

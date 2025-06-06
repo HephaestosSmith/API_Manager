@@ -5,91 +5,91 @@ import org.apache.ibatis.annotations.Param;
 import com.ruoyi.common.core.domain.entity.SysDictData;
 
 /**
- * 字典表 数据层
+ * 字典表 資料層
  * 
  * @author ruoyi
  */
 public interface SysDictDataMapper
 {
     /**
-     * 根据条件分页查询字典数据
+     * 根據條件分頁查詢字典資料
      * 
-     * @param dictData 字典数据信息
-     * @return 字典数据集合信息
+     * @param dictData 字典資料資訊
+     * @return 字典資料集合資訊
      */
     public List<SysDictData> selectDictDataList(SysDictData dictData);
 
     /**
-     * 根据字典类型查询字典数据
+     * 根據字典型別查詢字典資料
      * 
-     * @param dictType 字典类型
-     * @return 字典数据集合信息
+     * @param dictType 字典型別
+     * @return 字典資料集合資訊
      */
     public List<SysDictData> selectDictDataByType(String dictType);
 
     /**
-     * 根据字典类型和字典键值查询字典数据信息
+     * 根據字典型別和字典鍵值查詢字典資料資訊
      * 
-     * @param dictType 字典类型
-     * @param dictValue 字典键值
-     * @return 字典标签
+     * @param dictType 字典型別
+     * @param dictValue 字典鍵值
+     * @return 字典標籤
      */
     public String selectDictLabel(@Param("dictType") String dictType, @Param("dictValue") String dictValue);
 
     /**
-     * 根据字典数据ID查询信息
+     * 根據字典資料ID查詢資訊
      * 
-     * @param dictCode 字典数据ID
-     * @return 字典数据
+     * @param dictCode 字典資料ID
+     * @return 字典資料
      */
     public SysDictData selectDictDataById(Long dictCode);
 
     /**
-     * 查询字典数据
+     * 查詢字典資料
      * 
-     * @param dictType 字典类型
-     * @return 字典数据
+     * @param dictType 字典型別
+     * @return 字典資料
      */
     public int countDictDataByType(String dictType);
 
     /**
-     * 通过字典ID删除字典数据信息
+     * 透過字典ID刪除字典資料資訊
      * 
-     * @param dictCode 字典数据ID
-     * @return 结果
+     * @param dictCode 字典資料ID
+     * @return 結果
      */
     public int deleteDictDataById(Long dictCode);
 
     /**
-     * 批量删除字典数据信息
+     * 批次刪除字典資料資訊
      * 
-     * @param dictCodes 需要删除的字典数据ID
-     * @return 结果
+     * @param dictCodes 需要刪除的字典資料ID
+     * @return 結果
      */
     public int deleteDictDataByIds(Long[] dictCodes);
 
     /**
-     * 新增字典数据信息
+     * 新增字典資料資訊
      * 
-     * @param dictData 字典数据信息
-     * @return 结果
+     * @param dictData 字典資料資訊
+     * @return 結果
      */
     public int insertDictData(SysDictData dictData);
 
     /**
-     * 修改字典数据信息
+     * 修改字典資料資訊
      * 
-     * @param dictData 字典数据信息
-     * @return 结果
+     * @param dictData 字典資料資訊
+     * @return 結果
      */
     public int updateDictData(SysDictData dictData);
 
     /**
-     * 同步修改字典类型
+     * 同步修改字典型別
      * 
-     * @param oldDictType 旧字典类型
-     * @param newDictType 新旧字典类型
-     * @return 结果
+     * @param oldDictType 舊字典型別
+     * @param newDictType 新舊字典型別
+     * @return 結果
      */
     public int updateDictDataType(@Param("oldDictType") String oldDictType, @Param("newDictType") String newDictType);
 }
