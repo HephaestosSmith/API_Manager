@@ -1,4 +1,5 @@
 package com.ruoyi.system.domain;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -16,14 +17,17 @@ public class SysOperLog extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** 日誌主鍵 */
+    @ApiModelProperty(value = "操作序號")
     @Excel(name = "操作序號", cellType = ColumnType.NUMERIC)
     private Long operId;
 
     /** 操作模組 */
+    @ApiModelProperty(value = "操作模組")
     @Excel(name = "操作模組")
     private String title;
 
     /** 業務型別（0其它 1新增 2修改 3刪除） */
+    @ApiModelProperty(value = "業務型別")
     @Excel(name = "業務型別", readConverterExp = "0=其它,1=新增,2=修改,3=刪除,4=授權,5=匯出,6=匯入,7=強退,8=生成程式碼,9=清空資料")
     private Integer businessType;
 
@@ -31,59 +35,73 @@ public class SysOperLog extends BaseEntity
     private Integer[] businessTypes;
 
     /** 請求方法 */
+    @ApiModelProperty(value = "請求方法")
     @Excel(name = "請求方法")
     private String method;
 
     /** 請求方式 */
+    @ApiModelProperty(value = "請求方式")
     @Excel(name = "請求方式")
     private String requestMethod;
 
     /** 操作類別（0其它 1後臺使用者 2手機端使用者） */
+    @ApiModelProperty(value = "操作類別")
     @Excel(name = "操作類別", readConverterExp = "0=其它,1=後臺使用者,2=手機端使用者")
     private Integer operatorType;
 
     /** 操作人員 */
+    @ApiModelProperty(value = "操作人員")
     @Excel(name = "操作人員")
     private String operName;
 
     /** 部門名稱 */
+    @ApiModelProperty(value = "部門名稱")
     @Excel(name = "部門名稱")
     private String deptName;
 
     /** 請求url */
+    @ApiModelProperty(value = "請求地址")
     @Excel(name = "請求地址")
     private String operUrl;
 
     /** 操作地址 */
+    @ApiModelProperty(value = "操作地址")
     @Excel(name = "操作地址")
     private String operIp;
 
     /** 操作地點 */
+    @ApiModelProperty(value = "操作地點")
     @Excel(name = "操作地點")
     private String operLocation;
 
     /** 請求引數 */
+    @ApiModelProperty(value = "請求引數")
     @Excel(name = "請求引數")
     private String operParam;
 
     /** 返回引數 */
+    @ApiModelProperty(value = "返回引數")
     @Excel(name = "返回引數")
     private String jsonResult;
 
     /** 操作狀態（0正常 1異常） */
+    @ApiModelProperty(value = "狀態")
     @Excel(name = "狀態", readConverterExp = "0=正常,1=異常")
     private Integer status;
 
     /** 錯誤訊息 */
+    @ApiModelProperty(value = "錯誤訊息")
     @Excel(name = "錯誤訊息")
     private String errorMsg;
 
     /** 操作時間 */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @ApiModelProperty(value = "操作時間")
     @Excel(name = "操作時間", width = 30, dateFormat = "yyyy-MM-dd HH:mm:ss")
     private Date operTime;
 
     /** 消耗時間 */
+    @ApiModelProperty(value = "消耗時間")
     @Excel(name = "消耗時間", suffix = "毫秒")
     private Long costTime;
 

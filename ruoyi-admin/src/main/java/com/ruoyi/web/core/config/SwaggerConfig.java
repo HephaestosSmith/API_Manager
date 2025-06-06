@@ -58,8 +58,9 @@ public class SwaggerConfig
                 // 掃描所有有註解的api，用這種方式更靈活
                 //.apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 // 掃描指定包中的swagger註解
-                // .apis(RequestHandlerSelectors.basePackage("com.ruoyi.project.tool.swagger"))
-                // 掃描所有 .apis(RequestHandlerSelectors.any())
+                //.apis(RequestHandlerSelectors.basePackage("com.ruoyi.project.tool.swagger"))
+                // 掃描所有
+                .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
                 .build()
                 /* 設定安全模式，swagger可以設定訪問token */
@@ -113,9 +114,9 @@ public class SwaggerConfig
         // 用ApiInfoBuilder進行定製
         return new ApiInfoBuilder()
                 // 設定標題
-                .title("標題：若依管理系統_介面文件")
+                .title("標題：管理系統_介面文件")
                 // 描述
-                .description("描述：用於管理集團旗下公司的人員資訊,具體包括XXX,XXX模組...")
+                .description("描述：用於管理集團旗下公司的人員資訊")
                 // 作者資訊
                 .contact(new Contact(ruoyiConfig.getName(), null, null))
                 // 版本

@@ -1,4 +1,5 @@
 package com.ruoyi.common.core.domain.entity;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Set;
 import javax.validation.constraints.NotBlank;
@@ -20,22 +21,27 @@ public class SysRole extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** 角色ID */
+    @ApiModelProperty(value = "角色序號")
     @Excel(name = "角色序號", cellType = ColumnType.NUMERIC)
     private Long roleId;
 
     /** 角色名稱 */
+    @ApiModelProperty(value = "角色名稱")
     @Excel(name = "角色名稱")
     private String roleName;
 
     /** 角色許可權 */
+    @ApiModelProperty(value = "角色許可權")
     @Excel(name = "角色許可權")
     private String roleKey;
 
     /** 角色排序 */
+    @ApiModelProperty(value = "角色排序")
     @Excel(name = "角色排序")
     private Integer roleSort;
 
     /** 資料範圍（1：所有資料許可權；2：自定義資料許可權；3：本部門資料許可權；4：本部門及以下資料許可權；5：僅本人資料許可權） */
+    @ApiModelProperty(value = "資料範圍")
     @Excel(name = "資料範圍", readConverterExp = "1=所有資料許可權,2=自定義資料許可權,3=本部門資料許可權,4=本部門及以下資料許可權,5=僅本人資料許可權")
     private String dataScope;
 
@@ -46,6 +52,7 @@ public class SysRole extends BaseEntity
     private boolean deptCheckStrictly;
 
     /** 角色狀態（0正常 1停用） */
+    @ApiModelProperty(value = "角色狀態")
     @Excel(name = "角色狀態", readConverterExp = "0=正常,1=停用")
     private String status;
 

@@ -1,4 +1,5 @@
 package com.ruoyi.system.domain;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -16,39 +17,48 @@ public class SysLogininfor extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** ID */
+    @ApiModelProperty(value = "序號")
     @Excel(name = "序號", cellType = ColumnType.NUMERIC)
     private Long infoId;
 
     /** 使用者賬號 */
+    @ApiModelProperty(value = "使用者賬號")
     @Excel(name = "使用者賬號")
     private String userName;
 
     /** 登入狀態 0成功 1失敗 */
+    @ApiModelProperty(value = "登入狀態")
     @Excel(name = "登入狀態", readConverterExp = "0=成功,1=失敗")
     private String status;
 
     /** 登入IP地址 */
+    @ApiModelProperty(value = "登入地址")
     @Excel(name = "登入地址")
     private String ipaddr;
 
     /** 登入地點 */
+    @ApiModelProperty(value = "登入地點")
     @Excel(name = "登入地點")
     private String loginLocation;
 
     /** 瀏覽器型別 */
+    @ApiModelProperty(value = "瀏覽器")
     @Excel(name = "瀏覽器")
     private String browser;
 
     /** 作業系統 */
+    @ApiModelProperty(value = "作業系統")
     @Excel(name = "作業系統")
     private String os;
 
     /** 提示訊息 */
+    @ApiModelProperty(value = "提示訊息")
     @Excel(name = "提示訊息")
     private String msg;
 
     /** 訪問時間 */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @ApiModelProperty(value = "訪問時間")
     @Excel(name = "訪問時間", width = 30, dateFormat = "yyyy-MM-dd HH:mm:ss")
     private Date loginTime;
 

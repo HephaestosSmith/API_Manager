@@ -1,4 +1,5 @@
 package com.ruoyi.common.core.domain.entity;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
 import java.util.List;
@@ -22,30 +23,37 @@ public class SysUser extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** 使用者ID */
+    @ApiModelProperty(value = "使用者序號")
     @Excel(name = "使用者序號", type = Type.EXPORT, cellType = ColumnType.NUMERIC, prompt = "使用者編號")
     private Long userId;
 
     /** 部門ID */
+    @ApiModelProperty(value = "部門編號")
     @Excel(name = "部門編號", type = Type.IMPORT)
     private Long deptId;
 
     /** 使用者賬號 */
+    @ApiModelProperty(value = "登入名稱")
     @Excel(name = "登入名稱")
     private String userName;
 
     /** 使用者暱稱 */
+    @ApiModelProperty(value = "使用者名稱稱")
     @Excel(name = "使用者名稱稱")
     private String nickName;
 
     /** 使用者郵箱 */
+    @ApiModelProperty(value = "使用者郵箱")
     @Excel(name = "使用者郵箱")
     private String email;
 
     /** 手機號碼 */
+    @ApiModelProperty(value = "手機號碼")
     @Excel(name = "手機號碼", cellType = ColumnType.TEXT)
     private String phonenumber;
 
     /** 使用者性別 */
+    @ApiModelProperty(value = "使用者性別")
     @Excel(name = "使用者性別", readConverterExp = "0=男,1=女,2=未知")
     private String sex;
 
@@ -56,6 +64,7 @@ public class SysUser extends BaseEntity
     private String password;
 
     /** 賬號狀態（0正常 1停用） */
+    @ApiModelProperty(value = "賬號狀態")
     @Excel(name = "賬號狀態", readConverterExp = "0=正常,1=停用")
     private String status;
 
@@ -63,10 +72,12 @@ public class SysUser extends BaseEntity
     private String delFlag;
 
     /** 最後登入IP */
+    @ApiModelProperty(value = "最後登入IP")
     @Excel(name = "最後登入IP", type = Type.EXPORT)
     private String loginIp;
 
     /** 最後登入時間 */
+    @ApiModelProperty(value = "最後登入時間")
     @Excel(name = "最後登入時間", width = 30, dateFormat = "yyyy-MM-dd HH:mm:ss", type = Type.EXPORT)
     private Date loginDate;
 
@@ -74,9 +85,10 @@ public class SysUser extends BaseEntity
     private Date pwdUpdateDate;
 
     /** 部門物件 */
+    @ApiModelProperty(value = "部門物件，包含部門名稱與負責人")
     @Excels({
-        @Excel(name = "部門名稱", targetAttr = "deptName", type = Type.EXPORT),
-        @Excel(name = "部門負責人", targetAttr = "leader", type = Type.EXPORT)
+            @Excel(name = "部門名稱", targetAttr = "deptName", type = Type.EXPORT),
+            @Excel(name = "部門負責人", targetAttr = "leader", type = Type.EXPORT)
     })
     private SysDept dept;
 

@@ -1,4 +1,5 @@
 package com.ruoyi.system.domain;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -18,22 +19,27 @@ public class SysConfig extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** 引數主鍵 */
+    @ApiModelProperty(value = "引數主鍵")
     @Excel(name = "引數主鍵", cellType = ColumnType.NUMERIC)
     private Long configId;
 
     /** 引數名稱 */
+    @ApiModelProperty(value = "引數名稱")
     @Excel(name = "引數名稱")
     private String configName;
 
     /** 引數鍵名 */
+    @ApiModelProperty(value = "引數鍵名")
     @Excel(name = "引數鍵名")
     private String configKey;
 
     /** 引數鍵值 */
+    @ApiModelProperty(value = "引數鍵值")
     @Excel(name = "引數鍵值")
     private String configValue;
 
     /** 系統內建（Y是 N否） */
+    @ApiModelProperty(value = "系統內建")
     @Excel(name = "系統內建", readConverterExp = "Y=是,N=否")
     private String configType;
 

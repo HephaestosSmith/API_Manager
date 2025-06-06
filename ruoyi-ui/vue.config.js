@@ -7,7 +7,7 @@ function resolve(dir) {
 
 const CompressionPlugin = require('compression-webpack-plugin')
 
-const name = process.env.VUE_APP_TITLE || '若依管理系統' // 網頁標題
+const name = process.env.VUE_APP_TITLE || '管理系統' // 網頁標題
 
 const baseUrl = 'http://localhost:8080' // 後端介面
 

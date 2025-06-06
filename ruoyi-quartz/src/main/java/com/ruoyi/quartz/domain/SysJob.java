@@ -1,4 +1,5 @@
 package com.ruoyi.quartz.domain;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
 import javax.validation.constraints.NotBlank;
@@ -23,34 +24,42 @@ public class SysJob extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** 任務ID */
+    @ApiModelProperty(value = "任務序號")
     @Excel(name = "任務序號", cellType = ColumnType.NUMERIC)
     private Long jobId;
 
     /** 任務名稱 */
+    @ApiModelProperty(value = "任務名稱")
     @Excel(name = "任務名稱")
     private String jobName;
 
     /** 任務組名 */
+    @ApiModelProperty(value = "任務組名")
     @Excel(name = "任務組名")
     private String jobGroup;
 
     /** 呼叫目標字串 */
+    @ApiModelProperty(value = "呼叫目標字串")
     @Excel(name = "呼叫目標字串")
     private String invokeTarget;
 
     /** cron執行表示式 */
+    @ApiModelProperty(value = "執行表示式 ")
     @Excel(name = "執行表示式 ")
     private String cronExpression;
 
     /** cron計劃策略 */
+    @ApiModelProperty(value = "計劃策略 ")
     @Excel(name = "計劃策略 ", readConverterExp = "0=預設,1=立即觸發執行,2=觸發一次執行,3=不觸發立即執行")
     private String misfirePolicy = ScheduleConstants.MISFIRE_DEFAULT;
 
     /** 是否併發執行（0允許 1禁止） */
+    @ApiModelProperty(value = "併發執行")
     @Excel(name = "併發執行", readConverterExp = "0=允許,1=禁止")
     private String concurrent;
 
     /** 任務狀態（0正常 1暫停） */
+    @ApiModelProperty(value = "任務狀態")
     @Excel(name = "任務狀態", readConverterExp = "0=正常,1=暫停")
     private String status;
 
