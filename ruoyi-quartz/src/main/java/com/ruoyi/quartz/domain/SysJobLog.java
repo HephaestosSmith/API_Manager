@@ -1,5 +1,5 @@
 package com.ruoyi.quartz.domain;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.util.Date;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -17,37 +17,37 @@ public class SysJobLog extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** ID */
-    @ApiModelProperty(value = "日誌序號")
+    @Schema(description = "日誌序號")
     @Excel(name = "日誌序號")
     private Long jobLogId;
 
     /** 任務名稱 */
-    @ApiModelProperty(value = "任務名稱")
+    @Schema(description = "任務名稱")
     @Excel(name = "任務名稱")
     private String jobName;
 
     /** 任務組名 */
-    @ApiModelProperty(value = "任務組名")
+    @Schema(description = "任務組名")
     @Excel(name = "任務組名")
     private String jobGroup;
 
     /** 呼叫目標字串 */
-    @ApiModelProperty(value = "呼叫目標字串")
+    @Schema(description = "呼叫目標字串")
     @Excel(name = "呼叫目標字串")
     private String invokeTarget;
 
     /** 日誌資訊 */
-    @ApiModelProperty(value = "日誌資訊")
+    @Schema(description = "日誌資訊")
     @Excel(name = "日誌資訊")
     private String jobMessage;
 
     /** 執行狀態（0正常 1失敗） */
-    @ApiModelProperty(value = "執行狀態")
+    @Schema(description = "執行狀態")
     @Excel(name = "執行狀態", readConverterExp = "0=正常,1=失敗")
     private String status;
 
     /** 異常資訊 */
-    @ApiModelProperty(value = "異常資訊")
+    @Schema(description = "異常資訊")
     @Excel(name = "異常資訊")
     private String exceptionInfo;
 

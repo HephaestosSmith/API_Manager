@@ -1,5 +1,5 @@
 package com.ruoyi.common.core.domain.entity;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -20,27 +20,27 @@ public class SysDictData extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** 字典編碼 */
-    @ApiModelProperty(value = "字典編碼")
+    @Schema(description = "字典編碼")
     @Excel(name = "字典編碼", cellType = ColumnType.NUMERIC)
     private Long dictCode;
 
     /** 字典排序 */
-    @ApiModelProperty(value = "字典排序")
+    @Schema(description = "字典排序")
     @Excel(name = "字典排序", cellType = ColumnType.NUMERIC)
     private Long dictSort;
 
     /** 字典標籤 */
-    @ApiModelProperty(value = "字典標籤")
+    @Schema(description = "字典標籤")
     @Excel(name = "字典標籤")
     private String dictLabel;
 
     /** 字典鍵值 */
-    @ApiModelProperty(value = "字典鍵值")
+    @Schema(description = "字典鍵值")
     @Excel(name = "字典鍵值")
     private String dictValue;
 
     /** 字典型別 */
-    @ApiModelProperty(value = "字典型別")
+    @Schema(description = "字典型別")
     @Excel(name = "字典型別")
     private String dictType;
 
@@ -51,12 +51,12 @@ public class SysDictData extends BaseEntity
     private String listClass;
 
     /** 是否預設（Y是 N否） */
-    @ApiModelProperty(value = "是否預設")
+    @Schema(description = "是否預設")
     @Excel(name = "是否預設", readConverterExp = "Y=是,N=否")
     private String isDefault;
 
     /** 狀態（0正常 1停用） */
-    @ApiModelProperty(value = "狀態")
+    @Schema(description = "狀態")
     @Excel(name = "狀態", readConverterExp = "0=正常,1=停用")
     private String status;
 

@@ -1,5 +1,5 @@
 package com.ruoyi.system.domain;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -20,27 +20,27 @@ public class SysPost extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** 崗位序號 */
-    @ApiModelProperty(value = "崗位序號")
+    @Schema(description = "崗位序號")
     @Excel(name = "崗位序號", cellType = ColumnType.NUMERIC)
     private Long postId;
 
     /** 崗位編碼 */
-    @ApiModelProperty(value = "崗位編碼")
+    @Schema(description = "崗位編碼")
     @Excel(name = "崗位編碼")
     private String postCode;
 
     /** 崗位名稱 */
-    @ApiModelProperty(value = "崗位名稱")
+    @Schema(description = "崗位名稱")
     @Excel(name = "崗位名稱")
     private String postName;
 
     /** 崗位排序 */
-    @ApiModelProperty(value = "崗位排序")
+    @Schema(description = "崗位排序")
     @Excel(name = "崗位排序")
     private Integer postSort;
 
     /** 狀態（0正常 1停用） */
-    @ApiModelProperty(value = "狀態")
+    @Schema(description = "狀態")
     @Excel(name = "狀態", readConverterExp = "0=正常,1=停用")
     private String status;
 

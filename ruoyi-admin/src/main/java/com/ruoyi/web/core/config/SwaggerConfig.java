@@ -1,126 +1,75 @@
 package com.ruoyi.web.core.config;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.ruoyi.common.config.RuoYiConfig;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.security.*;
+import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import com.ruoyi.common.config.RuoYiConfig;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.models.auth.In;
-import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.ApiKey;
-import springfox.documentation.service.AuthorizationScope;
-import springfox.documentation.service.Contact;
-import springfox.documentation.service.SecurityReference;
-import springfox.documentation.service.SecurityScheme;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spi.service.contexts.SecurityContext;
-import springfox.documentation.spring.web.plugins.Docket;
+
+import java.util.List;
 
 /**
- * Swagger2的介面配置
- * 
- * @author ruoyi
+ * OpenAPI 配置 (springdoc-openapi)
+ * 適用於 Swagger 介面文件顯示
  */
 @Configuration
-public class SwaggerConfig
-{
-    /** 系統基礎配置 */
+public class SwaggerConfig {
+
     @Autowired
     private RuoYiConfig ruoyiConfig;
 
-    /** 是否開啟swagger */
-    @Value("${swagger.enabled}")
+    @Value("${swagger.enabled:true}")
     private boolean enabled;
 
-    /** 設定請求的統一字首 */
-    @Value("${swagger.pathMapping}")
+    @Value("${swagger.pathMapping:}")
     private String pathMapping;
 
     /**
-     * 建立API
+     * 主配置 - OpenAPI 基本資訊與 Token 安全設定
      */
     @Bean
-    public Docket createRestApi()
-    {
-        return new Docket(DocumentationType.OAS_30)
-                // 是否啟用Swagger
-                .enable(enabled)
-                // 用來建立該API的基本資訊，展示在文件的頁面中（自定義展示的資訊）
-                .apiInfo(apiInfo())
-                // 設定哪些介面暴露給Swagger展示
-                .select()
-                // 掃描所有有註解的api，用這種方式更靈活
-                //.apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
-                // 掃描指定包中的swagger註解
-                //.apis(RequestHandlerSelectors.basePackage("com.ruoyi.project.tool.swagger"))
-                // 掃描所有
-                .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.any())
-                .build()
-                /* 設定安全模式，swagger可以設定訪問token */
-                .securitySchemes(securitySchemes())
-                .securityContexts(securityContexts())
-                .pathMapping(pathMapping);
+    public OpenAPI customOpenAPI() {
+        return new OpenAPI()
+                .info(new Info()
+                        .title("標題：管理系統_介面文件")
+                        .description("描述：用於管理集團旗下公司的人員資訊")
+                        .version("版本號:" + ruoyiConfig.getVersion())
+                        .contact(new Contact()
+                                .name(ruoyiConfig.getName())
+                                .email("") // 可填寫 Email
+                                .url("")) // 可填寫網站
+                )
+                .addSecurityItem(new SecurityRequirement().addList("Authorization"))
+                .components(new io.swagger.v3.oas.models.Components()
+                        .addSecuritySchemes("Authorization",
+                                new SecurityScheme()
+                                        .name("Authorization")
+                                        .type(SecurityScheme.Type.HTTP)
+                                        .scheme("bearer")
+                                        .bearerFormat("JWT")
+                        )
+                );
     }
 
     /**
-     * 安全模式，這裡指定token透過Authorization頭請求頭傳遞
+     * 分組 API（可選，這邊只做一組 default）
      */
-    private List<SecurityScheme> securitySchemes()
-    {
-        List<SecurityScheme> apiKeyList = new ArrayList<SecurityScheme>();
-        apiKeyList.add(new ApiKey("Authorization", "Authorization", In.HEADER.toValue()));
-        return apiKeyList;
-    }
-
-    /**
-     * 安全上下文
-     */
-    private List<SecurityContext> securityContexts()
-    {
-        List<SecurityContext> securityContexts = new ArrayList<>();
-        securityContexts.add(
-                SecurityContext.builder()
-                        .securityReferences(defaultAuth())
-                        .operationSelector(o -> o.requestMappingPattern().matches("/.*"))
-                        .build());
-        return securityContexts;
-    }
-
-    /**
-     * 預設的安全上引用
-     */
-    private List<SecurityReference> defaultAuth()
-    {
-        AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
-        AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
-        authorizationScopes[0] = authorizationScope;
-        List<SecurityReference> securityReferences = new ArrayList<>();
-        securityReferences.add(new SecurityReference("Authorization", authorizationScopes));
-        return securityReferences;
-    }
-
-    /**
-     * 新增摘要資訊
-     */
-    private ApiInfo apiInfo()
-    {
-        // 用ApiInfoBuilder進行定製
-        return new ApiInfoBuilder()
-                // 設定標題
-                .title("標題：管理系統_介面文件")
-                // 描述
-                .description("描述：用於管理集團旗下公司的人員資訊")
-                // 作者資訊
-                .contact(new Contact(ruoyiConfig.getName(), null, null))
-                // 版本
-                .version("版本號:" + ruoyiConfig.getVersion())
+    @Bean
+    public GroupedOpenApi defaultApiGroup() {
+        return GroupedOpenApi.builder()
+                .group("default")
+                .pathsToMatch("/**")
+                .addOperationCustomizer((operation, handlerMethod) -> {
+                    if (!enabled) {
+                        operation.setDeprecated(true); // 如果禁用，標記為廢棄
+                    }
+                    return operation;
+                })
                 .build();
     }
 }

@@ -1,5 +1,5 @@
 package com.ruoyi.common.core.domain.entity;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -20,22 +20,22 @@ public class SysDictType extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** 字典主鍵 */
-    @ApiModelProperty(value = "字典主鍵")
+    @Schema(description = "字典主鍵")
     @Excel(name = "字典主鍵", cellType = ColumnType.NUMERIC)
     private Long dictId;
 
     /** 字典名稱 */
-    @ApiModelProperty(value = "字典名稱")
+    @Schema(description = "字典名稱")
     @Excel(name = "字典名稱")
     private String dictName;
 
     /** 字典型別 */
-    @ApiModelProperty(value = "字典型別")
+    @Schema(description = "字典型別")
     @Excel(name = "字典型別")
     private String dictType;
 
     /** 狀態（0正常 1停用） */
-    @ApiModelProperty(value = "狀態")
+    @Schema(description = "狀態")
     @Excel(name = "狀態", readConverterExp = "0=正常,1=停用")
     private String status;
 
